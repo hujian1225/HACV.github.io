@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ICPC类编码手法 | HACV</title>
+    <meta name="description" content="Personal Blog Website">
+    <link rel="icon" href="/images/photo.jpg">
+  <link rel="manifest" href="/images/photo.jpg">
+  <link rel="apple-touch-icon" href="/images/photo.jpg">
+  <meta http-quiv="pragma" cotent="no-cache">
+  <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+  <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.8eb0d87d.css" as="style"><link rel="preload" href="/assets/js/app.0d587972.js" as="script"><link rel="preload" href="/assets/js/22.aca118be.js" as="script"><link rel="prefetch" href="/assets/js/10.ebd9e5bb.js"><link rel="prefetch" href="/assets/js/100.58510c48.js"><link rel="prefetch" href="/assets/js/101.1acfc2fa.js"><link rel="prefetch" href="/assets/js/102.e9d8b6d7.js"><link rel="prefetch" href="/assets/js/103.bc49ab10.js"><link rel="prefetch" href="/assets/js/104.d9c8a8aa.js"><link rel="prefetch" href="/assets/js/105.2988f13c.js"><link rel="prefetch" href="/assets/js/106.4e5665ee.js"><link rel="prefetch" href="/assets/js/107.379fa1b3.js"><link rel="prefetch" href="/assets/js/108.947b5c69.js"><link rel="prefetch" href="/assets/js/109.66e72927.js"><link rel="prefetch" href="/assets/js/11.8f5f6683.js"><link rel="prefetch" href="/assets/js/110.0903950a.js"><link rel="prefetch" href="/assets/js/111.f7a61215.js"><link rel="prefetch" href="/assets/js/112.ee6b9add.js"><link rel="prefetch" href="/assets/js/113.a881ea53.js"><link rel="prefetch" href="/assets/js/114.606270cc.js"><link rel="prefetch" href="/assets/js/115.410862fe.js"><link rel="prefetch" href="/assets/js/116.2e789c33.js"><link rel="prefetch" href="/assets/js/117.120bf6fc.js"><link rel="prefetch" href="/assets/js/118.0479fb97.js"><link rel="prefetch" href="/assets/js/119.a309ee1f.js"><link rel="prefetch" href="/assets/js/12.593ef9ae.js"><link rel="prefetch" href="/assets/js/120.e0d4e2e4.js"><link rel="prefetch" href="/assets/js/121.f9c9a1bf.js"><link rel="prefetch" href="/assets/js/122.614e3863.js"><link rel="prefetch" href="/assets/js/123.59eda613.js"><link rel="prefetch" href="/assets/js/124.354edc11.js"><link rel="prefetch" href="/assets/js/125.2391dcff.js"><link rel="prefetch" href="/assets/js/126.15a9c8b2.js"><link rel="prefetch" href="/assets/js/127.bfbab0b8.js"><link rel="prefetch" href="/assets/js/128.39c25858.js"><link rel="prefetch" href="/assets/js/129.81926f8a.js"><link rel="prefetch" href="/assets/js/13.67a13924.js"><link rel="prefetch" href="/assets/js/130.ea86dcab.js"><link rel="prefetch" href="/assets/js/131.35757ef3.js"><link rel="prefetch" href="/assets/js/132.f8217f3d.js"><link rel="prefetch" href="/assets/js/133.95b1a76d.js"><link rel="prefetch" href="/assets/js/134.ed30a6f9.js"><link rel="prefetch" href="/assets/js/135.4f726db9.js"><link rel="prefetch" href="/assets/js/136.4920df01.js"><link rel="prefetch" href="/assets/js/137.af233d74.js"><link rel="prefetch" href="/assets/js/138.49e4b258.js"><link rel="prefetch" href="/assets/js/139.3b119368.js"><link rel="prefetch" href="/assets/js/14.b89e9981.js"><link rel="prefetch" href="/assets/js/140.241c821d.js"><link rel="prefetch" href="/assets/js/141.f867e128.js"><link rel="prefetch" href="/assets/js/142.0a6b954c.js"><link rel="prefetch" href="/assets/js/143.38b8b740.js"><link rel="prefetch" href="/assets/js/144.4e1daec9.js"><link rel="prefetch" href="/assets/js/145.7c4ded43.js"><link rel="prefetch" href="/assets/js/146.7edb655a.js"><link rel="prefetch" href="/assets/js/147.1d86e8ae.js"><link rel="prefetch" href="/assets/js/148.f74e0f1c.js"><link rel="prefetch" href="/assets/js/149.d1a65e22.js"><link rel="prefetch" href="/assets/js/15.8658dbcc.js"><link rel="prefetch" href="/assets/js/150.4357a103.js"><link rel="prefetch" href="/assets/js/151.414c037d.js"><link rel="prefetch" href="/assets/js/16.0c69adc6.js"><link rel="prefetch" href="/assets/js/17.a20e9f3e.js"><link rel="prefetch" href="/assets/js/18.bda70dd0.js"><link rel="prefetch" href="/assets/js/19.ada15e0a.js"><link rel="prefetch" href="/assets/js/2.858e80da.js"><link rel="prefetch" href="/assets/js/20.39ab60f2.js"><link rel="prefetch" href="/assets/js/21.3a6af5e1.js"><link rel="prefetch" href="/assets/js/23.997c768f.js"><link rel="prefetch" href="/assets/js/24.2388b656.js"><link rel="prefetch" href="/assets/js/25.2e398a29.js"><link rel="prefetch" href="/assets/js/26.999e43d6.js"><link rel="prefetch" href="/assets/js/27.2be0cf10.js"><link rel="prefetch" href="/assets/js/28.b39e69d3.js"><link rel="prefetch" href="/assets/js/29.bc9dcf63.js"><link rel="prefetch" href="/assets/js/3.53ecd128.js"><link rel="prefetch" href="/assets/js/30.e43bc868.js"><link rel="prefetch" href="/assets/js/31.b8db3815.js"><link rel="prefetch" href="/assets/js/32.9c52ac0c.js"><link rel="prefetch" href="/assets/js/33.942c1377.js"><link rel="prefetch" href="/assets/js/34.ad488c6d.js"><link rel="prefetch" href="/assets/js/35.bde7fe50.js"><link rel="prefetch" href="/assets/js/36.dc87e012.js"><link rel="prefetch" href="/assets/js/37.9be237bc.js"><link rel="prefetch" href="/assets/js/38.a2ed656e.js"><link rel="prefetch" href="/assets/js/39.c6893003.js"><link rel="prefetch" href="/assets/js/4.7737ee66.js"><link rel="prefetch" href="/assets/js/40.ed6f077a.js"><link rel="prefetch" href="/assets/js/41.95871ed4.js"><link rel="prefetch" href="/assets/js/42.2252d8af.js"><link rel="prefetch" href="/assets/js/43.081ffb45.js"><link rel="prefetch" href="/assets/js/44.a6b3c3cf.js"><link rel="prefetch" href="/assets/js/45.a3ce1167.js"><link rel="prefetch" href="/assets/js/46.befd8516.js"><link rel="prefetch" href="/assets/js/47.f34f9cc4.js"><link rel="prefetch" href="/assets/js/48.62761611.js"><link rel="prefetch" href="/assets/js/49.5d8825e5.js"><link rel="prefetch" href="/assets/js/5.44a635f1.js"><link rel="prefetch" href="/assets/js/50.0d413cee.js"><link rel="prefetch" href="/assets/js/51.7c6d64d3.js"><link rel="prefetch" href="/assets/js/52.900f0e6d.js"><link rel="prefetch" href="/assets/js/53.ca23aed2.js"><link rel="prefetch" href="/assets/js/54.f172bf59.js"><link rel="prefetch" href="/assets/js/55.1b9517bc.js"><link rel="prefetch" href="/assets/js/56.80334add.js"><link rel="prefetch" href="/assets/js/57.7894c325.js"><link rel="prefetch" href="/assets/js/58.2c167e62.js"><link rel="prefetch" href="/assets/js/59.e54585ea.js"><link rel="prefetch" href="/assets/js/6.aad427eb.js"><link rel="prefetch" href="/assets/js/60.78afe802.js"><link rel="prefetch" href="/assets/js/61.d3de9a8d.js"><link rel="prefetch" href="/assets/js/62.2a9ca0f4.js"><link rel="prefetch" href="/assets/js/63.52ef0271.js"><link rel="prefetch" href="/assets/js/64.5dce8ce0.js"><link rel="prefetch" href="/assets/js/65.ffb04f2b.js"><link rel="prefetch" href="/assets/js/66.896cdc01.js"><link rel="prefetch" href="/assets/js/67.d6ca691a.js"><link rel="prefetch" href="/assets/js/68.e988fcba.js"><link rel="prefetch" href="/assets/js/69.56cdd1c7.js"><link rel="prefetch" href="/assets/js/7.620fa364.js"><link rel="prefetch" href="/assets/js/70.51c8d23a.js"><link rel="prefetch" href="/assets/js/71.de32e86c.js"><link rel="prefetch" href="/assets/js/72.03a9f5e4.js"><link rel="prefetch" href="/assets/js/73.ca41987b.js"><link rel="prefetch" href="/assets/js/74.88d83cef.js"><link rel="prefetch" href="/assets/js/75.b3683b54.js"><link rel="prefetch" href="/assets/js/76.43d2e38b.js"><link rel="prefetch" href="/assets/js/77.f3af5f07.js"><link rel="prefetch" href="/assets/js/78.e3fc9b02.js"><link rel="prefetch" href="/assets/js/79.24cdce5c.js"><link rel="prefetch" href="/assets/js/8.2fb63ebd.js"><link rel="prefetch" href="/assets/js/80.2ad1db1b.js"><link rel="prefetch" href="/assets/js/81.f1725f8c.js"><link rel="prefetch" href="/assets/js/82.c920e30f.js"><link rel="prefetch" href="/assets/js/83.e76f0172.js"><link rel="prefetch" href="/assets/js/84.2c1fc3ff.js"><link rel="prefetch" href="/assets/js/85.e613049c.js"><link rel="prefetch" href="/assets/js/86.b67437ac.js"><link rel="prefetch" href="/assets/js/87.40536e04.js"><link rel="prefetch" href="/assets/js/88.43da89fb.js"><link rel="prefetch" href="/assets/js/89.31670b27.js"><link rel="prefetch" href="/assets/js/9.48d24621.js"><link rel="prefetch" href="/assets/js/90.356e80c4.js"><link rel="prefetch" href="/assets/js/91.efbe9da4.js"><link rel="prefetch" href="/assets/js/92.89a08c16.js"><link rel="prefetch" href="/assets/js/93.7bb24f82.js"><link rel="prefetch" href="/assets/js/94.6a11b890.js"><link rel="prefetch" href="/assets/js/95.e43143a6.js"><link rel="prefetch" href="/assets/js/96.9a9179a7.js"><link rel="prefetch" href="/assets/js/97.8bf6fdb0.js"><link rel="prefetch" href="/assets/js/98.52c296d9.js"><link rel="prefetch" href="/assets/js/99.6d470e1a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8eb0d87d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">HACV</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/02.DataStructureAndAlgorithm/" class="nav-link router-link-active">🐾数据结构和算法</a></div><div class="nav-item"><a href="/03.OS/" class="nav-link">💻操作系统</a></div><div class="nav-item"><a href="/04.Net/" class="nav-link">☁️网络</a></div><div class="nav-item"><a href="/05.SE/" class="nav-link">☕️软件工程</a></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">💾数据库</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">🐉计算机内功</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">🔧Tools</a></div><div class="nav-item"><a href="/09.Language/" class="nav-link">⚛️C/C++</a></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/02.DataStructureAndAlgorithm/" class="nav-link router-link-active">🐾数据结构和算法</a></div><div class="nav-item"><a href="/03.OS/" class="nav-link">💻操作系统</a></div><div class="nav-item"><a href="/04.Net/" class="nav-link">☁️网络</a></div><div class="nav-item"><a href="/05.SE/" class="nav-link">☕️软件工程</a></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">💾数据库</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">🐉计算机内功</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">🔧Tools</a></div><div class="nav-item"><a href="/09.Language/" class="nav-link">⚛️C/C++</a></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>ICPC类编码手法</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#icpc类编码手法" class="sidebar-link">ICPC类编码手法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#一、icpc选修课记录" class="sidebar-link">一、ICPC选修课记录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#_1』上课讲的acm小技巧-acm经验" class="sidebar-link">1』上课讲的ACM小技巧+ACM经验</a></li></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#_2』ascii炫技" class="sidebar-link">2』ASCII炫技</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#浮点数，计算的精度" class="sidebar-link">浮点数，计算的精度</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#ac的代码" class="sidebar-link">AC的代码</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#一行区别的wa" class="sidebar-link">一行区别的WA</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#oj数学题" class="sidebar-link">OJ数学题</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#考点：同余定理" class="sidebar-link">考点：同余定理</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#湖大oj上输入输出格式" class="sidebar-link">湖大OJ上输入输出格式</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#类型转换：" class="sidebar-link">类型转换：</a></li></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#_1、杭电视频" class="sidebar-link">1、杭电视频</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#_2、清华教材" class="sidebar-link">2、清华教材</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#算法思想" class="sidebar-link">算法思想</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#一、题面" class="sidebar-link">一、题面</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#二、解法" class="sidebar-link">二、解法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#_1）贪心第1部分——贪心策略1（表述不如，算法清晰）" class="sidebar-link">1）贪心第1部分——贪心策略1（表述不如，算法清晰）</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#_2）贪心策略1的算法：" class="sidebar-link">2）贪心策略1的算法：</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#_3）贪心第2部分——贪心策略2" class="sidebar-link">3）贪心第2部分——贪心策略2</a></li></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#三、结合两种贪心策略的最终代码" class="sidebar-link">三、结合两种贪心策略的最终代码</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#一、使用情况" class="sidebar-link">一、使用情况</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#二、分治法-到底如何分解问题" class="sidebar-link">二、分治法-到底如何分解问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#最大问题" class="sidebar-link">最大问题</a></li><li class="sidebar-sub-header"><a href="/02.DataStructureAndAlgorithm/00.STL/Part05.ICPC.html#最小问题" class="sidebar-link">最小问题</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="icpc类编码手法"><a href="#icpc类编码手法" class="header-anchor">#</a> ICPC类编码手法</h2> <h2 id="一、icpc选修课记录"><a href="#一、icpc选修课记录" class="header-anchor">#</a> 一、ICPC选修课记录</h2> <p>title: 课程记录（一）
+date: 2020-09-11 08:00:01</p> <h3 id="_1』上课讲的acm小技巧-acm经验"><a href="#_1』上课讲的acm小技巧-acm经验" class="header-anchor">#</a> 1』上课讲的ACM小技巧+ACM经验</h3> <h4 id="_1-绪论——第一周（7-7）"><a href="#_1-绪论——第一周（7-7）" class="header-anchor">#</a> 1.绪论——第一周（7.7）</h4> <p>就讲讲历史，讲讲推荐参考书</p> <p>本课程知识点（已经讲了的，记得备注一下）</p> <blockquote><ul><li>第1章 经典数规结构与算法</li></ul> <blockquote><ul><li>草草的讲了一下stack，queue</li></ul></blockquote> <ul><li>第2章 动态规划(Dynanic Programming)</li> <li>第三章 贪心算法 (Greedy)</li></ul> <blockquote><ul><li>讲了</li></ul></blockquote> <ul><li>第四章 穷举搜索 (Complete Search)</li> <li>第五章 最短路径 (Shortest Path)</li> <li>第六章 背包问题 (Knapsack)</li> <li>第七帝 计算几何学Computational Geometr)</li> <li>第八章 网络流与二部阁匹阳 (Network Flow)</li> <li>第九章 凸包问题(Iwo-Dimeasional Convex Hul)</li> <li>第十章 数论与大数问题 (BigNums)</li> <li>第11章 线性规划与整数规划</li> <li>第12章 着色问题与排队论</li> <li>第13章 最小生成树(Minimun Spanning Tree)</li> <li>第14章 DFS与BFS以及剪枝问题</li> <li>第15章 组合数学与概率论</li> <li>第16章 启发式搜索(Heuristic Search)</li> <li>第17章 近似搜索Aproxinate Scarch)</li> <li>第18章 泛滥填充(Iood Fll)</li> <li>第19章 欧拉回路(Eulerian Path)</li> <li>第20章 回溯搜索技术(Recursive Search Techniques)</li></ul></blockquote> <h4 id="_2-输入输出格式——第一周（7-8）"><a href="#_2-输入输出格式——第一周（7-8）" class="header-anchor">#</a> 2.输入输出格式——第一周（7.8）</h4> <p>个别输入输出不错，但是我已经自学过了。</p> <p>但是对于，有人大概是觉得getchar那种输入输出速度快的
+这种奇技淫巧的喜爱？？？</p> <p>但是，我们不应该重点在于如何提高我们的算法能力吗？？？那些技巧，能学会也好，但是不要太依赖那些</p> <h4 id="_3-时间复杂度分析——第一周（7-9）"><a href="#_3-时间复杂度分析——第一周（7-9）" class="header-anchor">#</a> 3.时间复杂度分析——第一周（7.9）</h4> <p>讲解了：</p> <blockquote><ul><li>现在的ACM不是很卡内存了
+所以，上课没讲空间复杂度（这逻辑绝了）
+现在不讲空间复杂度了，比如长春赛区，开了二维线段树，很大，接近4G也AC了
+所以现在，一般你的电脑能开多大内存，一般也能给你弄
+<strong>现在比赛一般不卡内存了</strong>。。。。。。</li></ul></blockquote> <blockquote><ul><li>还是有<strong>卡内存</strong>的题目，比如<strong>幻方矩阵</strong>。</li></ul></blockquote> <p>并且，在幻方矩阵中，还有那个所谓的（特殊判断）</p> <h4 id="_4-部分数据结构——第2周（7-14）"><a href="#_4-部分数据结构——第2周（7-14）" class="header-anchor">#</a> 4.部分数据结构——第2周（7.14）</h4> <p><strong>比赛也很少考常数（常数级别算法？？）的，也就是1-2倍的区别</strong>
+比赛一般放8倍</p> <h4 id="_5-bf暴力——第2周（7-15）"><a href="#_5-bf暴力——第2周（7-15）" class="header-anchor">#</a> 5.BF暴力——第2周（7.15）</h4> <blockquote><ul><li>getchar()的作用
+中南有人，每次输入输出用getchar()，从来不用cin和scanf
+那个要很久。能够省略0.4s,，那次就竟然，，，AC了，那次是卡的常数
+那次，卡点，，AC了</li></ul></blockquote> <p>就是这个，这些技巧学就好了，算法才是硬实力，感觉有点太推崇这些。。。
+似乎不是很好。</p> <p>暴力算法是我们进步的阶梯</p> <p>每次自己写快速排序，，，，不
+每早，打快排，(也就是公众号中所说的，我们要做的事情是熟练)</p> <p>string公式要记忆，组合数，估计阶乘，估计，可以使得题目简单</p> <h4 id="_6-贪心算法——第2周（7-16）"><a href="#_6-贪心算法——第2周（7-16）" class="header-anchor">#</a> 6.贪心算法——第2周（7.16）</h4> <p><b>过桥那个智力题，，竟然是IBM以前的，是贪心算法</b></p> <p>但是，一直，不晓得是哪节课，讲解了sqrt在之前还是啥的，要和0.5啥的
+？？？哪个技巧
+没做到笔记（后面找到了笔记，eps）</p> <hr> <p>title: 课程记录（二）
+date: 2020-09-12 08:00:01</p> <p>categories:</p> <ul><li>算法
+tags:</li> <li>ICPC</li></ul> <p>img: /photos/2020.6.03_15/2020_06_06_cover.jpg
+top: false
+summary: eps经验
+mathjax: true</p> <p>cover: false</p> <hr> <p>负值，不能开根号啦</p> <h2 id="_2』ascii炫技"><a href="#_2』ascii炫技" class="header-anchor">#</a> 2』ASCII炫技</h2> <p>格式控制</p> <h3 id="浮点数，计算的精度"><a href="#浮点数，计算的精度" class="header-anchor">#</a> 浮点数，计算的精度</h3> <p>是的，开根号有误差
+第二，在X取整之前需要加0.05，为什么不加？</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token number">6.99</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>//上面强制类型转换后是6而不是7</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>1, 10, 100, 1000...
+Time Limit: 1000ms, Special Time Limit:2500ms, Memory Limit:32768KB
+Total submit users: 915, Accepted users: 691
+Problem 10238 : No special judgement
+Problem description
+Let's consider an infinite sequence of digits constructed of ascending powers of 10 written one after another. Here is the beginning of the sequence: 110100100010000... You are to find out what digit is located at the definite position of the sequence.
+
+Input
+There is the only positive integer number N in the first line, N &lt; 65536. The i-th of N left lines contains the positive integer Ki - the number of position in the sequence. It's given that Ki &lt; 231..
+
+Output
+You are to output N digits 0 or 1 separated with a space. More precisely, the i-th digit of output is to be equal to the Ki-th digit of described above sequence.
+
+Sample Input
+4
+3
+14
+7
+6
+Sample Output
+0 0 1 0
+Problem Source
+USU Open. October'2002 Junior
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h3 id="ac的代码"><a href="#ac的代码" class="header-anchor">#</a> AC的代码</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstdio&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cmath&gt;</span></span>
+
+<span class="token keyword">const</span> <span class="token keyword">double</span> eps<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">double</span> x<span class="token operator">=</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">8.0</span><span class="token operator">*</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">//用这种，0.05的来在强制转换（int)前是为了防止</span>
+	<span class="token comment">//本来经过很多次计算，应该获得是（int)7.00，最终是7</span>
+	<span class="token comment">//但是可能出现(int)6.999就变成了6这样的情况 </span>
+	<span class="token comment">//但是有一说一，有这比较方式，还不如，直接fabs(x-x)&lt;=eps </span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">==</span>x<span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token operator">+</span>eps<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+ 
+ 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> temp<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">//32是空格的ASCII，10是换行符号的ASCII</span>
+			<span class="token comment">//这样写代码很炫，但是，可读性极差，。。。炫技 </span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d%c&quot;</span><span class="token punctuation">,</span><span class="token function">test</span><span class="token punctuation">(</span>temp<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>n<span class="token operator">?</span><span class="token number">32</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//			printf(&quot;%d\n&quot;,test(temp-1));</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><h3 id="一行区别的wa"><a href="#一行区别的wa" class="header-anchor">#</a> 一行区别的WA</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstdio&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cmath&gt;</span></span>
+
+<span class="token keyword">const</span> <span class="token keyword">double</span> eps<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> x<span class="token operator">=</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">8.0</span><span class="token operator">*</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">//用这种，0.05的来在强制转换（int)前是为了防止</span>
+    <span class="token comment">//本来经过很多次计算，应该获得是（int)7.00，最终是7</span>
+    <span class="token comment">//但是可能出现(int)6.999就变成了6这样的情况 </span>
+    <span class="token comment">//但是有一说一，有这比较方式，还不如，直接fabs(x-x)&lt;=eps </span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">==</span>x<span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token operator">+</span>eps<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+ 
+ 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> temp<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//32是空格的ASCII，10是换行符号的ASCII</span>
+            <span class="token comment">//这样写代码很炫，但是，可读性极差，。。。炫技 </span>
+<span class="token comment">//            printf(&quot;%d%c&quot;,test(temp-1),n?32:10);</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">test</span><span class="token punctuation">(</span>temp<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><h3 id="oj数学题"><a href="#oj数学题" class="header-anchor">#</a> OJ数学题</h3> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>Reduced ID Numbers 
+Time Limit: 2000ms, Special Time Limit:2500ms, Memory Limit:32768KB
+Total submit users: 624, Accepted users: 574
+Problem 10275 : No special judgement
+Problem description
+T. Chur teaches various groups of students at university U. Every U-student has a unique Student Identification Number (SIN). A SIN s is an integer in the range 0 ≤ s ≤ MaxSIN with MaxSIN = 106-1. T. Chur finds this range of SINs too large for identification within her groups. For each group, she wants to find the smallest positive integer m, such that within the group all SINs reduced modulo m are unique.
+
+Input
+On the first line of the input is a single positive integer N, telling the number of test cases (groups) to follow. Each case starts with one line containing the integer G (1 ≤ G ≤ 300): the number of students in the group. The following G lines each contain one SIN. The SINs within a group are distinct, though not necessarily sorted.
+
+Output
+For each test case, output one line containing the smallest modulus m, such that all SINs reduced modulo m are distinct.
+
+Sample Input
+2
+1
+124866
+3
+124866
+111111
+987651
+Sample Output
+1
+8
+Problem Source
+NWERC 2005
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h3 id="考点：同余定理"><a href="#考点：同余定理" class="header-anchor">#</a> 考点：同余定理</h3> <p>这道题是对同余定理的考查，思路很简单，暴力地枚举j，直到j满足集合中任意两个数对j取余都不相等，此时停止循环；</p> <p>对于代码中的memset，比用for循环初始化为0快，只是在数组大的时候。在数组大小比较小时则for初始化比较省时（我在这超时了4、5次了）</p> <p>一共是n个学生，所以去完模之后至少要有n个不同的值，所有程序里面的j要从n开始的。当然从1开始也不会错，只是一个小小的优化吧。</p> <p>代码如下：</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;math.h&gt;</span></span>
+
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">10000001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>n<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> cas<span class="token punctuation">,</span>ans<span class="token punctuation">,</span>t<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> s<span class="token punctuation">[</span><span class="token number">303</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> f<span class="token punctuation">;</span>
+	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>cas<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>cas<span class="token operator">--</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+			<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span>n<span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">1000000</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			f<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>j<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>		<span class="token comment">//这里用memset的话会超时的！</span>
+				a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+			<span class="token punctuation">{</span>
+				<span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">%</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+				<span class="token punctuation">{</span>
+					f<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+					<span class="token keyword">break</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+				a<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">%</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>	
+			<span class="token punctuation">}</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>f<span class="token punctuation">)</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h3 id="湖大oj上输入输出格式"><a href="#湖大oj上输入输出格式" class="header-anchor">#</a> 湖大OJ上输入输出格式</h3> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>Count
+Time Limit: 1000ms, Special Time Limit:2500ms, Memory Limit:32768KB
+Total submit users: 285, Accepted users: 265
+Problem 10878 : No special judgement
+Problem description
+This problem is strictly to acclimate teams to the contest environment. We strongly suggest you first finish this problem, and then attempt the more complex practice problem.
+
+Input
+The input file will contain an unknown number of lines with at most 100 characters on each line. All the characters will be printable ASCII characters. Note that the input file will always exist, but may be empty.
+
+Output
+The number of lines in the input file.
+
+Sample Input
+one
+and two
+three
+
+Sample Output
+3
+
+Problem Source
+Rocky Mountain 2006
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">//考点:格式输出 </span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstdio&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstring&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">char</span> test<span class="token punctuation">[</span><span class="token number">105</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token operator">!=</span><span class="token function">gets</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+	<span class="token punctuation">{</span>
+		<span class="token operator">++</span>i<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="类型转换："><a href="#类型转换：" class="header-anchor">#</a> 类型转换：</h3> <h4 id="（1）自动类型转换"><a href="#（1）自动类型转换" class="header-anchor">#</a> （1）自动类型转换</h4> <p>当运算符的两边出现不一致的类型时，会自动转换成较大的类型
+大的意思是能表达的数的范围更大</p> <p>char -&gt; short -&gt; int -&gt; long -&gt; long long
+int  -&gt;float  -&gt;double</p> <p>特殊：
+1、对于printf，任意小于int的类型会被转换成int
+2、但是scanf不会，要输入short，需要 %hd</p> <h4 id="（2）强制类型转换"><a href="#（2）强制类型转换" class="header-anchor">#</a> （2）强制类型转换</h4> <p>要把一个量强制转换成另一个类型（通常是较小的类型）</p> <p>注意，这时候的安全性，小的变量不总能表达大的量</p> <p>只是从那个变量计算出了一个新的类型的值。
+它并不改变那个变量，无论是值还是类型都不改变</p> <hr> <p>title: 浮点数相关
+date: 2020-10-03 08:00:01</p> <p>top: false
+summary: 浮点数的一个坑的细节
+mathjax: true</p> <hr> <h1 id="二、浮点数细节"><a href="#二、浮点数细节" class="header-anchor">#</a> 二、浮点数细节</h1> <p>本文为自己的一个快速记录。</p> <h2 id="_1、杭电视频"><a href="#_1、杭电视频" class="header-anchor">#</a> 1、杭电视频</h2> <p><a href="http://mooc1.chaoxing.com/course/206090161.html#courseArticle_157633879" target="_blank" rel="noopener noreferrer">杭电-C语言程序设计2<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li>其中的，浮点数部分的视频</li></ul> <p>在杭电的视频中
+(11100.101)<sub>2</sub>=0.11100101*2<sup>101</sup>
+指数上面的101，其实是二进制，真的是坑，记得以前在很多书上都不告知，那些数字的由来，注明进制</p> <h2 id="_2、清华教材"><a href="#_2、清华教材" class="header-anchor">#</a> 2、清华教材</h2> <p>教材：《C++语言程序设计(第4版)》(郑莉,董渊)</p> <ul><li>面数：<code>page15</code></li></ul> <img src="https://gitee.com/HACV/images_bed/raw/master/MainBlog/2020/2020_10/10_03/1.png"> <p>如上，第一个红色箭头</p> <blockquote><ul><li>提醒：
+原码的符号位和数值位是<strong>分离</strong>管理的
+补码的符号位和数值位是<strong>一起</strong>管理的</li></ul></blockquote> <p>所以可以解释，第1个箭头和第2个箭头</p> <h2 id="算法思想"><a href="#算法思想" class="header-anchor">#</a> 算法思想</h2> <hr> <p>title: 贪心算法解决过桥问题
+date: 2020-09-29 08:00:01</p> <p>categories:</p> <ul><li>算法
+tags:</li> <li>ICPC</li></ul> <p>img: /photos/2020.6.03_15/2020_06_03_cover.jpg
+top: false
+summary: 过桥
+mathjax: true</p> <p>cover: false</p> <h1 id="password-6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"><a href="#password-6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b" class="header-anchor">#</a> password: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b</h1> <hr> <h1 id="三、『贪心』解决过桥问题"><a href="#三、『贪心』解决过桥问题" class="header-anchor">#</a> 三、『贪心』解决过桥问题</h1> <h2 id="一、题面"><a href="#一、题面" class="header-anchor">#</a> 一、题面</h2> <blockquote><ul><li>●N个人在晚上想通过桥。每次最多过去2个人，需要有手电筒。现在只有1个手电筒。每个人过桥的速度都不一样，过桥的时间以慢的为准。你的工作是找到最少的过桥的方法;
+●输入:
+首先是n,然后n行是过桥的时间。
+人数不超过1000，而且没有人过桥的时间超过100秒;
+●输出:
+首先输出总共所需最少时间;下面表示过桥的过程(见样例)，如果有多种过桥方案，输出其中一种。</li> <li>来源：IBM面试题，一道标准的贪心题目</li></ul></blockquote> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>样例输入：
+输入样例
+4 	//4个人
+1
+2
+5
+10
+样例输出：
+输出样例
+17
+1 2			//1和2先过去
+1			//1回来
+5 10		//5和10过去
+2			//2回来
+1 2		    //1 2 过去
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="二、解法"><a href="#二、解法" class="header-anchor">#</a> 二、解法</h2> <p>算法复杂度在于排序</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>样例：
+4
+1 2 5 10
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="_1）贪心第1部分——贪心策略1（表述不如，算法清晰）"><a href="#_1）贪心第1部分——贪心策略1（表述不如，算法清晰）" class="header-anchor">#</a> 1）贪心第1部分——贪心策略1（表述不如，算法清晰）</h3> <blockquote><ul><li>1）每次过桥2个人， <s>希望一起过去的人时间相差最小</s> ，选领近的两个，所以采用贪心技术。（第1个要贪心的）</li> <li>理解：比如，上面的最大的10是肯定没有办法避免的，但是我就希望这个5就不要在出现在我的和式里面了
+时间相差最小：比如，时间最多的人和时间次多的人一起过，这样我们最大的那个时间10就只出现一次
+怎么办？所以，我希望在过桥的时候，是5和10一起过
+-2）而且返回的时间要少，所以用时间最少的人返回;往回送手电筒的人，时间要少（第2个贪心）</li></ul></blockquote> <h3 id="_2）贪心策略1的算法："><a href="#_2）贪心策略1的算法：" class="header-anchor">#</a> 2）贪心策略1的算法：</h3> <p>预处理：我们将过桥的时间从小到大排好序，标记为T1,T2,T3..Tn</p> <blockquote><ul><li>1.首先让时间最少的两人过去，T1，T2（这2个人的使命是：用来往回送手电筒的）</li> <li>2.然后，返回T1和T2中的哪一个呢？
+-- Q：难道返回任何一个都没有关系？
+-- A：T1不是这次返回的话，反正下次还是要返回的
+但是，请看这个样例：如果只有3个人，1 2 3，显然如果要T2回去送，返回的时候会长一点点，会影响时间</li> <li>3.让Tn和Tn-1一起过去，我们希望在时间的总和里面，Tn出现，但是比他稍微小一点的Tn-1就不用再出现了</li> <li>4.然后余下的T2返回</li></ul></blockquote> <p>显然，观察容易知道，经过以上4个步骤会出现：
+T1和T2又回到了最初的位置，Tn和Tn-1却过河了
+这样，我们就从n个人转换为了n-2个人过河
+来回2趟，送过去2个人，得到一个部分最优解。
+在这个基础上，不断的分解</p> <h3 id="_3）贪心第2部分——贪心策略2"><a href="#_3）贪心第2部分——贪心策略2" class="header-anchor">#</a> 3）贪心第2部分——贪心策略2</h3> <p>Q：先前的策略是，时间最小的2个人来送手电筒，那么能否只让时间最小的1个人来送手电筒？
+A：不能，因为从数学上可以证明</p> <p>显然，我们上面的样例中，那个时间5会加到我们的总和中去，</p> <p>广义的数学证明这个贪心策略不行：</p> <p>抽象从小到大的4个数，T1，T2，Tn-1，Tn</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>贪心策略1：
+比如，Tn-1不会出现在最终和式中
+T1 T2过去 （T2）
+T1回来		（T1）
+Tn-1和Tn过去	（Tn)
+T2回来		(T2)
+sum1=Tn+2*T2+T1;
+
+贪心策略2：
+Tn,Tn-1啥的都会出现在最终和式
+T1 Tn过去  （Tn）
+T1回来		（T1）
+T1和Tn-1过去	（Tn-1)
+T1回来		(T1)
+sum2=Tn+T（n-1）1+2*T1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>显然
+sum2-sum1&lt;0的时候，需要满足Tn-1&lt; 2*T2-T1才能使用
+比如这个样例</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>4
+1 4 5 10
+贪心策略1：
+10+2*4+1=19
+贪心策略2：
+10+5+2*1=17
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>所以，我们使用贪心策略1还是2的时候，需要判别Tn-1&lt; 2*T2-T1的成立与否</p> <h2 id="三、结合两种贪心策略的最终代码"><a href="#三、结合两种贪心策略的最终代码" class="header-anchor">#</a> 三、结合两种贪心策略的最终代码</h2> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token keyword">int</span> maxn<span class="token operator">=</span><span class="token number">1000</span><span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> test<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+
+
+
+<span class="token comment">//伪代码，时间复杂度是O（n）</span>
+<span class="token keyword">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+
+	<span class="token comment">//t表示的意识是</span>
+	t<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>T2<span class="token operator">-</span> T1 （最小的T1，次小的T2）
+
+	<span class="token comment">//2个人来回送手电筒贪心策略</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>n<span class="token operator">-</span>l<span class="token punctuation">;</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token operator">-</span>l<span class="token punctuation">]</span><span class="token operator">&gt;</span>t<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>i<span class="token operator">&gt;</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>i<span class="token operator">-=</span><span class="token number">2</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">printf</span> <span class="token punctuation">(</span><span class="token string">&quot;%d %d\n&quot;</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">printf</span> <span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">printf</span> <span class="token punctuation">(</span><span class="token string">&quot;%d %d\n&quot;</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">printf</span> <span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//Tn-1&lt; 2*T2-T1才能使用</span>
+	<span class="token comment">//1个人来回送手电筒贪心策略</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span> j<span class="token operator">&gt;</span>l <span class="token punctuation">;</span> <span class="token operator">--</span>j<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d %d\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+
+<span class="token comment">//真实代码</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>test<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token function">sort</span><span class="token punctuation">(</span>test<span class="token punctuation">,</span>test<span class="token operator">+</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将所有的时间排序是贪心法的预备工作</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><hr> <p>title: 分治算法
+date: 2020-10-08 08:54:02</p> <p>categories:</p> <ul><li>算法
+tags:</li> <li>分治算法</li></ul> <p>img: /photos/2020.6.03_15/2020_06_05_cover.jpg
+top: false
+summary: 分治算法-记录
+mathjax: true</p> <p>cover: false</p> <h1 id="password-6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b-2"><a href="#password-6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b-2" class="header-anchor">#</a> password: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b</h1> <hr> <h1 id="四、『分治』算法"><a href="#四、『分治』算法" class="header-anchor">#</a> 四、『分治』算法</h1> <h2 id="一、使用情况"><a href="#一、使用情况" class="header-anchor">#</a> 一、使用情况</h2> <p>问题规模比较大的时候，难以求解
+想办法减少</p> <p><code>贪心，DP，分治，减治</code>
+减治，由于时间的关系，我们就不举例子了。</p> <p>分治：
+我们用得比较多的也是二分法，或者三分法</p> <h2 id="二、分治法-到底如何分解问题"><a href="#二、分治法-到底如何分解问题" class="header-anchor">#</a> 二、分治法-到底如何分解问题</h2> <p>到底如何分解问题，其实我一直很迷惑，9.2号。我突然想到一个好像不错的方法：</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>1）找到最大的问题
+2）找到最简化的问题（最小的问题）
+3）分析如何从最大的问题一步步转换为最小的问题
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>我后面，自己找了一个3人，3鬼的方法验证
+3人3鬼过河，人的数目要比鬼多，否则鬼会吃掉人。</p> <h3 id="最大问题"><a href="#最大问题" class="header-anchor">#</a> 最大问题</h3> <p>人人人 鬼鬼鬼|  |</p> <h3 id="最小问题"><a href="#最小问题" class="header-anchor">#</a> 最小问题</h3> <p>人 鬼|	|
+这个容易解决，一次性过去。</p> <p>中等问题
+人人鬼鬼| |</p> <p>显然，中等问题要成功，最后的状态要是
+人鬼|  |人鬼
+或者
+鬼| |人人鬼</p> <p>转换关系</p> <p>最大要转换为
+人人鬼鬼|（船在这）  |人鬼</p> <p>中等问题要转换为
+人鬼|（船在这） |人鬼</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.0d587972.js" defer></script><script src="/assets/js/22.aca118be.js" defer></script>
+  </body>
+</html>
