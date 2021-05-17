@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vim命令强化 | HACV</title>
+    <meta name="description" content="Personal Blog Website">
+    <link rel="icon" href="/images/photo.jpg">
+  <link rel="manifest" href="/images/photo.jpg">
+  <link rel="apple-touch-icon" href="/images/photo.jpg">
+  <meta http-quiv="pragma" cotent="no-cache">
+  <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+  <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.8eb0d87d.css" as="style"><link rel="preload" href="/assets/js/app.09ac11d8.js" as="script"><link rel="preload" href="/assets/js/21.f3eca95b.js" as="script"><link rel="prefetch" href="/assets/js/10.9f12aa84.js"><link rel="prefetch" href="/assets/js/11.efe5693b.js"><link rel="prefetch" href="/assets/js/12.ba81f444.js"><link rel="prefetch" href="/assets/js/13.e76a0d65.js"><link rel="prefetch" href="/assets/js/14.e383861f.js"><link rel="prefetch" href="/assets/js/15.77da96a5.js"><link rel="prefetch" href="/assets/js/16.09ccbda3.js"><link rel="prefetch" href="/assets/js/17.49ddbf6a.js"><link rel="prefetch" href="/assets/js/18.9d2b0797.js"><link rel="prefetch" href="/assets/js/19.be5af8f4.js"><link rel="prefetch" href="/assets/js/2.f660967f.js"><link rel="prefetch" href="/assets/js/20.4a0cb292.js"><link rel="prefetch" href="/assets/js/22.afd4f40f.js"><link rel="prefetch" href="/assets/js/23.c4e5f6e3.js"><link rel="prefetch" href="/assets/js/24.1c6a1cfd.js"><link rel="prefetch" href="/assets/js/25.56380e6e.js"><link rel="prefetch" href="/assets/js/26.a95957f1.js"><link rel="prefetch" href="/assets/js/27.157dd37e.js"><link rel="prefetch" href="/assets/js/28.efe4bbb9.js"><link rel="prefetch" href="/assets/js/29.a3ffd643.js"><link rel="prefetch" href="/assets/js/3.5603d0df.js"><link rel="prefetch" href="/assets/js/30.be4868e8.js"><link rel="prefetch" href="/assets/js/31.4412d2a6.js"><link rel="prefetch" href="/assets/js/32.b4a59cf6.js"><link rel="prefetch" href="/assets/js/33.f1dbe4f6.js"><link rel="prefetch" href="/assets/js/34.0cf6ce0c.js"><link rel="prefetch" href="/assets/js/35.e8a9c6f3.js"><link rel="prefetch" href="/assets/js/36.d71cf97e.js"><link rel="prefetch" href="/assets/js/37.f5f93123.js"><link rel="prefetch" href="/assets/js/38.e04621f2.js"><link rel="prefetch" href="/assets/js/39.790fdb6a.js"><link rel="prefetch" href="/assets/js/4.a42b7175.js"><link rel="prefetch" href="/assets/js/40.7715f020.js"><link rel="prefetch" href="/assets/js/41.0b8c42ec.js"><link rel="prefetch" href="/assets/js/42.95920b8e.js"><link rel="prefetch" href="/assets/js/43.78255535.js"><link rel="prefetch" href="/assets/js/44.13d72a08.js"><link rel="prefetch" href="/assets/js/45.05c8e5a8.js"><link rel="prefetch" href="/assets/js/46.2113ab69.js"><link rel="prefetch" href="/assets/js/47.9fb13c21.js"><link rel="prefetch" href="/assets/js/48.338b6ed6.js"><link rel="prefetch" href="/assets/js/49.9d266595.js"><link rel="prefetch" href="/assets/js/5.12ad9c26.js"><link rel="prefetch" href="/assets/js/50.3fcb0291.js"><link rel="prefetch" href="/assets/js/51.0ac41aa8.js"><link rel="prefetch" href="/assets/js/52.a6ac7206.js"><link rel="prefetch" href="/assets/js/53.57993269.js"><link rel="prefetch" href="/assets/js/54.8a853ecf.js"><link rel="prefetch" href="/assets/js/55.b0d9396a.js"><link rel="prefetch" href="/assets/js/56.949f2956.js"><link rel="prefetch" href="/assets/js/57.77d0438f.js"><link rel="prefetch" href="/assets/js/58.ca2c3a2e.js"><link rel="prefetch" href="/assets/js/59.919e9b0c.js"><link rel="prefetch" href="/assets/js/6.54fcdc8d.js"><link rel="prefetch" href="/assets/js/60.89888aae.js"><link rel="prefetch" href="/assets/js/61.ce3da9b2.js"><link rel="prefetch" href="/assets/js/62.39b211d9.js"><link rel="prefetch" href="/assets/js/63.ba0f6511.js"><link rel="prefetch" href="/assets/js/64.e7335b03.js"><link rel="prefetch" href="/assets/js/65.2cd347b5.js"><link rel="prefetch" href="/assets/js/66.90ce4b1a.js"><link rel="prefetch" href="/assets/js/67.6798c8da.js"><link rel="prefetch" href="/assets/js/68.73f16f4a.js"><link rel="prefetch" href="/assets/js/69.7fb5cdd5.js"><link rel="prefetch" href="/assets/js/7.1df95d9e.js"><link rel="prefetch" href="/assets/js/70.0ac63f5c.js"><link rel="prefetch" href="/assets/js/71.cce72202.js"><link rel="prefetch" href="/assets/js/72.576fbb45.js"><link rel="prefetch" href="/assets/js/73.9e13ac4f.js"><link rel="prefetch" href="/assets/js/74.ce3792fe.js"><link rel="prefetch" href="/assets/js/75.960c172e.js"><link rel="prefetch" href="/assets/js/76.85018bb5.js"><link rel="prefetch" href="/assets/js/77.6f1ce9c6.js"><link rel="prefetch" href="/assets/js/78.421935b6.js"><link rel="prefetch" href="/assets/js/79.f944ddf6.js"><link rel="prefetch" href="/assets/js/8.21fc4e67.js"><link rel="prefetch" href="/assets/js/80.49d94097.js"><link rel="prefetch" href="/assets/js/81.dc65827a.js"><link rel="prefetch" href="/assets/js/82.70026136.js"><link rel="prefetch" href="/assets/js/83.d6d72009.js"><link rel="prefetch" href="/assets/js/84.93a4198d.js"><link rel="prefetch" href="/assets/js/85.62b99e65.js"><link rel="prefetch" href="/assets/js/86.c1f48b6f.js"><link rel="prefetch" href="/assets/js/87.e6d4a37b.js"><link rel="prefetch" href="/assets/js/88.98e2fe0f.js"><link rel="prefetch" href="/assets/js/89.865549a4.js"><link rel="prefetch" href="/assets/js/9.f72c9269.js"><link rel="prefetch" href="/assets/js/90.00e309b6.js"><link rel="prefetch" href="/assets/js/91.72b6912a.js"><link rel="prefetch" href="/assets/js/92.5432581d.js"><link rel="prefetch" href="/assets/js/93.57ea545a.js"><link rel="prefetch" href="/assets/js/94.68b481b9.js"><link rel="prefetch" href="/assets/js/95.2c5cdb0d.js"><link rel="prefetch" href="/assets/js/96.4ac01f6f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8eb0d87d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">HACV</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/01.About/" class="nav-link">✡️About</a></div><div class="nav-item"><a href="/02.DataStructureAndAlgorithm/" class="nav-link">🐾数据结构和算法</a></div><div class="nav-item"><a href="/03.OS/" class="nav-link router-link-active">💻操作系统</a></div><div class="nav-item"><a href="/04.Net/" class="nav-link">☁️网络</a></div><div class="nav-item"><a href="/05.SE/" class="nav-link">☕️软件工程</a></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">💾数据库</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">⭐️硬件和编译</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">🔧Tools</a></div><div class="nav-item"><a href="/09.Language/" class="nav-link">⚛️C/C++</a></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/01.About/" class="nav-link">✡️About</a></div><div class="nav-item"><a href="/02.DataStructureAndAlgorithm/" class="nav-link">🐾数据结构和算法</a></div><div class="nav-item"><a href="/03.OS/" class="nav-link router-link-active">💻操作系统</a></div><div class="nav-item"><a href="/04.Net/" class="nav-link">☁️网络</a></div><div class="nav-item"><a href="/05.SE/" class="nav-link">☕️软件工程</a></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">💾数据库</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">⭐️硬件和编译</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">🔧Tools</a></div><div class="nav-item"><a href="/09.Language/" class="nav-link">⚛️C/C++</a></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Vim命令强化</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#一、vim三种模式" class="sidebar-link">一、Vim三种模式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#二、命令模式" class="sidebar-link">二、命令模式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#三、输入模式" class="sidebar-link">三、输入模式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#四、末行模式" class="sidebar-link">四、末行模式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#一、shell脚本学习" class="sidebar-link">一、Shell脚本学习</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#二、linux-shell使用笔记" class="sidebar-link">二、Linux shell使用笔记</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#零、绪论" class="sidebar-link">零、绪论</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_1、判断的条件" class="sidebar-link">1、判断的条件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#格式1" class="sidebar-link">格式1</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#格式2" class="sidebar-link">格式2</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_2、每次的习惯" class="sidebar-link">2、每次的习惯</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_3、测试环境" class="sidebar-link">3、测试环境</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_4、常见shell错误" class="sidebar-link">4、常见shell错误</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_5、常见命令" class="sidebar-link">5、常见命令</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#一、if的使用" class="sidebar-link">一、if的使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#二、for的使用" class="sidebar-link">二、for的使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#格式1-2" class="sidebar-link">格式1</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#三、while的使用" class="sidebar-link">三、while的使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#格式" class="sidebar-link">格式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#四、无限循环" class="sidebar-link">四、无限循环</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#五、until循环（有点像c语言下的do-while循环）" class="sidebar-link">五、until循环（有点像C语言下的do while循环）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#六、case多选择（类似于c语言中的switch选择）" class="sidebar-link">六、case多选择（类似于C语言中的switch选择）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#七、break和continue" class="sidebar-link">七、break和continue</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#八、shell-基本运算符（记忆——强化，对比汇编语句）" class="sidebar-link">八、Shell 基本运算符（记忆——强化，对比汇编语句）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#关系运算符" class="sidebar-link">关系运算符</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#三、shell强化" class="sidebar-link">三、shell强化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（1）printf格式化打印" class="sidebar-link">（1）printf格式化打印</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_0、目录记忆" class="sidebar-link">0、目录记忆</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（1）root和home" class="sidebar-link">（1）root和home</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（2）opt" class="sidebar-link">（2）opt</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#一、linux输出与输入" class="sidebar-link">一、Linux输出与输入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（1）输出『echo』" class="sidebar-link">（1）输出『echo』</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（2）输入『read』" class="sidebar-link">（2）输入『read』</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#二、重定向与追加『-』和『-』" class="sidebar-link">二、重定向与追加『&gt;』和『&gt;&gt;』</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#三、linux下各种man" class="sidebar-link">三、linux下各种man</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（1）『man-1』" class="sidebar-link">（1）『man  1』</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（5）『man-5』" class="sidebar-link">（5）『man 5』</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（1024）man的经验" class="sidebar-link">（1024）man的经验</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（10）linux下开发c语言需要安装的manpages手册『核心』" class="sidebar-link">（10）Linux下开发C语言需要安装的manpages手册『核心』</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（11）换源" class="sidebar-link">（11）换源</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#四、『进程』查询" class="sidebar-link">四、『进程』查询</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#五、安装linux后的工作" class="sidebar-link">五、安装Linux后的工作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（1）设置无线网络（联网）" class="sidebar-link">（1）设置无线网络（联网）</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（2）『换源』到中国的地方" class="sidebar-link">（2）『换源』到中国的地方</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（3）『换源』后安装『中文输入法』" class="sidebar-link">（3）『换源』后安装『中文输入法』</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#五、正常联网后，更新源之后-安装ibus拼音" class="sidebar-link">五、正常联网后，更新源之后+安装ibus拼音</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（1）apt-get-update" class="sidebar-link">（1）apt-get update</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（2）apt-get-install-ibus-ibus-pinyin" class="sidebar-link">（2）apt-get install ibus ibus-pinyin</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（3）im-config" class="sidebar-link">（3）im-config</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（4）重启电脑" class="sidebar-link">（4）重启电脑</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（4）开启蓝牙" class="sidebar-link">（4）开启蓝牙</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（5）正确关机" class="sidebar-link">（5）正确关机</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#（6）正确挂载u盘等『mount』" class="sidebar-link">（6）正确挂载U盘等『mount』</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#一、egrep加上-n显示行数" class="sidebar-link">一、egrep加上-n显示行数</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#二、makefile脚本和shell脚本对比" class="sidebar-link">二、makefile脚本和shell脚本对比</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#三。设置vim显示行号" class="sidebar-link">三。设置vim显示行号</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_1）临时显示行号" class="sidebar-link">1）临时显示行号</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#_2）永久显示行号" class="sidebar-link">2）永久显示行号</a></li></ul></li><li><a href="/03.OS/Linux/04.LinuxShell%E5%92%8CVim%E7%BC%96%E7%A8%8B.html#sed-awk-还有必要学么" class="sidebar-link">sed awk 还有必要学么?</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="vim命令强化"><a href="#vim命令强化" class="header-anchor">#</a> Vim命令强化</h1> <p>PS：所有测试在Redhat RHEL7（<strong>R</strong>ed<strong>H</strong>at <strong>E</strong>nterprise <strong>L</strong>inux <strong>7</strong>）通过</p> <h2 id="一、vim三种模式"><a href="#一、vim三种模式" class="header-anchor">#</a> 一、Vim三种模式</h2> <p>Vim编辑器中设置了三种模式一命令模式、末行模式和编辑模式
+<strong>每种模式分别又支持多种不同的命令快捷键</strong></p> <p>我们先弄清这三种模式的操作区别以及模式之间的切换方法</p> <blockquote><ul><li>命令模式:控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。</li> <li>输人模式:正常的文本录入。</li> <li>末行模式:保存或退出文档，以及设置编辑环境。</li></ul></blockquote> <img src="https://gitee.com/HACV/images_bed/raw/master/MainBlog/2020/2020_06/2020_06_22_Vim_01.png" width="80%"> <p>说明：
+<code>vim 文件名</code> 则进入了vim的命令模式
+1）在每次运行Vim编辑器时，<strong>默认进入</strong>命令模式，
+2）此外，每次在编写完文档后需要先返回命令模式，然后再进人末行模式，执行文档.的保存或退出操作。
+<strong>在Vim中，无法直接从输人模式切换到末行模式。</strong></p> <p>命令模式进入输入模式：</p> <blockquote><ul><li>i取自insert插入，</li></ul> <blockquote><ul><li><code>i</code> 光标处<strong>前一个字符</strong>编辑</li> <li><code>I</code> 大写的 i，光标所处<strong>行首</strong>编辑</li></ul></blockquote></blockquote> <blockquote><ul><li><strong>a取append</strong>追加，（我记得在Python中有用过这个函数，然后似乎C++11中也有？）</li></ul> <blockquote><ul><li><code>a</code> 光标处<strong>后一个字符</strong>编辑</li> <li><code>A</code> 光标所处<strong>行尾</strong>编辑</li></ul></blockquote></blockquote> <blockquote><ul><li>暂时没想到
+<code>o</code> 光标处<strong>向下</strong>新建一行编辑
+<code>O</code> 大写的 o，光标处<strong>向上</strong>新建一行编辑</li></ul></blockquote> <h2 id="二、命令模式"><a href="#二、命令模式" class="header-anchor">#</a> 二、命令模式</h2> <p>命令模式:控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。</p> <blockquote><ul><li>剪切类（可以用作删除）（但是<strong>d却是delete删除，首字母</strong>）</li></ul> <blockquote><ul><li><code>dd</code>剪切(删除)<strong>光标所在整行</strong></li> <li><code>5dd</code>删除(剪切)从光标处开始的5行</li></ul></blockquote></blockquote> <blockquote><ul><li>复制类（暂时用<strong>copy的末尾y记忆</strong>）</li></ul> <blockquote><ul><li><code>yy</code>复制<strong>光标所在整行</strong></li> <li><code>5yy</code>复制从光标处开始的5行</li></ul></blockquote></blockquote> <blockquote><ul><li>粘贴（<strong>p是paste</strong>粘贴，首字符）</li></ul> <blockquote><ul><li><code>p</code>将之前剪切(dd)或复制(yy)过的数据粘贴到光标后面</li></ul></blockquote></blockquote> <blockquote><ul><li>撤销（<strong>u是unsay</strong>收回，撤回，首字母）</li></ul> <blockquote><ul><li><code>u</code>撤销上一步的操作</li></ul></blockquote></blockquote> <blockquote><ul><li>单个字符修改</li></ul> <blockquote><ul><li><code>X</code>删除光标所处的字符：X（和Windows下Ctrl+X有点类似了，但是只是删除）</li> <li>按<code>R</code>后输入新的字符替换光标所处的字符</li></ul></blockquote></blockquote> <blockquote><ul><li>字符串匹配后续</li></ul> <blockquote><ul><li><code>n</code>显示搜索命令定位到的下一个字符串</li> <li><code>N</code>显示搜索命令定位到的上一个字符串</li></ul></blockquote></blockquote> <h2 id="三、输入模式"><a href="#三、输入模式" class="header-anchor">#</a> 三、输入模式</h2> <p>输人模式:正常的文本录入。</p> <h2 id="四、末行模式"><a href="#四、末行模式" class="header-anchor">#</a> 四、末行模式</h2> <p>末行模式:保存或退出文档，以及设置编辑环境。</p> <p>末行模式的命令都写在你用<code>:</code>进去末行模式后面</p> <blockquote><p>总的来说格式：
+<code>:命令</code>执行该命令</p></blockquote> <p><strong>下面的都省略了<code>:</code></strong> <code>整数</code>跳转到这个整数的那一行
+<code>w</code> 保存
+<code>q</code> 退出（quit）
+<code>q!</code>强制退出（放弃对文档的修改内容）</p> <p><code>wq!</code>强制保存退出</p> <blockquote><ul><li>看代码常用</li></ul> <blockquote><ul><li><code>set nu</code>显示行号，nu——num</li> <li><code>set nonu</code>显示行号，</li></ul></blockquote></blockquote> <blockquote><ul><li>查找和替换</li></ul> <blockquote><ul><li>查找</li></ul> <blockquote><ul><li><code>/字符串</code> 在文本中<strong>从上至下</strong>搜索该字符串</li> <li><code>?字符串</code> 在文本中<strong>从下至上</strong>搜索该字符串</li></ul></blockquote> <ul><li>替换</li></ul> <blockquote><ul><li><code>:s/one/two</code>将<strong>当前光标所在行</strong>的第一个 one替换成two</li> <li><code>:s/one/two/g</code>将当<strong>前光标所在行</strong>的<strong>所有</strong>one替换成two</li> <li><code>:%s/one/two/g 8s/one/two/g</code>将<strong>全文</strong>中的<strong>所有</strong>one替换成two</li></ul></blockquote></blockquote></blockquote> <h2 id="一、shell脚本学习"><a href="#一、shell脚本学习" class="header-anchor">#</a> 一、Shell脚本学习</h2> <ul><li>01.<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener noreferrer">菜鸟教程shell教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h2 id="二、linux-shell使用笔记"><a href="#二、linux-shell使用笔记" class="header-anchor">#</a> 二、Linux shell使用笔记</h2> <h2 id="零、绪论"><a href="#零、绪论" class="header-anchor">#</a> 零、绪论</h2> <h2 id="_1、判断的条件"><a href="#_1、判断的条件" class="header-anchor">#</a> 1、判断的条件</h2> <h3 id="格式1"><a href="#格式1" class="header-anchor">#</a> 格式1</h3> <ul><li><p>都使用</p></li> <li><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>使用</p></li></ul> <h3 id="格式2"><a href="#格式2" class="header-anchor">#</a> 格式2</h3> <ul><li>使用test命令</li></ul> <h2 id="_2、每次的习惯"><a href="#_2、每次的习惯" class="header-anchor">#</a> 2、每次的习惯</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token string">&quot;124&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$var</span>
+
+<span class="token assign-left variable">ttt</span><span class="token operator">=</span><span class="token number">123</span>
+<span class="token assign-left variable">temp</span><span class="token operator">=</span><span class="token number">123</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ttt</span> <span class="token operator">==</span> <span class="token variable">$temp</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span> 
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;Yes&quot;</span>
+<span class="token keyword">else</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;No&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;成功&quot;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="_3、测试环境"><a href="#_3、测试环境" class="header-anchor">#</a> 3、测试环境</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">sh</span> demo.sh
+上面的可能会出现情况：demo.sh: <span class="token number">7</span>: <span class="token punctuation">[</span>: <span class="token number">123</span>: unexpected operator
+原因：linux下能正常执行的脚本，在ubuntu系统中都会编译报错，因为二者使用的解释器不一同导致
+
+Linux：.sh
+
+ubuntu:.dash
+
+因为ubuntu默认的sh是连接到dash的,又因为dash跟bash的不兼容所以出错了.执行时可以把sh换成bash文件名.sh来执行.成功.dash是什么东西,查了一下,应该也是一种shell,貌似用户对它的诟病颇多
+
+解决办法：将Ubuntu解释器修改默认连接到bash
+
+<span class="token function">sudo</span> dpkg-reconfigure dash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>以下的才是OK的（测试习惯）</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">bash</span> demo.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>或者用方法</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">chmod</span> +x demo.sh
+./demo.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="_4、常见shell错误"><a href="#_4、常见shell错误" class="header-anchor">#</a> 4、常见shell错误</h2> <p>SHELL编程提示：行12: 语法错误: 未预期的文件结尾</p> <h2 id="_5、常见命令"><a href="#_5、常见命令" class="header-anchor">#</a> 5、常见命令</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">read</span> 
+<span class="token builtin class-name">echo</span>
+<span class="token builtin class-name">printf</span>
+<span class="token builtin class-name">test</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="一、if的使用"><a href="#一、if的使用" class="header-anchor">#</a> 一、if的使用</h2> <p>格式为</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">if</span> 判断
+<span class="token keyword">then</span>
+	内容
+<span class="token keyword">elif</span> 判断
+<span class="token keyword">then</span> 
+	内容
+<span class="token keyword">else</span>
+	内容
+<span class="token keyword">fi</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">123</span>
+<span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">123</span>
+<span class="token assign-left variable">c</span><span class="token operator">=</span><span class="token number">123</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$a</span> <span class="token operator">==</span> <span class="token variable">$b</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span> 
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;equal&quot;</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$a</span> -gt <span class="token variable">$c</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span> 
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;greater&quot;</span>
+<span class="token keyword">else</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;Bye&quot;</span>
+	
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;end&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>上面出错：</p> <p>SHELL编程提示：行12: 语法错误: 未预期的文件结尾</p> <p>原因：Linux的shell难以定位真正的位置</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">123</span>
+<span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">123</span>
+<span class="token assign-left variable">c</span><span class="token operator">=</span><span class="token number">123</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$a</span> <span class="token operator">==</span> <span class="token variable">$b</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span> 
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;equal&quot;</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$a</span> -gt <span class="token variable">$c</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span> 
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;greater&quot;</span>
+<span class="token keyword">else</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;Bye&quot;</span>
+<span class="token keyword">fi</span>		<span class="token comment">#这个地方出错</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;end&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="二、for的使用"><a href="#二、for的使用" class="header-anchor">#</a> 二、for的使用</h2> <h2 id="格式1-2"><a href="#格式1-2" class="header-anchor">#</a> 格式1</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">for</span> 变量名字 <span class="token keyword">in</span> 几个变量
+<span class="token keyword">do</span>
+	内容，注意，for和while都用到了do和done
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">for</span> <span class="token for-or-select variable">var</span> <span class="token keyword">in</span> <span class="token number">111</span> first <span class="token number">222</span>
+<span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token variable">$var</span>
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="三、while的使用"><a href="#三、while的使用" class="header-anchor">#</a> 三、while的使用</h2> <h2 id="格式"><a href="#格式" class="header-anchor">#</a> 格式</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">while</span> 判断条件
+<span class="token keyword">do</span>
+	内容，注意，for和while都用到了do和done
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token number">11</span>
+<span class="token keyword">while</span> <span class="token punctuation">[</span> <span class="token variable">$var</span> -gt <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token variable">$var</span>
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="四、无限循环"><a href="#四、无限循环" class="header-anchor">#</a> 四、无限循环</h2> <p>无限循环
+无限循环语法格式：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">while</span> <span class="token builtin class-name">:</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">command</span>
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>或者</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">while</span> <span class="token boolean">true</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">command</span>
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>或者</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> <span class="token punctuation">;</span> <span class="token punctuation">;</span> <span class="token punctuation">))</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="五、until循环（有点像c语言下的do-while循环）"><a href="#五、until循环（有点像c语言下的do-while循环）" class="header-anchor">#</a> 五、until循环（有点像C语言下的do while循环）</h2> <p>until 循环执行一系列命令直至条件为 true 时停止。</p> <p>until 循环与 while 循环在处理方式上刚好相反。</p> <p>一般 while 循环优于 until 循环，但在某些时候—也只是极少数情况下，until 循环更加有用。</p> <p>until 语法格式:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">until</span> condition
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">command</span>
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="六、case多选择（类似于c语言中的switch选择）"><a href="#六、case多选择（类似于c语言中的switch选择）" class="header-anchor">#</a> 六、case多选择（类似于C语言中的switch选择）</h2> <p>case ... esac</p> <p><strong>case ... esac</strong> 为多选择语句，与其他语言中的 switch ... case 语句类似，是一种多分枝选择结构，每个 case 分支用右圆括号开始，用两个分号 <strong>;;</strong> 表示 break，即执行结束，跳出整个 case ... esac 语句，esac（就是 case 反过来）作为结束标记。</p> <p>可以用 case 语句匹配一个值与一个模式，如果匹配成功，执行相匹配的命令。</p> <p><strong>case ... esac</strong> 语法格式如下：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token keyword">case</span> 值 <span class="token keyword">in</span>
+模式1<span class="token punctuation">)</span>
+    command1
+    command2
+    <span class="token punctuation">..</span>.
+    commandN
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+模式2）
+    command1
+    command2
+    <span class="token punctuation">..</span>.
+    commandN
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="七、break和continue"><a href="#七、break和continue" class="header-anchor">#</a> 七、break和continue</h2> <h2 id="八、shell-基本运算符（记忆——强化，对比汇编语句）"><a href="#八、shell-基本运算符（记忆——强化，对比汇编语句）" class="header-anchor">#</a> 八、Shell 基本运算符（记忆——强化，对比汇编语句）</h2> <ul><li><a href="https://www.runoob.com/linux/linux-shell-basic-operators.html" target="_blank" rel="noopener noreferrer">参考网站<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>Shell 和其他编程语言一样，支持多种运算符，包括：</p> <ul><li>算数运算符</li> <li>关系运算符</li> <li>布尔运算符</li> <li>字符串运算符</li> <li>文件测试运算符</li></ul> <p>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。</p> <p>expr 是一款表达式计算工具，使用它能完成表达式的求值操作。</p> <p>例如，两个数相加(**注意使用的是反引号 *<em>`\ 而不是单引号 *</em>'**)：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>运算符	说明	举例
++	加法	<span class="token variable"><span class="token variable">`</span><span class="token function">expr</span> $a + $b<span class="token variable">`</span></span> 结果为 <span class="token number">30</span>。
+-	减法	<span class="token variable"><span class="token variable">`</span><span class="token function">expr</span> $a - $b<span class="token variable">`</span></span> 结果为 -10。
+*	乘法	<span class="token variable"><span class="token variable">`</span><span class="token function">expr</span> $a <span class="token punctuation">\</span>* $b<span class="token variable">`</span></span> 结果为  <span class="token number">200</span>。
+/	除法	<span class="token variable"><span class="token variable">`</span><span class="token function">expr</span> $b / $a<span class="token variable">`</span></span> 结果为 <span class="token number">2</span>。
+%	取余	<span class="token variable"><span class="token variable">`</span><span class="token function">expr</span> $b % $a<span class="token variable">`</span></span> 结果为 <span class="token number">0</span>。
+<span class="token operator">=</span>	赋值	<span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token variable">$b</span> 将把变量 b 的值赋给 a。
+<span class="token operator">==</span>	相等。用于比较两个数字，相同则返回 true。	<span class="token punctuation">[</span> <span class="token variable">$a</span> <span class="token operator">==</span> <span class="token variable">$b</span> <span class="token punctuation">]</span> 返回 false。
+<span class="token operator">!=</span>	不相等。用于比较两个数字，不相同则返回 true。	<span class="token punctuation">[</span> <span class="token variable">$a</span> <span class="token operator">!=</span> <span class="token variable">$b</span> <span class="token punctuation">]</span> 返回 true。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token keyword">while</span> <span class="token boolean">true</span>
+<span class="token keyword">do</span> 
+        <span class="token builtin class-name">echo</span> <span class="token variable">$var</span>
+        <span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">expr</span> $var + <span class="token number">1</span> <span class="token variable">`</span></span>
+<span class="token keyword">done</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="关系运算符"><a href="#关系运算符" class="header-anchor">#</a> 关系运算符</h2> <p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字。</p> <p>下表列出了常用的关系运算符，假定变量 a 为 10，变量 b 为 20：</p> <table><thead><tr><th style="text-align:left">运算符</th> <th style="text-align:left">说明</th> <th style="text-align:left">举例</th></tr></thead> <tbody><tr><td style="text-align:left">-eq</td> <td style="text-align:left">检测两个数是否相等，相等返回 true。</td> <td style="text-align:left">[ $a -eq $b ] 返回 false。</td></tr> <tr><td style="text-align:left">-ne</td> <td style="text-align:left">检测两个数是否不相等，不相等返回 true。</td> <td style="text-align:left">[ $a -ne $b ] 返回 true。</td></tr> <tr><td style="text-align:left">-gt</td> <td style="text-align:left">检测左边的数是否大于右边的，如果是，则返回 true。</td> <td style="text-align:left">[ $a -gt $b ] 返回 false。</td></tr> <tr><td style="text-align:left">-lt</td> <td style="text-align:left">检测左边的数是否小于右边的，如果是，则返回 true。</td> <td style="text-align:left">[ $a -lt $b ] 返回 true。</td></tr> <tr><td style="text-align:left">-ge</td> <td style="text-align:left">检测左边的数是否大于等于右边的，如果是，则返回 true。</td> <td style="text-align:left">[ $a -ge $b ] 返回 false。</td></tr> <tr><td style="text-align:left">-le</td> <td style="text-align:left">检测左边的数是否小于等于右边的，如果是，则返回 true。</td> <td style="text-align:left">[ $a -le $b ] 返回 true。</td></tr></tbody></table> <h2 id="三、shell强化"><a href="#三、shell强化" class="header-anchor">#</a> 三、shell强化</h2> <h3 id="（1）printf格式化打印"><a href="#（1）printf格式化打印" class="header-anchor">#</a> （1）printf格式化打印</h3> <ul><li>shell的printf和C语言中的不是一个东西，但是效果相似</li></ul> <h1 id="linux常用积累"><a href="#linux常用积累" class="header-anchor">#</a> Linux常用积累</h1> <img src="https://gitee.com/HACV/images_bed/raw/master/HACV/06.OS/Linux/04.LinuxCommand/01.%E6%A0%B9%E7%9B%AE%E5%BD%95%E8%AE%B0%E5%BF%86%20(1).png"> <h2 id="_0、目录记忆"><a href="#_0、目录记忆" class="header-anchor">#</a> 0、目录记忆</h2> <h3 id="（1）root和home"><a href="#（1）root和home" class="header-anchor">#</a> （1）root和home</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> ~/
+和
+<span class="token builtin class-name">cd</span> /root/
+等价，都是去root用户的『家』
+类似于，去普通用户的『家』
+<span class="token builtin class-name">cd</span> /home/hacv/
+
+『家』是什么？？如果你的Linux装了图形化的话，那么家下面就会有『桌面』、『图片』啥的，比如我装在U盘中的系统
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><img src="https://gitee.com/HACV/images_bed/raw/master/HACV/06.OS/Linux/04.LinuxCommand/01.%E6%A0%B9%E7%9B%AE%E5%BD%95%E8%AE%B0%E5%BF%86%20(2).png"> <h3 id="（2）opt"><a href="#（2）opt" class="header-anchor">#</a> （2）opt</h3> <blockquote><p>一般我们装的软件，比如『Typeroa』这样的Markdown编辑器，一般放这个里面</p></blockquote> <h2 id="一、linux输出与输入"><a href="#一、linux输出与输入" class="header-anchor">#</a> 一、Linux输出与输入</h2> <blockquote><p>类似C语言中printf和scanf？</p></blockquote> <h3 id="（1）输出『echo』"><a href="#（1）输出『echo』" class="header-anchor">#</a> （1）输出『echo』</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> 输出
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="（2）输入『read』"><a href="#（2）输入『read』" class="header-anchor">#</a> （2）输入『read』</h3> <p>Linux read命令用于从标准输入读取数值。</p> <p>read 内部命令被用来从标准输入读取单行数据。这个命令可以用来读取键盘输入，当使用重定向的时候，可以读取文件中的一行数据。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> 输出成功
+<span class="token builtin class-name">echo</span> 按任意键继续
+<span class="token builtin class-name">read</span> -n <span class="token number">1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>该例子使用了-n 选项，后接数值 1，指示 read 命令只要接受到一个字符就退出。</p> <p>只要按下一个字符进行回答，read 命令立即接受输入并将其传给变量，无需按回车键。</p> <p>联合使用</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment">#!bin/bash</span>
+
+<span class="token builtin class-name">echo</span> 请输入字符串
+<span class="token builtin class-name">read</span> str
+<span class="token builtin class-name">echo</span> <span class="token variable">$str</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><blockquote><p>1、<code>#</code>是注释的作用</p> <p>2、神奇命令<code>#!</code>仅此一条，并不是注释</p></blockquote> <h2 id="二、重定向与追加『-』和『-』"><a href="#二、重定向与追加『-』和『-』" class="header-anchor">#</a> 二、重定向与追加『&gt;』和『&gt;&gt;』</h2> <ul><li>记忆方法：</li> <li><code>&gt;</code>只有1个，那就是直接覆盖</li> <li><code>&gt;&gt;</code>有2个，那就是可以叠加在一个<code>&gt;</code>上面，显然就是追加</li></ul> <h2 id="三、linux下各种man"><a href="#三、linux下各种man" class="header-anchor">#</a> 三、linux下各种man</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">man</span> <span class="token function">man</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>就可以查询到下面这些</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>帮助文件man：
+    <span class="token function">man</span> <span class="token number">1</span>：用户命令（可执行命令和shell程序）  『man ls』或『man <span class="token number">1</span> ls』  『man passwd』  『man tar』
+    <span class="token function">man</span> <span class="token number">2</span>：系统调用（从用户空间调用的内核例程）
+    <span class="token function">man</span> <span class="token number">3</span>：库函数（有程序库提供）
+    <span class="token function">man</span> <span class="token number">4</span>：特殊文件（如设备文件）
+    <span class="token function">man</span> <span class="token number">5</span>：文件格式（用于许多配置文件和结构）	『man ext4 -5』或者『man <span class="token number">5</span> ext4』但是直接『man ext4』也OK
+    <span class="token function">man</span> <span class="token number">6</span>：游戏（过去的有趣程序章节）
+    <span class="token function">man</span> <span class="token number">7</span>：惯例、标准和其他（协议、文件系统）
+    <span class="token function">man</span> <span class="token number">8</span>：系统管理和特权命令（维护任务）『man fdisk』或『man <span class="token number">8</span> fdisk』   『man <span class="token number">8</span> useradd』
+    <span class="token function">man</span> <span class="token number">9</span>：Linux 内核API（内核调用）
+    n 新文档， 可能要移到更适合的领域。
+
+o 老文档， 可能会在一段期限内保留。
+
+l 本地文档， 与本特定系统有关的。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="（1）『man-1』"><a href="#（1）『man-1』" class="header-anchor">#</a> （1）『man  1』</h3> <p>man 1：用户命令（可执行命令和shell程序）</p> <h3 id="（5）『man-5』"><a href="#（5）『man-5』" class="header-anchor">#</a> （5）『man 5』</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">man</span> <span class="token number">5</span> ext4
+<span class="token function">man</span> ext <span class="token number">5</span>
+<span class="token function">man</span> ext -5
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>注意：就是不能....man -5 ext4`，这是什么鬼？？</p> <h3 id="（1024）man的经验"><a href="#（1024）man的经验" class="header-anchor">#</a> （1024）man的经验</h3> <p>大家都知道在Unix/Linux中有个man命令，可以查询常用的命令，函数。可是对于我们这样只知道用&quot;man 函数名&quot;来查询的人来说，会遇到很多问题，比如：</p> <p>man read，我想看的是ANSI C中stdio的read函数原型和说明，没想到出来的确是BASH命令的说明，这是怎么回事呢？</p> <p>原来read本身是man命令的一个参数，这样输入man就会以为你要使用read的功能，而不是查看read函数，那么要怎样查看read函数呢?</p> <p>要查属于哪一部分的，就用哪一部分的编号在命令之前。</p> <p>此外，在Ubuntu中是可以安装中文man的，不会的可以GOOGLE下</p> <p>1.man 2 write</p> <p>man后加2表示：函数是系统函数。</p> <p>2.man 3 fopen</p> <p>man后加3表示：函数是C库函数。</p> <h3 id="（10）linux下开发c语言需要安装的manpages手册『核心』"><a href="#（10）linux下开发c语言需要安装的manpages手册『核心』" class="header-anchor">#</a> （10）Linux下开发C语言需要安装的manpages手册『核心』</h3> <ul><li>因为笔者发现，在我买的『腾讯云』的cetos服务器上，我想<code>man fork</code>和<code>man scanf</code>都没有反应！</li> <li>比如，我man系统编程的<code>man 7 signal</code>也显示</li> <li><code>No manual entry for signal in section 7</code></li> <li>如果知道本电脑装上了哪些man pages呢？</li></ul> <blockquote><div class="language-bash line-numbers-mode"><pre class="language-bash"><code>这个简单 <span class="token function">man</span> 全部内容基本上都在这个目录（包括了目录）里。
+<span class="token builtin class-name">cd</span> /usr/share/man
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></blockquote> <p>linux下开发C代码需要安装的manpages：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> manpages
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> manpages-dev
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> manpages-posix
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> manpages-posix-dev
+
+manpages 包含 GNU/Linux 的基本操作
+manpages-dev 包含 GNU/Linux 的基本操作API
+manpages-posix 包含 POSIX 所定义公用程序的方法
+manpages-posix-dev 包含 POSIX 的 header files 和 library calls 的用法
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="（11）换源"><a href="#（11）换源" class="header-anchor">#</a> （11）换源</h3> <p>CentOS的和Kali 的对比</p> <p>都在文件夹<code>cd /etc/</code></p> <ul><li>yum系列的在：<code>yum.repos.d/</code></li></ul> <p>可以搜索：<code>ls | grep &quot;yum&quot;</code></p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@VM-0-14-centos etc<span class="token punctuation">]</span><span class="token comment"># cd yum</span>
+yum/         yum.repos.d/ 
+<span class="token punctuation">[</span>root@VM-0-14-centos etc<span class="token punctuation">]</span><span class="token comment"># cd yum</span>
+yum/         yum.repos.d/ 
+<span class="token punctuation">[</span>root@VM-0-14-centos etc<span class="token punctuation">]</span><span class="token comment"># pwd</span>
+/etc
+<span class="token punctuation">[</span>root@VM-0-14-centos etc<span class="token punctuation">]</span><span class="token comment"># cd yum.repos.d/</span>
+<span class="token punctuation">[</span>root@VM-0-14-centos yum.repos.d<span class="token punctuation">]</span><span class="token comment"># ls</span>
+CentOS-Base.repo  CentOS-Epel.repo
+<span class="token punctuation">[</span>root@VM-0-14-centos yum.repos.d<span class="token punctuation">]</span><span class="token comment"># ls</span>
+CentOS-Base.repo  CentOS-Epel.repo
+<span class="token punctuation">[</span>root@VM-0-14-centos yum.repos.d<span class="token punctuation">]</span><span class="token comment"># cat CentOS-Base.repo </span>
+<span class="token punctuation">[</span>extras<span class="token punctuation">]</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>http://mirrors.tencentyun.com/centos/RPM-GPG-KEY-CentOS-7
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://mirrors.tencentyun.com/centos/<span class="token variable">$releasever</span>/extras/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">name</span><span class="token operator">=</span>Qcloud centos extras - <span class="token variable">$basearch</span>
+<span class="token punctuation">[</span>os<span class="token punctuation">]</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>http://mirrors.tencentyun.com/centos/RPM-GPG-KEY-CentOS-7
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://mirrors.tencentyun.com/centos/<span class="token variable">$releasever</span>/os/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">name</span><span class="token operator">=</span>Qcloud centos os - <span class="token variable">$basearch</span>
+<span class="token punctuation">[</span>updates<span class="token punctuation">]</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>http://mirrors.tencentyun.com/centos/RPM-GPG-KEY-CentOS-7
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://mirrors.tencentyun.com/centos/<span class="token variable">$releasever</span>/updates/<span class="token variable">$basearch</span>/
+<span class="token punctuation">[</span>root@VM-0-14-centos yum.repos.d<span class="token punctuation">]</span><span class="token comment"># cat CentOS-Epel.repo </span>
+<span class="token punctuation">[</span>epel<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>EPEL <span class="token keyword">for</span> redhat/centos <span class="token variable">$releasever</span> - <span class="token variable">$basearch</span>
+<span class="token assign-left variable">failovermethod</span><span class="token operator">=</span>priority
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>http://mirrors.tencentyun.com/epel/RPM-GPG-KEY-EPEL-7
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://mirrors.tencentyun.com/epel/<span class="token variable">$releasever</span>/<span class="token variable">$basearch</span>/<span class="token punctuation">[</span>root@VM-0-14-centos yum.repos.d<span class="token punctuation">]</span><span class="token comment"># </span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><ul><li>apt系列在<code>cd apt</code></li> <li><code>vim source.list</code></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/etc/apt<span class="token punctuation">]</span>
+└─<span class="token comment"># ls</span>
+apt.conf.d  auth.conf.d  listchanges.conf  listchanges.conf.d  preferences.d  sources.list  sources.list~  sources.list.d  trusted.gpg.d
+                                                         
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/etc/apt<span class="token punctuation">]</span>
+└─<span class="token comment"># vim sources.list</span>
+                                     
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="四、『进程』查询"><a href="#四、『进程』查询" class="header-anchor">#</a> 四、『进程』查询</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;init&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>也可以是</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">grep</span> init
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="五、安装linux后的工作"><a href="#五、安装linux后的工作" class="header-anchor">#</a> 五、安装Linux后的工作</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>hacv㉿HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">whoami</span>
+hacv
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>hacv㉿HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">su</span> root
+密码：
+su: 鉴定故障
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>hacv㉿HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">sudo</span> <span class="token function">passwd</span> root                                                                                                                                              <span class="token number">1</span> ⨯
+
+我们信任您已经从系统管理员那里了解了日常注意事项。
+总结起来无外乎这三点：
+
+    <span class="token comment">#1) 尊重别人的隐私。</span>
+    <span class="token comment">#2) 输入前要先考虑(后果和风险)。</span>
+    <span class="token comment">#3) 权力越大，责任越大。</span>
+
+<span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> hacv 的密码：
+新的 密码：
+重新输入新的 密码：
+passwd：已成功更新密码
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>hacv㉿HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~<span class="token punctuation">]</span>
+└─$ <span class="token function">su</span> root         
+密码：
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/home/hacv<span class="token punctuation">]</span>
+└─<span class="token comment"># </span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>修改root密码</p> <p>root身份修改一般用户的密码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># passwd username(要更改密码的用户名)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="（1）设置无线网络（联网）"><a href="#（1）设置无线网络（联网）" class="header-anchor">#</a> （1）设置无线网络（联网）</h3> <ul><li>linux下回到桌面的快捷键
+自己设置。</li></ul> <h3 id="（2）『换源』到中国的地方"><a href="#（2）『换源』到中国的地方" class="header-anchor">#</a> （2）『换源』到中国的地方</h3> <ul><li>步骤如下</li></ul> <p>（1）首先将『源』中所有的删掉</p> <p>删掉那个文件中所有的内容，然后用软件<code>leapad</code>借助CSDN复制粘贴去
+source.list leapad +csdn</p> <p><a href="http://www.baidu.com/from=844b/s?word=source.list+leapad+%2Bcsdn&ts=2922354&t_kt=0&ie=utf-8&fm_kl=021394be2f&rsv_iqid=4060937357&rsv_t=9408T5L%252BY6Y3bX1Zpg%252BK6z2QAeltntpabrgIRaAhlc%252FLJqRmO4x%252BmDfw2g&sa=ib&ms=1&rsv_pq=4060937357&rsv_sug4=5918&ss=110&tj=1&sugid=11740036168319372660" target="_blank" rel="noopener noreferrer">CSDN源传送门<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>（2）cd到目录</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /etc/apt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>（3）编辑『sources.list』——注意用root权限</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/etc/apt<span class="token punctuation">]</span>
+└─<span class="token comment"># ls</span>
+apt.conf.d  auth.conf.d  listchanges.conf  listchanges.conf.d  preferences.d  sources.list  sources.list~  sources.list.d  trusted.gpg.d
+                                                         
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/etc/apt<span class="token punctuation">]</span>
+└─<span class="token comment"># vim sources.list</span>
+                                                                                                     
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>第1次编辑，我竟然把『阿里云。网易、kali Linux官方』等各种源都写进去了，然后一旦<code>update</code>立马就挂了。。</p> <p>所以，后面我只剩下一个『阿里云』好像是，然后更新就成功了。</p> <p>下面我们看看不成功的情况</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>┌──(root💀HACV)-[/etc/apt]
+└─# apt-get update
+获取:1 http://mirrors.aliyun.com/kali kali-rolling InRelease [30.5 kB]
+获取:2 http://mirrors.aliyun.com/kali kali-rolling/non-free Sources [128 kB]
+获取:3 http://mirrors.aliyun.com/kali kali-rolling/main Sources [13.7 MB]
+获取:4 http://mirrors.aliyun.com/kali kali-rolling/contrib Sources [62.5 kB]
+获取:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages [17.2 MB]
+忽略:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages                                                                                                
+忽略:6 http://mirrors.aliyun.com/kali kali-rolling/non-free i386 Packages
+忽略:7 http://mirrors.aliyun.com/kali kali-rolling/contrib i386 Packages
+忽略:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages
+忽略:6 http://mirrors.aliyun.com/kali kali-rolling/non-free i386 Packages
+忽略:7 http://mirrors.aliyun.com/kali kali-rolling/contrib i386 Packages
+忽略:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages
+忽略:6 http://mirrors.aliyun.com/kali kali-rolling/non-free i386 Packages
+忽略:7 http://mirrors.aliyun.com/kali kali-rolling/contrib i386 Packages
+忽略:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages
+忽略:6 http://mirrors.aliyun.com/kali kali-rolling/non-free i386 Packages
+忽略:7 http://mirrors.aliyun.com/kali kali-rolling/contrib i386 Packages
+错误:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages
+  连接超时 [IP: 120.226.183.220 80]
+错误:6 http://mirrors.aliyun.com/kali kali-rolling/non-free i386 Packages
+  无法连接上 mirrors.aliyun.com:80 (120.226.183.220)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.221)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.217)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.219)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.224)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.222)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.218)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.223)。 - connect (113: 没有到主机的路由) [IP: 120.226.183.220 80]
+错误:7 http://mirrors.aliyun.com/kali kali-rolling/contrib i386 Packages
+  不能连接到 mirrors.aliyun.com：http： [IP: 120.226.183.220 80]
+正在读取软件包列表... 完成
+W: 无法下载 http://mirrors.aliyun.com/kali/dists/kali-rolling/main/binary-i386/Packages  连接超时 [IP: 120.226.183.220 80]
+W: 无法下载 http://mirrors.aliyun.com/kali/dists/kali-rolling/non-free/binary-i386/Packages  无法连接上 mirrors.aliyun.com:80 (120.226.183.220)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.221)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.217)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.219)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.224)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.222)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.218)。 - connect (113: 没有到主机的路由) 无法连接上 mirrors.aliyun.com:80 (120.226.183.223)。 - connect (113: 没有到主机的路由) [IP: 120.226.183.220 80]
+W: 无法下载 http://mirrors.aliyun.com/kali/dists/kali-rolling/contrib/binary-i386/Packages  不能连接到 mirrors.aliyun.com：http： [IP: 120.226.183.220 80]
+W: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。
+                                                                                                                                                                      
+┌──(root💀HACV)-[/etc/apt]
+└─# apt-get install ibus ibus-pinyin
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+E: 无法定位软件包 ibus
+E: 无法定位软件包 ibus-pinyin
+                                                                                                                                                                     
+┌──(root💀HACV)-[/etc/apt]
+└─# apt-get update                                                                                                                                              100 ⨯
+获取:1 http://mirrors.aliyun.com/kali kali-rolling InRelease [30.5 kB]
+获取:2 http://mirrors.aliyun.com/kali kali-rolling/main Sources [13.7 MB]
+获取:3 http://mirrors.aliyun.com/kali kali-rolling/non-free Sources [128 kB]
+获取:4 http://mirrors.aliyun.com/kali kali-rolling/contrib Sources [62.5 kB]
+获取:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages [17.2 MB]
+获取:6 http://mirrors.aliyun.com/kali kali-rolling/non-free i386 Packages [171 kB]                                                                                   
+获取:7 http://mirrors.aliyun.com/kali kali-rolling/contrib i386 Packages [95.4 kB]                                                                                   
+已下载 6,208 kB，耗时 1分 3秒 (98.4 kB/s)                                                                                                                            
+正在读取软件包列表... 完成
+                                                                                                                                                                      
+┌──(root💀HACV)-[/etc/apt]
+└─# apt-get install ibus ibus-pinyin
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+将会同时安装下列软件：
+  dconf-cli gir1.2-ibus-1.0 ibus-data ibus-gtk ibus-gtk3 im-config libibus-1.0-5 liblua5.4-0 libpyzy-1.0-0v5 python3-ibus-1.0
+建议安装：
+  ibus-clutter ibus-doc
+下列【新】软件包将被安装：
+  dconf-cli gir1.2-ibus-1.0 ibus ibus-data ibus-gtk ibus-gtk3 ibus-pinyin im-config libibus-1.0-5 liblua5.4-0 libpyzy-1.0-0v5 python3-ibus-1.0
+升级了 0 个软件包，新安装了 12 个软件包，要卸载 0 个软件包，有 127 个软件包未被升级。
+需要下载 14.7 MB/23.2 MB 的归档。
+解压缩后会消耗 128 MB 的额外空间。
+您希望继续执行吗？ [Y/n] y
+获取:1 http://mirrors.aliyun.com/kali kali-rolling/main i386 libpyzy-1.0-0v5 i386 1.0.1-7 [14.7 MB]                                                                  
+已下载 6,340 kB，耗时 1分 12秒 (88.0 kB/s)                                                                                                                           
+正在选中未选择的软件包 dconf-cli。
+(正在读取数据库 ... 系统当前共安装有 315905 个文件和目录。)
+准备解压 .../00-dconf-cli_0.38.0-1_i386.deb  ...
+正在解压 dconf-cli (0.38.0-1) ...
+正在选中未选择的软件包 libibus-1.0-5:i386。
+准备解压 .../01-libibus-1.0-5_1.5.23-2_i386.deb  ...
+正在解压 libibus-1.0-5:i386 (1.5.23-2) ...
+正在选中未选择的软件包 gir1.2-ibus-1.0:i386。
+准备解压 .../02-gir1.2-ibus-1.0_1.5.23-2_i386.deb  ...
+正在解压 gir1.2-ibus-1.0:i386 (1.5.23-2) ...
+正在选中未选择的软件包 ibus-data。
+准备解压 .../03-ibus-data_1.5.23-2_all.deb  ...
+正在解压 ibus-data (1.5.23-2) ...
+正在选中未选择的软件包 python3-ibus-1.0。
+准备解压 .../04-python3-ibus-1.0_1.5.23-2_all.deb  ...
+正在解压 python3-ibus-1.0 (1.5.23-2) ...
+正在选中未选择的软件包 ibus。
+准备解压 .../05-ibus_1.5.23-2_i386.deb  ...
+正在解压 ibus (1.5.23-2) ...
+正在选中未选择的软件包 ibus-gtk:i386。
+准备解压 .../06-ibus-gtk_1.5.23-2_i386.deb  ...
+正在解压 ibus-gtk:i386 (1.5.23-2) ...
+正在选中未选择的软件包 ibus-gtk3:i386。
+准备解压 .../07-ibus-gtk3_1.5.23-2_i386.deb  ...
+正在解压 ibus-gtk3:i386 (1.5.23-2) ...
+正在选中未选择的软件包 liblua5.4-0:i386。
+准备解压 .../08-liblua5.4-0_5.4.2-1_i386.deb  ...
+正在解压 liblua5.4-0:i386 (5.4.2-1) ...
+正在选中未选择的软件包 libpyzy-1.0-0v5。
+准备解压 .../09-libpyzy-1.0-0v5_1.0.1-7_i386.deb  ...
+正在解压 libpyzy-1.0-0v5 (1.0.1-7) ...
+正在选中未选择的软件包 ibus-pinyin。
+准备解压 .../10-ibus-pinyin_1.5.0-6.1+b1_i386.deb  ...
+正在解压 ibus-pinyin (1.5.0-6.1+b1) ...
+正在选中未选择的软件包 im-config。
+准备解压 .../11-im-config_0.46-1_all.deb  ...
+正在解压 im-config (0.46-1) ...
+正在设置 dconf-cli (0.38.0-1) ...
+正在设置 libibus-1.0-5:i386 (1.5.23-2) ...
+正在设置 ibus-data (1.5.23-2) ...
+正在设置 libpyzy-1.0-0v5 (1.0.1-7) ...
+正在设置 im-config (0.46-1) ...
+正在设置 ibus-gtk:i386 (1.5.23-2) ...
+正在设置 liblua5.4-0:i386 (5.4.2-1) ...
+正在设置 ibus-gtk3:i386 (1.5.23-2) ...
+正在设置 gir1.2-ibus-1.0:i386 (1.5.23-2) ...
+正在设置 ibus-pinyin (1.5.0-6.1+b1) ...
+正在设置 python3-ibus-1.0 (1.5.23-2) ...
+正在处理用于 mailcap (3.67) 的触发器 ...
+正在处理用于 kali-menu (2021.1.2) 的触发器 ...
+正在处理用于 desktop-file-utils (0.26-1) 的触发器 ...
+正在处理用于 hicolor-icon-theme (0.17-2) 的触发器 ...
+正在处理用于 libglib2.0-0:i386 (2.66.3-2) 的触发器 ...
+正在处理用于 libgtk-3-0:i386 (3.24.24-1) 的触发器 ...
+正在处理用于 libgtk2.0-0:i386 (2.24.32-5) 的触发器 ...
+正在处理用于 libc-bin (2.31-5) 的触发器 ...
+正在处理用于 man-db (2.9.3-2) 的触发器 ...
+正在设置 ibus (1.5.23-2) ...
+                                                                                                                                                                      
+┌──(root💀HACV)-[/etc/apt]
+└─# im-config                       
+                                                                                                                                                                      
+┌──(root💀HACV)-[/etc/apt]
+└─# im-config
+                                                            
+                                                                                                                                                                
+┌──(root💀HACV)-[/etc/apt]
+└─# ps                                                                                                                                                          127 ⨯
+  PID TTY          TIME CMD
+ 3235 pts/0    00:00:00 su
+ 3236 pts/0    00:00:00 zsh
+ 6555 pts/0    00:00:00 ps
+                                                                                                                                                                      
+┌──(root💀HACV)-[/etc/apt]
+└─# ibus-setup
+cd /
+ls
+^CTraceback (most recent call last):
+  File &quot;/usr/share/ibus/setup/main.py&quot;, line 674, in &lt;module&gt;
+    setup = Setup()
+  File &quot;/usr/share/ibus/setup/main.py&quot;, line 106, in __init__
+    self.__init_bus()
+  File &quot;/usr/share/ibus/setup/main.py&quot;, line 552, in __init_bus
+    id = dlg.run()
+  File &quot;/usr/lib/python3/dist-packages/gi/overrides/Gtk.py&quot;, line 580, in run
+    return Gtk.Dialog.run(self, *args, **kwargs)
+  File &quot;/usr/lib/python3.9/contextlib.py&quot;, line 124, in __exit__
+    next(self.gen)
+  File &quot;/usr/lib/python3/dist-packages/gi/_ossighelper.py&quot;, line 237, in register_sigint_fallback
+    signal.default_int_handler(signal.SIGINT, None)
+KeyboardInterrupt
+
+                                                                                                                                                                      
+┌──(root💀HACV)-[/etc/apt]
+└─#                                                                                                                                                             130 ⨯
+                                                                                                                                                                      
+┌──(root💀HACV)-[/etc/apt]
+└─# ibus-setup                                                                                                                                                  130 ⨯
+                                                                                                     
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br></div></div><h3 id="（3）『换源』后安装『中文输入法』"><a href="#（3）『换源』后安装『中文输入法』" class="header-anchor">#</a> （3）『换源』后安装『中文输入法』</h3> <p>安装后记得重启</p> <h2 id="五、正常联网后，更新源之后-安装ibus拼音"><a href="#五、正常联网后，更新源之后-安装ibus拼音" class="header-anchor">#</a> 五、正常联网后，更新源之后+安装ibus拼音</h2> <h3 id="（1）apt-get-update"><a href="#（1）apt-get-update" class="header-anchor">#</a> （1）apt-get update</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/etc/apt<span class="token punctuation">]</span>
+└─<span class="token comment"># apt-get update       </span>
+获取:1 http://mirrors.aliyun.com/kali kali-rolling InRelease <span class="token punctuation">[</span><span class="token number">30.5</span> kB<span class="token punctuation">]</span>
+获取:2 http://mirrors.aliyun.com/kali kali-rolling/non-free Sources <span class="token punctuation">[</span><span class="token number">127</span> kB<span class="token punctuation">]</span>
+获取:3 http://mirrors.aliyun.com/kali kali-rolling/contrib Sources <span class="token punctuation">[</span><span class="token number">63.1</span> kB<span class="token punctuation">]</span>
+获取:4 http://mirrors.aliyun.com/kali kali-rolling/main Sources <span class="token punctuation">[</span><span class="token number">13.7</span> MB<span class="token punctuation">]</span>
+获取:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 Packages <span class="token punctuation">[</span><span class="token number">17.2</span> MB<span class="token punctuation">]</span>                                                                                      
+获取:6 http://mirrors.aliyun.com/kali kali-rolling/non-free i386 Packages <span class="token punctuation">[</span><span class="token number">171</span> kB<span class="token punctuation">]</span>                                                                                   
+获取:7 http://mirrors.aliyun.com/kali kali-rolling/contrib i386 Packages <span class="token punctuation">[</span><span class="token number">96.3</span> kB<span class="token punctuation">]</span>                                                                                   
+已下载 <span class="token number">31.4</span> MB，耗时 <span class="token number">33</span>秒 <span class="token punctuation">(</span><span class="token number">948</span> kB/s<span class="token punctuation">)</span>                                                                                                                                 
+正在读取软件包列表<span class="token punctuation">..</span>. 完成
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="（2）apt-get-install-ibus-ibus-pinyin"><a href="#（2）apt-get-install-ibus-ibus-pinyin" class="header-anchor">#</a> （2）apt-get install ibus ibus-pinyin</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/etc/apt<span class="token punctuation">]</span>
+└─<span class="token comment"># apt-get install ibus ibus-pinyin   </span>
+正在读取软件包列表<span class="token punctuation">..</span>. 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息<span class="token punctuation">..</span>. 完成       
+将会同时安装下列软件：
+  dconf-cli gir1.2-ibus-1.0 ibus-data ibus-gtk ibus-gtk3 im-config libibus-1.0-5 liblua5.4-0 libpyzy-1.0-0v5 python3-ibus-1.0
+建议安装：
+  ibus-clutter ibus-doc
+下列【新】软件包将被安装：
+  dconf-cli gir1.2-ibus-1.0 ibus ibus-data ibus-gtk ibus-gtk3 ibus-pinyin im-config libibus-1.0-5 liblua5.4-0 libpyzy-1.0-0v5 python3-ibus-1.0
+升级了 <span class="token number">0</span> 个软件包，新安装了 <span class="token number">12</span> 个软件包，要卸载 <span class="token number">0</span> 个软件包，有 <span class="token number">396</span> 个软件包未被升级。
+需要下载 <span class="token number">23.2</span> MB 的归档。
+解压缩后会消耗 <span class="token number">128</span> MB 的额外空间。
+您希望继续执行吗？ <span class="token punctuation">[</span>Y/n<span class="token punctuation">]</span> y
+获取:1 http://mirrors.aliyun.com/kali kali-rolling/main i386 dconf-cli i386 <span class="token number">0.38</span>.0-1 <span class="token punctuation">[</span><span class="token number">33.8</span> kB<span class="token punctuation">]</span>
+获取:2 http://mirrors.aliyun.com/kali kali-rolling/main i386 libibus-1.0-5 i386 <span class="token number">1.5</span>.23-2 <span class="token punctuation">[</span><span class="token number">410</span> kB<span class="token punctuation">]</span>
+获取:3 http://mirrors.aliyun.com/kali kali-rolling/main i386 gir1.2-ibus-1.0 i386 <span class="token number">1.5</span>.23-2 <span class="token punctuation">[</span><span class="token number">317</span> kB<span class="token punctuation">]</span>
+获取:4 http://mirrors.aliyun.com/kali kali-rolling/main i386 ibus-data all <span class="token number">1.5</span>.23-2 <span class="token punctuation">[</span><span class="token number">5,692</span> kB<span class="token punctuation">]</span>
+获取:5 http://mirrors.aliyun.com/kali kali-rolling/main i386 python3-ibus-1.0 all <span class="token number">1.5</span>.23-2 <span class="token punctuation">[</span><span class="token number">259</span> kB<span class="token punctuation">]</span>                                                                  
+获取:6 http://mirrors.aliyun.com/kali kali-rolling/main i386 ibus i386 <span class="token number">1.5</span>.23-2 <span class="token punctuation">[</span><span class="token number">562</span> kB<span class="token punctuation">]</span>                                                                             
+获取:7 http://mirrors.aliyun.com/kali kali-rolling/main i386 ibus-gtk i386 <span class="token number">1.5</span>.23-2 <span class="token punctuation">[</span><span class="token number">268</span> kB<span class="token punctuation">]</span>                                                                         
+获取:8 http://mirrors.aliyun.com/kali kali-rolling/main i386 ibus-gtk3 i386 <span class="token number">1.5</span>.23-2 <span class="token punctuation">[</span><span class="token number">268</span> kB<span class="token punctuation">]</span>                                                                        
+获取:9 http://mirrors.aliyun.com/kali kali-rolling/main i386 liblua5.4-0 i386 <span class="token number">5.4</span>.2-1 <span class="token punctuation">[</span><span class="token number">158</span> kB<span class="token punctuation">]</span>                                                                       
+获取:10 http://mirrors.aliyun.com/kali kali-rolling/main i386 libpyzy-1.0-0v5 i386 <span class="token number">1.0</span>.1-7 <span class="token punctuation">[</span><span class="token number">14.7</span> MB<span class="token punctuation">]</span>                                                                 
+获取:11 http://mirrors.aliyun.com/kali kali-rolling/main i386 ibus-pinyin i386 <span class="token number">1.5</span>.0-6.1+b1 <span class="token punctuation">[</span><span class="token number">488</span> kB<span class="token punctuation">]</span>                                                                 
+获取:12 http://mirrors.aliyun.com/kali kali-rolling/main i386 im-config all <span class="token number">0.46</span>-1 <span class="token punctuation">[</span><span class="token number">52.0</span> kB<span class="token punctuation">]</span>                                                                         
+已下载 <span class="token number">23.2</span> MB，耗时 <span class="token number">24</span>秒 <span class="token punctuation">(</span><span class="token number">975</span> kB/s<span class="token punctuation">)</span>                                                                                                                                 
+正在选中未选择的软件包 dconf-cli。
+<span class="token punctuation">(</span>正在读取数据库 <span class="token punctuation">..</span>. 系统当前共安装有 <span class="token number">316091</span> 个文件和目录。<span class="token punctuation">)</span>
+准备解压 <span class="token punctuation">..</span>./00-dconf-cli_0.38.0-1_i386.deb  <span class="token punctuation">..</span>.
+正在解压 dconf-cli <span class="token punctuation">(</span><span class="token number">0.38</span>.0-1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 libibus-1.0-5:i386。
+准备解压 <span class="token punctuation">..</span>./01-libibus-1.0-5_1.5.23-2_i386.deb  <span class="token punctuation">..</span>.
+正在解压 libibus-1.0-5:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 gir1.2-ibus-1.0:i386。
+准备解压 <span class="token punctuation">..</span>./02-gir1.2-ibus-1.0_1.5.23-2_i386.deb  <span class="token punctuation">..</span>.
+正在解压 gir1.2-ibus-1.0:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 ibus-data。
+准备解压 <span class="token punctuation">..</span>./03-ibus-data_1.5.23-2_all.deb  <span class="token punctuation">..</span>.
+正在解压 ibus-data <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 python3-ibus-1.0。
+准备解压 <span class="token punctuation">..</span>./04-python3-ibus-1.0_1.5.23-2_all.deb  <span class="token punctuation">..</span>.
+正在解压 python3-ibus-1.0 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 ibus。
+准备解压 <span class="token punctuation">..</span>./05-ibus_1.5.23-2_i386.deb  <span class="token punctuation">..</span>.
+正在解压 ibus <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 ibus-gtk:i386。
+准备解压 <span class="token punctuation">..</span>./06-ibus-gtk_1.5.23-2_i386.deb  <span class="token punctuation">..</span>.
+正在解压 ibus-gtk:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 ibus-gtk3:i386。
+准备解压 <span class="token punctuation">..</span>./07-ibus-gtk3_1.5.23-2_i386.deb  <span class="token punctuation">..</span>.
+正在解压 ibus-gtk3:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 liblua5.4-0:i386。
+准备解压 <span class="token punctuation">..</span>./08-liblua5.4-0_5.4.2-1_i386.deb  <span class="token punctuation">..</span>.
+正在解压 liblua5.4-0:i386 <span class="token punctuation">(</span><span class="token number">5.4</span>.2-1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 libpyzy-1.0-0v5。
+准备解压 <span class="token punctuation">..</span>./09-libpyzy-1.0-0v5_1.0.1-7_i386.deb  <span class="token punctuation">..</span>.
+正在解压 libpyzy-1.0-0v5 <span class="token punctuation">(</span><span class="token number">1.0</span>.1-7<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 ibus-pinyin。
+准备解压 <span class="token punctuation">..</span>./10-ibus-pinyin_1.5.0-6.1+b1_i386.deb  <span class="token punctuation">..</span>.
+正在解压 ibus-pinyin <span class="token punctuation">(</span><span class="token number">1.5</span>.0-6.1+b1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在选中未选择的软件包 im-config。
+准备解压 <span class="token punctuation">..</span>./11-im-config_0.46-1_all.deb  <span class="token punctuation">..</span>.
+正在解压 im-config <span class="token punctuation">(</span><span class="token number">0.46</span>-1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 dconf-cli <span class="token punctuation">(</span><span class="token number">0.38</span>.0-1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 libibus-1.0-5:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 ibus-data <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 libpyzy-1.0-0v5 <span class="token punctuation">(</span><span class="token number">1.0</span>.1-7<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 im-config <span class="token punctuation">(</span><span class="token number">0.46</span>-1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 ibus-gtk:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 liblua5.4-0:i386 <span class="token punctuation">(</span><span class="token number">5.4</span>.2-1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 ibus-gtk3:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 gir1.2-ibus-1.0:i386 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 ibus-pinyin <span class="token punctuation">(</span><span class="token number">1.5</span>.0-6.1+b1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在设置 python3-ibus-1.0 <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+正在处理用于 mailcap <span class="token punctuation">(</span><span class="token number">3.67</span><span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 kali-menu <span class="token punctuation">(</span><span class="token number">2021.1</span>.2<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 desktop-file-utils <span class="token punctuation">(</span><span class="token number">0.26</span>-1<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 hicolor-icon-theme <span class="token punctuation">(</span><span class="token number">0.17</span>-2<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 libglib2.0-0:i386 <span class="token punctuation">(</span><span class="token number">2.66</span>.3-2<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 libgtk-3-0:i386 <span class="token punctuation">(</span><span class="token number">3.24</span>.24-1<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 libgtk2.0-0:i386 <span class="token punctuation">(</span><span class="token number">2.24</span>.32-5<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 libc-bin <span class="token punctuation">(</span><span class="token number">2.31</span>-5<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在处理用于 man-db <span class="token punctuation">(</span><span class="token number">2.9</span>.3-2<span class="token punctuation">)</span> 的触发器 <span class="token punctuation">..</span>.
+正在设置 ibus <span class="token punctuation">(</span><span class="token number">1.5</span>.23-2<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br></div></div><h3 id="（3）im-config"><a href="#（3）im-config" class="header-anchor">#</a> （3）im-config</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>im-config
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后<strong>出现图片</strong>
+设置为ibus</p> <h3 id="（4）重启电脑"><a href="#（4）重启电脑" class="header-anchor">#</a> （4）重启电脑</h3> <p>一定要重启电脑，不然不OK</p> <h3 id="（4）开启蓝牙"><a href="#（4）开启蓝牙" class="header-anchor">#</a> （4）开启蓝牙</h3> <ul><li>蓝牙的坑</li></ul> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>┌──(root💀HACV)-[/home/redhat/桌面]
+└─# service bluetooth start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li><p><strong>无论是root还是普通用户的，好像每次打开蓝牙都要手动输入命令！！！</strong></p></li> <li><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">service</span> bluetooth start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li></ul> <h3 id="（5）正确关机"><a href="#（5）正确关机" class="header-anchor">#</a> （5）正确关机</h3> <p>每次关机前，先sync</p> <h3 id="（6）正确挂载u盘等『mount』"><a href="#（6）正确挂载u盘等『mount』" class="header-anchor">#</a> （6）正确挂载U盘等『mount』</h3> <ul><li>linux 挂载mount</li></ul> <p>（1）FAT32 format的文件系统 U盘</p> <ul><li>第一步：<code>fdisk -l</code>    (注意是：小写的L)</li></ul> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>┌──(root💀HACV)-[/mnt]
+└─# fdisk -l                        
+Disk /dev/sdb: 119.24 GiB, 128035676160 bytes, 250069680 sectors
+Disk model: SanDisk SD8SN8U1
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 14BF0CD1-CAE5-48B7-AD99-B990C0C491A7
+
+Device         Start       End   Sectors   Size Type
+/dev/sdb1       2048    534527    532480   260M EFI System
+/dev/sdb2     534528    567295     32768    16M Microsoft reserved
+/dev/sdb3     567296 248430591 247863296 118.2G Microsoft basic data
+/dev/sdb4  248430592 250068991   1638400   800M Windows recovery environment
+
+
+Disk /dev/sda: 931.51 GiB, 1000204886016 bytes, 1953525168 sectors
+Disk model: HGST HTS541010B7
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: DBF9AD13-E5CA-487F-9D1A-6AD8887AC669
+
+Device          Start        End   Sectors   Size Type
+/dev/sda1        2048  588191743 588189696 280.5G Microsoft basic data
+/dev/sda2   588191744 1270857727 682665984 325.5G Microsoft basic data
+/dev/sda3  1270857728 1953521663 682663936 325.5G Microsoft basic data
+
+
+Disk /dev/sdc: 14.9 GiB, 15993970688 bytes, 31238224 sectors
+Disk model: MiniKing        
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x0d606a22
+
+Device     Boot    Start      End  Sectors  Size Id Type
+/dev/sdc1  *        2048 29237247 29235200 13.9G 83 Linux
+/dev/sdc2       29239294 31236095  1996802  975M  5 Extended
+/dev/sdc5       29239296 31236095  1996800  975M 82 Linux swap / Solaris
+
+
+Disk /dev/sdd: 115.1 GiB, 123589361664 bytes, 241385472 sectors
+Disk model: 3.2 Gen 1       
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 33553920 bytes
+Disklabel type: dos
+Disk identifier: 0xcad4ebea
+
+Device     Boot Start       End   Sectors   Size Id Type
+/dev/sdd4  *      256 241385471 241385216 115.1G  c W95 FAT32 (LBA)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div><p>as you can see that  <code>/dev/sdd4/</code>
+so we could know that</p> <p>error :because  <code>sdb4!=sdd4</code></p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt<span class="token punctuation">]</span>
+└─<span class="token comment"># mount -t vfat /dev/sdb4 /mnt/usb </span>
+mount: /mnt/usb: wrong fs type, bad option, bad superblock on /dev/sdb4, missing codepage or helper program, or other error.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>true</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt<span class="token punctuation">]</span>
+└─<span class="token comment"># mount -t vfat /dev/sdd4 /mnt/usb</span>
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt<span class="token punctuation">]</span>
+└─<span class="token comment"># ls   </span>
+usb
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt<span class="token punctuation">]</span>
+└─<span class="token comment"># cd usb </span>
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt/usb<span class="token punctuation">]</span>
+└─<span class="token comment"># ls</span>
+autorun.inf  boot  debian  dists  EFI  efi.img  firmware  g2ldr  g2ldr.mbr  <span class="token function">install</span>  isolinux  live  md5sum.txt  pool  pool-udeb  setup.exe  tools  win32-loader.ini
+                 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>The same as</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt<span class="token punctuation">]</span>
+└─<span class="token comment"># fdisk -l                                                                                                                                                    127 ⨯</span>
+Disk /dev/sdb: <span class="token number">119.24</span> GiB, <span class="token number">128035676160</span> bytes, <span class="token number">250069680</span> sectors
+Disk model: SanDisk SD8SN8U1
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+Disklabel type: gpt
+Disk identifier: 14BF0CD1-CAE5-48B7-AD99-B990C0C491A7
+
+Device         Start       End   Sectors   Size Type
+/dev/sdb1       <span class="token number">2048</span>    <span class="token number">534527</span>    <span class="token number">532480</span>   260M EFI System
+/dev/sdb2     <span class="token number">534528</span>    <span class="token number">567295</span>     <span class="token number">32768</span>    16M Microsoft reserved
+/dev/sdb3     <span class="token number">567296</span> <span class="token number">248430591</span> <span class="token number">247863296</span> <span class="token number">118</span>.2G Microsoft basic data
+/dev/sdb4  <span class="token number">248430592</span> <span class="token number">250068991</span>   <span class="token number">1638400</span>   800M Windows recovery environment
+
+
+Disk /dev/sda: <span class="token number">931.51</span> GiB, <span class="token number">1000204886016</span> bytes, <span class="token number">1953525168</span> sectors
+Disk model: HGST HTS541010B7
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">4096</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">4096</span> bytes / <span class="token number">4096</span> bytes
+Disklabel type: gpt
+Disk identifier: DBF9AD13-E5CA-487F-9D1A-6AD8887AC669
+
+Device          Start        End   Sectors   Size Type
+/dev/sda1        <span class="token number">2048</span>  <span class="token number">588191743</span> <span class="token number">588189696</span> <span class="token number">280</span>.5G Microsoft basic data
+/dev/sda2   <span class="token number">588191744</span> <span class="token number">1270857727</span> <span class="token number">682665984</span> <span class="token number">325</span>.5G Microsoft basic data
+/dev/sda3  <span class="token number">1270857728</span> <span class="token number">1953521663</span> <span class="token number">682663936</span> <span class="token number">325</span>.5G Microsoft basic data
+
+
+Disk /dev/sdc: <span class="token number">14.9</span> GiB, <span class="token number">15993970688</span> bytes, <span class="token number">31238224</span> sectors
+Disk model: MiniKing        
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+Disklabel type: dos
+Disk identifier: 0x0d606a22
+
+Device     Boot    Start      End  Sectors  Size Id Type
+/dev/sdc1  *        <span class="token number">2048</span> <span class="token number">29237247</span> <span class="token number">29235200</span> <span class="token number">13</span>.9G <span class="token number">83</span> Linux
+/dev/sdc2       <span class="token number">29239294</span> <span class="token number">31236095</span>  <span class="token number">1996802</span>  975M  <span class="token number">5</span> Extended
+/dev/sdc5       <span class="token number">29239296</span> <span class="token number">31236095</span>  <span class="token number">1996800</span>  975M <span class="token number">82</span> Linux swap / Solaris
+
+
+Disk /dev/sdd: <span class="token number">115.1</span> GiB, <span class="token number">123589361664</span> bytes, <span class="token number">241385472</span> sectors
+Disk model: <span class="token number">3.2</span> Gen <span class="token number">1</span>       
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">33553920</span> bytes
+Disklabel type: dos
+Disk identifier: 0xcad4ebea
+
+Device     Boot Start       End   Sectors   Size Id Type
+/dev/sdd4  *      <span class="token number">256</span> <span class="token number">241385471</span> <span class="token number">241385216</span> <span class="token number">115</span>.1G  c W95 FAT32 <span class="token punctuation">(</span>LBA<span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><p>then</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt<span class="token punctuation">]</span>
+└─<span class="token comment"># umount /mnt/usb                                                                                                                                             130 ⨯</span>
+                                                                                                                                                                      
+
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt<span class="token punctuation">]</span>
+└─<span class="token comment"># cd usb                                                                                                                                                        1 ⨯</span>
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt/usb<span class="token punctuation">]</span>
+└─<span class="token comment"># ls</span>
+                                                                                                                                                                      
+┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt/usb<span class="token punctuation">]</span>
+└─<span class="token comment"># </span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code>┌──<span class="token punctuation">(</span>root💀HACV<span class="token punctuation">)</span>-<span class="token punctuation">[</span>/mnt/usb<span class="token punctuation">]</span>
+└─<span class="token comment"># fdisk -l</span>
+Disk /dev/sdb: <span class="token number">119.24</span> GiB, <span class="token number">128035676160</span> bytes, <span class="token number">250069680</span> sectors
+Disk model: SanDisk SD8SN8U1
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+Disklabel type: gpt
+Disk identifier: 14BF0CD1-CAE5-48B7-AD99-B990C0C491A7
+
+Device         Start       End   Sectors   Size Type
+/dev/sdb1       <span class="token number">2048</span>    <span class="token number">534527</span>    <span class="token number">532480</span>   260M EFI System
+/dev/sdb2     <span class="token number">534528</span>    <span class="token number">567295</span>     <span class="token number">32768</span>    16M Microsoft reserved
+/dev/sdb3     <span class="token number">567296</span> <span class="token number">248430591</span> <span class="token number">247863296</span> <span class="token number">118</span>.2G Microsoft basic data
+/dev/sdb4  <span class="token number">248430592</span> <span class="token number">250068991</span>   <span class="token number">1638400</span>   800M Windows recovery environment
+
+
+Disk /dev/sda: <span class="token number">931.51</span> GiB, <span class="token number">1000204886016</span> bytes, <span class="token number">1953525168</span> sectors
+Disk model: HGST HTS541010B7
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">4096</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">4096</span> bytes / <span class="token number">4096</span> bytes
+Disklabel type: gpt
+Disk identifier: DBF9AD13-E5CA-487F-9D1A-6AD8887AC669
+
+Device          Start        End   Sectors   Size Type
+/dev/sda1        <span class="token number">2048</span>  <span class="token number">588191743</span> <span class="token number">588189696</span> <span class="token number">280</span>.5G Microsoft basic data
+/dev/sda2   <span class="token number">588191744</span> <span class="token number">1270857727</span> <span class="token number">682665984</span> <span class="token number">325</span>.5G Microsoft basic data
+/dev/sda3  <span class="token number">1270857728</span> <span class="token number">1953521663</span> <span class="token number">682663936</span> <span class="token number">325</span>.5G Microsoft basic data
+
+
+Disk /dev/sdc: <span class="token number">14.9</span> GiB, <span class="token number">15993970688</span> bytes, <span class="token number">31238224</span> sectors
+Disk model: MiniKing        
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+Disklabel type: dos
+Disk identifier: 0x0d606a22
+
+Device     Boot    Start      End  Sectors  Size Id Type
+/dev/sdc1  *        <span class="token number">2048</span> <span class="token number">29237247</span> <span class="token number">29235200</span> <span class="token number">13</span>.9G <span class="token number">83</span> Linux
+/dev/sdc2       <span class="token number">29239294</span> <span class="token number">31236095</span>  <span class="token number">1996802</span>  975M  <span class="token number">5</span> Extended
+/dev/sdc5       <span class="token number">29239296</span> <span class="token number">31236095</span>  <span class="token number">1996800</span>  975M <span class="token number">82</span> Linux swap / Solaris
+
+
+Disk /dev/sdd: <span class="token number">115.1</span> GiB, <span class="token number">123589361664</span> bytes, <span class="token number">241385472</span> sectors
+Disk model: <span class="token number">3.2</span> Gen <span class="token number">1</span>       
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">33553920</span> bytes
+Disklabel type: dos
+Disk identifier: 0xcad4ebea
+
+Device     Boot Start       End   Sectors   Size Id Type
+/dev/sdd4  *      <span class="token number">256</span> <span class="token number">241385471</span> <span class="token number">241385216</span> <span class="token number">115</span>.1G  c W95 FAT32 <span class="token punctuation">(</span>LBA<span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><h2 id="一、egrep加上-n显示行数"><a href="#一、egrep加上-n显示行数" class="header-anchor">#</a> 一、egrep加上-n显示行数</h2> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>[root@iZwz9ivqsnyj6hi71t3pamZ ~]# egrep 'now6' test.cpp 
+//												      int now6=now5+tag[6];
+//												      if(now6==n)
+//												      else if(now6&gt;n)
+
+[root@iZwz9ivqsnyj6hi71t3pamZ ~]# egrep 'now6' test.cpp  -n
+87://												      int now6=now5+tag[6];
+88://												      if(now6==n)
+93://												      else if(now6&gt;n)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="二、makefile脚本和shell脚本对比"><a href="#二、makefile脚本和shell脚本对比" class="header-anchor">#</a> 二、makefile脚本和shell脚本对比</h2> <p>我们测试</p> <div class="language-sh line-numbers-mode"><pre class="language-text"><code>[root@iZwz9ivqsnyj6hi71t3pamZ ~]# make -v
+GNU Make 4.2.1
+Built for x86_64-redhat-linux-gnu
+Copyright (C) 1988-2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><blockquote><ul><li>make是打包工具，对应的脚本文件是makefile</li> <li>shell是操作系统的用户界面,对应的脚本文件是sh脚本</li></ul></blockquote> <p>一个是专用工具（make）
+一个是通用工具（shell）</p> <blockquote><ul><li>不过你高兴高兴倒是可以手写shell脚本编译你的项目 , 但是makefile是设计来完成编译工作的 , 它有许多你用shell脚本写起来很麻烦但是很有用的功能 , 比如增量编译 , 多线程编译之类的 .</li></ul></blockquote> <h2 id="三。设置vim显示行号"><a href="#三。设置vim显示行号" class="header-anchor">#</a> 三。设置vim显示行号</h2> <p>从windows下用习惯了devC++和VS等
+其实，还是要显示行数的好，不然都不好调试代码</p> <h3 id="_1）临时显示行号"><a href="#_1）临时显示行号" class="header-anchor">#</a> 1）临时显示行号</h3> <p>在末行模式</p> <div class="language-sh line-numbers-mode"><pre class="language-text"><code>:set nu
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>或者</p> <div class="language-sh line-numbers-mode"><pre class="language-text"><code>:set number
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_2）永久显示行号"><a href="#_2）永久显示行号" class="header-anchor">#</a> 2）永久显示行号</h3> <p>众所周知要想要Linux下的设置永久生效，要写入磁盘才好</p> <p>而Linux下一切都是文件，也就是说，要写入相关文件</p> <p>首先去</p> <div class="language-sh line-numbers-mode"><pre class="language-text"><code>cd /
+cd etc/
+[root@iZwz9ivqsnyj6hi71t3pamZ etc]# pwd
+/etc
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-sh line-numbers-mode"><pre class="language-text"><code>[root@iZwz9ivqsnyj6hi71t3pamZ etc]# ls | grep 'vim'
+vimrc
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language-sh line-numbers-mode"><pre class="language-text"><code>vim vimrc
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如果想让vim永久显示行号，则需要修改vim配置文件vimrc。如果没有此文件可以创建一个。在启动vim时，当前用户根目录下的vimrc文件会被自动读取，因此一般在当前用户的根目录下创建vimrc文件，即使用下面的命令：</p> <p>vimrc文件中最后一行输入：set number ，然后保存退出。再次用vim打开文件时，就会显示行号了。</p> <div class="language-sh line-numbers-mode"><pre class="language-text"><code>let &amp;guicursor = &amp;guicursor . &quot;,a:blinkon0&quot;
+
+&quot; 2020-09-11  设置命令，全局set number,上面是本来就有的
+
+set number
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="sed-awk-还有必要学么"><a href="#sed-awk-还有必要学么" class="header-anchor">#</a> sed awk 还有必要学么?</h2> <ul><li>如果不学这两个 ... 你要用什么来替代这两个的功能呢 ...</li> <li>awk 很好用啊...最简单的使用分隔符进行分列这个至少学下吧...遵循80/20法则，熟练掌握常用的几个sed/awk命令用不了多长时间，但可以起到很大的效果；用Perl、Python当然可以实现sed/awk的功能，不过这需要更多的键盘敲击量……</li> <li>楼主没看过编程珠玑？</li></ul></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.09ac11d8.js" defer></script><script src="/assets/js/21.f3eca95b.js" defer></script>
+  </body>
+</html>
