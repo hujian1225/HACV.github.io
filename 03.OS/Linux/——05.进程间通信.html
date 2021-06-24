@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>进程间通信（IPC） | HACV</title>
+    <meta name="description" content="Personal Blog Website">
+    <link rel="icon" href="/images/photo.jpg">
+  <link rel="manifest" href="/images/photo.jpg">
+  <link rel="apple-touch-icon" href="/images/photo.jpg">
+  <meta http-quiv="pragma" cotent="no-cache">
+  <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+  <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.8eb0d87d.css" as="style"><link rel="preload" href="/assets/js/app.e37a6e1c.js" as="script"><link rel="preload" href="/assets/js/25.cff7296a.js" as="script"><link rel="prefetch" href="/assets/js/10.b375f4a8.js"><link rel="prefetch" href="/assets/js/11.ff1bb2dc.js"><link rel="prefetch" href="/assets/js/12.5914830b.js"><link rel="prefetch" href="/assets/js/13.5820edd1.js"><link rel="prefetch" href="/assets/js/14.5cb62db4.js"><link rel="prefetch" href="/assets/js/15.381f720f.js"><link rel="prefetch" href="/assets/js/16.fe777202.js"><link rel="prefetch" href="/assets/js/17.4ec0fac6.js"><link rel="prefetch" href="/assets/js/18.a65ac44a.js"><link rel="prefetch" href="/assets/js/19.75db2ea8.js"><link rel="prefetch" href="/assets/js/2.09156efe.js"><link rel="prefetch" href="/assets/js/20.494661b2.js"><link rel="prefetch" href="/assets/js/21.50bbb2bb.js"><link rel="prefetch" href="/assets/js/22.94b819c1.js"><link rel="prefetch" href="/assets/js/23.e84cbc43.js"><link rel="prefetch" href="/assets/js/24.83b97da4.js"><link rel="prefetch" href="/assets/js/26.c37c4982.js"><link rel="prefetch" href="/assets/js/27.0c4f55bf.js"><link rel="prefetch" href="/assets/js/28.e44f5262.js"><link rel="prefetch" href="/assets/js/29.cf28d351.js"><link rel="prefetch" href="/assets/js/3.5d437a55.js"><link rel="prefetch" href="/assets/js/30.990206c0.js"><link rel="prefetch" href="/assets/js/31.0387d1e3.js"><link rel="prefetch" href="/assets/js/32.0a64b56b.js"><link rel="prefetch" href="/assets/js/33.02b6a5b3.js"><link rel="prefetch" href="/assets/js/34.20bf782e.js"><link rel="prefetch" href="/assets/js/35.d519769b.js"><link rel="prefetch" href="/assets/js/36.ac1e725d.js"><link rel="prefetch" href="/assets/js/37.4753d2ed.js"><link rel="prefetch" href="/assets/js/38.cbb318e3.js"><link rel="prefetch" href="/assets/js/39.79000b90.js"><link rel="prefetch" href="/assets/js/4.fdfe8087.js"><link rel="prefetch" href="/assets/js/40.329bceaa.js"><link rel="prefetch" href="/assets/js/41.38a2ae58.js"><link rel="prefetch" href="/assets/js/42.ec3ea045.js"><link rel="prefetch" href="/assets/js/43.fa5495e7.js"><link rel="prefetch" href="/assets/js/44.33abfbe9.js"><link rel="prefetch" href="/assets/js/45.7901f7ad.js"><link rel="prefetch" href="/assets/js/46.c19cad0d.js"><link rel="prefetch" href="/assets/js/47.e12e9743.js"><link rel="prefetch" href="/assets/js/48.a6eb235c.js"><link rel="prefetch" href="/assets/js/49.57e980b6.js"><link rel="prefetch" href="/assets/js/5.cb5eef92.js"><link rel="prefetch" href="/assets/js/50.05253cac.js"><link rel="prefetch" href="/assets/js/51.5bbf4031.js"><link rel="prefetch" href="/assets/js/52.c1e4adf2.js"><link rel="prefetch" href="/assets/js/53.88992f99.js"><link rel="prefetch" href="/assets/js/54.3b8c2b85.js"><link rel="prefetch" href="/assets/js/55.9aeb6a7e.js"><link rel="prefetch" href="/assets/js/56.2149189d.js"><link rel="prefetch" href="/assets/js/57.227f6cef.js"><link rel="prefetch" href="/assets/js/58.b1237b9a.js"><link rel="prefetch" href="/assets/js/59.e8fa8758.js"><link rel="prefetch" href="/assets/js/6.2b76e1e2.js"><link rel="prefetch" href="/assets/js/60.3cd60266.js"><link rel="prefetch" href="/assets/js/61.22068599.js"><link rel="prefetch" href="/assets/js/62.8c2d282f.js"><link rel="prefetch" href="/assets/js/63.27b7366f.js"><link rel="prefetch" href="/assets/js/64.a265b137.js"><link rel="prefetch" href="/assets/js/65.9ab2cdc3.js"><link rel="prefetch" href="/assets/js/66.32a9bcd0.js"><link rel="prefetch" href="/assets/js/67.626416a8.js"><link rel="prefetch" href="/assets/js/68.468011f1.js"><link rel="prefetch" href="/assets/js/69.6fa7a8cc.js"><link rel="prefetch" href="/assets/js/7.dfc6e7d0.js"><link rel="prefetch" href="/assets/js/70.55d7aaa5.js"><link rel="prefetch" href="/assets/js/71.1aae043b.js"><link rel="prefetch" href="/assets/js/72.80486310.js"><link rel="prefetch" href="/assets/js/73.e7d1fa71.js"><link rel="prefetch" href="/assets/js/74.134ba6a5.js"><link rel="prefetch" href="/assets/js/75.45cbaec7.js"><link rel="prefetch" href="/assets/js/76.f9a3fea2.js"><link rel="prefetch" href="/assets/js/77.276a13ac.js"><link rel="prefetch" href="/assets/js/78.e9417847.js"><link rel="prefetch" href="/assets/js/79.1af2da68.js"><link rel="prefetch" href="/assets/js/8.bc9e539d.js"><link rel="prefetch" href="/assets/js/80.8911a5c0.js"><link rel="prefetch" href="/assets/js/81.ae9b0772.js"><link rel="prefetch" href="/assets/js/82.fbd4b6c9.js"><link rel="prefetch" href="/assets/js/83.79a19767.js"><link rel="prefetch" href="/assets/js/84.5949e38b.js"><link rel="prefetch" href="/assets/js/85.976c8b08.js"><link rel="prefetch" href="/assets/js/86.4ae98b8b.js"><link rel="prefetch" href="/assets/js/87.976a8161.js"><link rel="prefetch" href="/assets/js/88.6a949c1b.js"><link rel="prefetch" href="/assets/js/89.e71ef4c7.js"><link rel="prefetch" href="/assets/js/9.96730d0b.js"><link rel="prefetch" href="/assets/js/90.f9fba070.js"><link rel="prefetch" href="/assets/js/91.f09467ae.js"><link rel="prefetch" href="/assets/js/92.28721b11.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8eb0d87d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">HACV</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/01.About/" class="nav-link">✡️About</a></div><div class="nav-item"><a href="/02.DataStructureAndAlgorithm/" class="nav-link">🐾数据结构和算法</a></div><div class="nav-item"><a href="/03.OS/" class="nav-link router-link-active">💻操作系统</a></div><div class="nav-item"><a href="/04.Net/" class="nav-link">☁️网络</a></div><div class="nav-item"><a href="/05.SE/" class="nav-link">☕️软件工程</a></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">💾数据库</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">⭐️硬件和编译</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">🔧Tools</a></div><div class="nav-item"><a href="/09.Language/" class="nav-link">⚛️Language</a></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/01.About/" class="nav-link">✡️About</a></div><div class="nav-item"><a href="/02.DataStructureAndAlgorithm/" class="nav-link">🐾数据结构和算法</a></div><div class="nav-item"><a href="/03.OS/" class="nav-link router-link-active">💻操作系统</a></div><div class="nav-item"><a href="/04.Net/" class="nav-link">☁️网络</a></div><div class="nav-item"><a href="/05.SE/" class="nav-link">☕️软件工程</a></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">💾数据库</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">⭐️硬件和编译</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">🔧Tools</a></div><div class="nav-item"><a href="/09.Language/" class="nav-link">⚛️Language</a></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>进程间通信（IPC）</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#一、现今『常用』的4种ipc" class="sidebar-link">一、现今『常用』的4种IPC</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（1）管道-使用最简单" class="sidebar-link">（1）管道 (使用最简单)</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（2）共享映射区-无血缘关系" class="sidebar-link">（2）共享映射区 (无血缘关系)</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（3）信号-开销最小" class="sidebar-link">（3）信号 (开销最小)</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（4）本地套接字-最稳定" class="sidebar-link">（4）本地套接字 (最稳定)</a></li></ul></li><li><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#二、管道" class="sidebar-link">二、管道</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#三、共享内存（或者叫“共享映射”）" class="sidebar-link">三、共享内存（或者叫“共享映射”）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（1）linux下7种文件类型（重要）" class="sidebar-link">（1）Linux下7种文件类型（重要）</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（2）共享内存ipc详解" class="sidebar-link">（2）共享内存IPC详解</a></li></ul></li><li><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#三、信号『软中断』" class="sidebar-link">三、信号『软中断』</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（1）信号的概念" class="sidebar-link">（1）信号的概念</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（2）信号的特征" class="sidebar-link">（2）信号的特征</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（3）如何产生信号？-产生信号-5-种方式" class="sidebar-link">（3）如何产生信号？ 产生信号 5 种方式</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（4）关于信号的状态和一些常用的名词。" class="sidebar-link">（4）关于信号的状态和一些常用的名词。</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（5）pcb结构体中，有2个非常重要的成员：" class="sidebar-link">（5）PCB结构体中，有2个非常重要的成员：</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（6）信号的处理方式-（假设没有前面那些奇奇怪怪的东西）" class="sidebar-link">（6）信号的处理方式: （假设没有前面那些奇奇怪怪的东西）</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#（7）信号4要素" class="sidebar-link">（7）信号4要素</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#默认动作：" class="sidebar-link">默认动作：</a></li></ul></li><li><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#四、信号的产生（具体我们怎么用）" class="sidebar-link">四、信号的产生（具体我们怎么用）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#_1）终端按键产生信号" class="sidebar-link">1）终端按键产生信号</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#_2）硬件异常产生信号" class="sidebar-link">2）硬件异常产生信号</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#_3）kill函数-命令产生信号" class="sidebar-link">3）kill函数/命令产生信号</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#_4）raise和abort函数" class="sidebar-link">4）raise和abort函数</a></li><li class="sidebar-sub-header"><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#_5）软件条件产生信号" class="sidebar-link">5）软件条件产生信号</a></li></ul></li><li><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#五、信号捕捉" class="sidebar-link">五、信号捕捉</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.OS/Linux/%E2%80%94%E2%80%9405.%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1.html#六（第4）" class="sidebar-link">六（第4）</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="进程间通信（ipc）"><a href="#进程间通信（ipc）" class="header-anchor">#</a> 进程间通信（IPC）</h1> <h2 id="一、现今『常用』的4种ipc"><a href="#一、现今『常用』的4种ipc" class="header-anchor">#</a> 一、现今『常用』的4种IPC</h2> <p>（主要4种，主要学）</p> <h3 id="（1）管道-使用最简单"><a href="#（1）管道-使用最简单" class="header-anchor">#</a> （1）管道 (使用最简单)</h3> <ul><li>语法最方便，代码编写量最少。与管道对应的，另一种通信方式是<strong>fifo</strong>：我们把它称之为“有名管道”，所以有书，称<strong>pipe</strong>管道为：“未名管道”或者“匿名管道”,用于（<strong>非血缘关系</strong>进程间通信）</li></ul> <h3 id="（2）共享映射区-无血缘关系"><a href="#（2）共享映射区-无血缘关系" class="header-anchor">#</a> （2）共享映射区 (无血缘关系)</h3> <ul><li>相对管道，可以在<strong>没有血缘关系</strong>的进程之间，完成数据传递。</li></ul> <h3 id="（3）信号-开销最小"><a href="#（3）信号-开销最小" class="header-anchor">#</a> （3）信号 (开销最小)</h3> <h3 id="（4）本地套接字-最稳定"><a href="#（4）本地套接字-最稳定" class="header-anchor">#</a> （4）本地套接字 (最稳定)</h3> <ul><li><p>相较于前3种，难度最大，但是稳定性最好</p></li> <li><p>本地套接字：我们放最后，在系统编程快结束阶段，在网络编程阶段，讲完以后，顺路把本地套接字介绍出来。</p></li></ul> <h2 id="二、管道"><a href="#二、管道" class="header-anchor">#</a> 二、管道</h2> <div class="language-c line-numbers-mode"><pre class="language-c"><code>pipe函数在头文件，<span class="token operator">&lt;</span>unistd<span class="token punctuation">.</span>h<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><blockquote><ul><li>pipe函数，管道的一般读写行为，</li></ul></blockquote></blockquote> <blockquote><ul><li>与管道对应的，另一种通信方式是fifo：我们把它称之为“有名管道”
+所以有书，称pipe管道为：“未名管道”或者“匿名管道”
+用于（<strong>非血缘关系</strong>进程间通信）</li></ul></blockquote> <p>管道是有大小的，默认是4K大小。当然是可以调整的</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/wait.h&gt;</span></span>
+
+<span class="token keyword">void</span> <span class="token function">sys_err</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">perror</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">pid_t</span> pid<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> fd<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token string">&quot;test for pipe\n&quot;</span><span class="token punctuation">;</span>
+    
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">pipe</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> 
+       <span class="token function">sys_err</span><span class="token punctuation">(</span><span class="token string">&quot;pipe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   pid <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>pid <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token function">sys_err</span><span class="token punctuation">(</span><span class="token string">&quot;fork err&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pid <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">write</span><span class="token punctuation">(</span>STDOUT_FILENO<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">wait</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h2 id="三、共享内存（或者叫“共享映射”）"><a href="#三、共享内存（或者叫“共享映射”）" class="header-anchor">#</a> 三、共享内存（或者叫“共享映射”）</h2> <p>主要用到一个函数叫做mmap函数
+可以用来在<strong>父子进程</strong>，或者是<strong>没有血缘关系</strong>的进程之间完成数据传递</p> <p>伪文件？？</p> <h3 id="（1）linux下7种文件类型（重要）"><a href="#（1）linux下7种文件类型（重要）" class="header-anchor">#</a> （1）Linux下7种文件类型（重要）</h3> <blockquote><ul><li><code>文件</code> 实际占用磁盘存储空间</li> <li><code>d 目录</code>  占用</li> <li><code>l符号链接</code>	占用——特殊一点，他记录的是你链接的路径。</li></ul> <blockquote><ul><li>只有上面的3种占用，下面4种都不占用。下面4种，我们统一称它为伪文件，因为他们不是真正的文件
+他也不会占用磁盘存储。</li></ul></blockquote> <ul><li><code>套接字</code></li> <li><code>b块设备</code></li> <li><code>c字符设备</code></li> <li><code>p管道</code></li></ul></blockquote> <p>通信
+单工方式（<strong>遥控器</strong>）单向，单工
+半双工方式（数据只能在一个方向流动—）双向，半双工
+全双工方式（比如，手机，电话）双向，全双工</p> <h3 id="（2）共享内存ipc详解"><a href="#（2）共享内存ipc详解" class="header-anchor">#</a> （2）共享内存IPC详解</h3> <p><strong>mmap为一个系统调用函数。</strong></p> <blockquote><ul><li>mmap函数
+参数多，每个参数都易失败
+1）借助我们创建出的共享内存，访问磁盘文件
+2）<code>在这之前</code>，我们都是用open,write,read访问磁盘文件的。
+3）现如今，我们可以通过mmap创建，一个映射区，将磁盘上的文件，映射到内存当中。
+映射到内存以后，我就可以通过指针来访问了。</li></ul></blockquote> <p>有的论坛上，有人说，可以用mmap创建那个匿名映射区。</p> <p>无血缘关系的进程可以打开同一个文件进行通信吗?为什么?</p> <p>到底什么是建立映射区？
+一般，创建映射区的大小取决于，创建</p> <p>我们在映射的时候，我们可以将整个磁盘文件直接映射到这上面，也可以截取一部分，映射进去。
+offset做偏移</p> <h4 id="_1）mmap创建映射区"><a href="#_1）mmap创建映射区" class="header-anchor">#</a> 1）mmap创建映射区</h4> <p>比如，用malloc创建0字节大小的空间是可以的。而且，还能用free函数区把他释放掉。</p> <p>参数可能出现的错误</p> <p>思考：</p> <ol><li><p>可以open的时候O_CREAT一个新文件来创建映射区吗?
+可以，但是不能创建出一个0字节大小的映射区。</p></li> <li><p>如果open时O_RDONLY, mmap时PROT参数指定PROT_READ|PROT_WRITE会怎样？
+不行，权限不足，因为文件是只读，映射区却想读还想写</p></li> <li><p>文件描述符先关闭，对mmap映射有没有影响？
+没有，因为文件描述符是用来操作文件的句柄的。</p></li> <li><p>如果文件偏移量为1000会怎样？
+出现无效参数错误，必须是4K的整数倍。因为这个是内核里面的MMU帮你映射的、</p></li> <li><p>对mem越界操作会怎样？
+不可以</p></li> <li><p>如果mem++，munmap可否成功？
+不能成功，</p></li> <li><p>mmap什么情况下会调用失败？</p></li> <li><p>如果不检测mmap的返回值，会怎样？
+很容易会出问题。。。除非你很有信心</p></li></ol> <p>总结：使用mmap时务必注意以下事项：</p> <blockquote><ul><li>1.创建映射区的过程中，隐含着一次对映射文件的读操作。(实际上，要把文件读一遍)</li> <li>2.当MAP_SHARED时，要求：<code>映射区的权限应 &lt;=文件打开的权限</code>(出于对映射区的保护)。而MAP_PRIVATE则无所谓，因为mmap中的权限是对内存的限制。</li> <li>3.映射区的释放与文件关闭无关。<strong>只要映射建立成功，文件可以立即关闭</strong>。(因为，操作文件的方式发生了变化)</li> <li>4.特别注意，当映射文件大小为0时，不能创建映射区。所以：用于映射的文件必须要有实际大小！！	mmap使用时常常会出现总线错误，通常是由于共享文件存储空间大小引起的。</li> <li>5.munmap传入的地址一定是mmap的返回地址。坚决杜绝指针<code>++</code>，'--'操作。</li> <li>6.如果文件偏移量必须为4K的整数倍</li> <li>7.mmap创建映射区出错概率非常高，一定要检查返回值，确保映射区建立成功再进行后续操作。</li></ul></blockquote> <p>常见的硬件错误
+1）段错误
+2）除0的浮点数
+3）总线错误</p> <p>invalid argv无效参数</p> <h4 id="_2）mmap父子进程之间通信（有血缘关系）"><a href="#_2）mmap父子进程之间通信（有血缘关系）" class="header-anchor">#</a> 2）mmap父子进程之间通信（有血缘关系）</h4> <p>Linux下文件的存储
+分为2部分
+1）inode存储文件的属性信息
+inode里面包含的是，近乎于结构体
+文件大小，权限，文件类型，所有者，所属组，文件存储指针地址（指向数据块的首地址，我们的数据块，最终是放在磁盘上的）
+也就是你ls看出来的那些都在那个里面，
+(注意：文件名没有保存在这)
+2） 不对着单词。。。directy(目录项)</p> <p>文件名+iNode编号</p> <p><code>实际上我们所谓的硬链接。本质就是目录项</code></p> <h4 id="_2）匿名映射区"><a href="#_2）匿名映射区" class="header-anchor">#</a> 2）匿名映射区</h4> <p>缺陷是，每次创建映射区一定要依赖一个文件才能实现。通常为了建立映射区要open一个temp文件，创建好了再unlink、close掉，比较麻烦。</p> <p>可以直接使用匿名映射来代替。其实Linux系统给我们提供了创建匿名映射区的方法，无需依赖一个文件即可创建映射区。同样需要借助标志位参数flags来指定。</p> <p>有没有一种方法，不需要一个文件，就能创建映射区，专门用于父子进程之间通信呢？
+匿名映射区
+（这种，是我不需要把映射区中的什么东西，反映到物理磁盘上，我只用这个映射区完成这两个进程之间的IPC）
+还是借助mmap函数，多一个宏
+注意，这个宏，只在Linux下使用，在unix和其他类Unix上的操作系统上不一定有！</p> <h4 id="_3）没有血缘关系的进程之间mmmap通信"><a href="#_3）没有血缘关系的进程之间mmmap通信" class="header-anchor">#</a> 3）没有血缘关系的进程之间mmmap通信</h4> <p>实质上mmap是内核借助文件帮我们创建了一个映射区，多个进程之间利用该映射区完成数据传递。</p> <p>由于内核空间多进程共享，因此无血缘关系的进程间也可以使用mmap来完成通信。
+只要设置相应的标志位参数flags即可。
+若想实现共享，当然应该使用MAP_SHARED了。</p> <p>一个进程利用文件创建一个映射区，另外一个进程用相同的文件创建一个映射区。
+然后把数据写到映射区里面。
+<font style="background:yellow;">关键：创建映射区的文件必须是相同的文件。</font></p> <p>直接用文件在进程之间进行通信也是可以的</p> <p>所以，实际上，早open文件之后，操作系统确确实实就是做了一个mmap</p> <h2 id="三、信号『软中断』"><a href="#三、信号『软中断』" class="header-anchor">#</a> 三、信号『软中断』</h2> <ul><li>IPC之信号,信号在汇编中叫『“<strong>软中断</strong>”』</li></ul> <p>目标</p> <ol><li><p>信号的概念
+基本的属性，机制。 软中断   延时性
+信号4要素。 ：
+我们在讲变量的时候有3要素：变量类型，变量名和变量值。使用变量前，要对3要素有基本的了解</p></li> <li><p>如何产生信号？ 产生信号 5 种方式
+其中重要的：kill函数和alarm函数（和闹钟或者定时器有联系）。
+和alarm函数对应的，还有setitimer函数。可以说是前者的提升版。
+前者定时比较粗糙，后者可以完成精确定时。</p></li> <li><p><strong>信号集</strong>操作函数。
+信号在Linux内核里面有一个集合的描述形式。对这个集合会有一系列函数对他操作。
+主要操作函数有2个，分别针对：信号屏蔽字和未决信号集
+自定义集合：  5函数 emptyset  fillset  addset  delset  ismember</p> <p>信号屏蔽字   sigprocmask</p> <p>未决信号集   sigpending</p></li> <li><p>信号的捕捉</p> <p>如何注册信号捕捉函数。、、当你完成这个的注册之后，后期关于信号的捕捉工作就是由Linux内核帮助你做了。我们只需要在应用程序中完成注册。</p> <p>signal()
+主要用到的函数：sigaction函数
+**sigaction函数。(重点)**这个函数掌握了，信号捕捉这章就没问题了。</p> <p>struct sigaction:  sa_handler
+sa_mask
+sa_flags = 0;</p></li></ol> <h3 id="（1）信号的概念"><a href="#（1）信号的概念" class="header-anchor">#</a> （1）信号的概念</h3> <p>实际上计算机里面所看到的所有的东西，在生活当中都会能够找到他的影子。和印证、</p> <h3 id="（2）信号的特征"><a href="#（2）信号的特征" class="header-anchor">#</a> （2）信号的特征</h3> <p>1.简单2.不能携带大量信息3.满足某个特设条件才发送。
+所以，信号不能带个结构体过去。</p> <p>信号的原理和时钟中断的原理几乎是一样的，只不过时钟中断时通过<strong>硬件</strong>来完成的。
+信号的话，是通过软件手段俩实现的。</p> <p><font size="5" style="background:yellow;">有的参考书，也称<strong>信号</strong>为<strong>软中断</strong></font></p> <p>也就是借助<strong>软件手段</strong>实现的中断机制。
+信号的特质：由于信号是通过软件方法实现，其实现手段导致信号有很强的延时性（这个说法是针对CPU说的）。但对于用户来说，这个延迟时间非常短，不易察觉。</p> <p>每个进程收到的所有信号，都是<font size="5" style="background:yellow;">由内核负责发送的</font>
+内核处理。
+所以严谨的讲，进程A给进程B发信号，这样的说法，应该说是A驱使内核给B发信号。</p> <h3 id="（3）如何产生信号？-产生信号-5-种方式"><a href="#（3）如何产生信号？-产生信号-5-种方式" class="header-anchor">#</a> （3）如何产生信号？ 产生信号 5 种方式</h3> <p><strong>与信号相关的事件和状态</strong></p> <p>产生信号 5 种方式：</p> <ol><li><strong>按键产生</strong>，如：Ctrl+c、Ctrl+z、Ctrl+\  （比如Ctrl+Z 会导致，这个按键会导致内核向你当前执行的进程发送一个信号过去，这个信号会把进程杀死）</li> <li><strong>系统调用</strong>产生，如：kill、raise、abort</li> <li><strong>软件条件</strong>产生，如：<strong>定时器alarm</strong></li> <li><strong>硬件异常</strong>产生，如：非法访问内存(段错误)、除0(浮点数例外)、内存对齐出错(总线错误)（这个总线错误，比如咋们在mmap建立映射区的时候出现的总线错误）</li> <li><strong>命令产生</strong>，如：kill命令，实际上其他命令也有，但一般研究这</li></ol> <h3 id="（4）关于信号的状态和一些常用的名词。"><a href="#（4）关于信号的状态和一些常用的名词。" class="header-anchor">#</a> （4）关于信号的状态和一些常用的名词。</h3> <p>比如Ctrl+Z ，马上信号产生了-》马上递送-》递达
+一般我们认为，从信号产生到最后递达，我们认为是瞬时的。可以说时间忽略不计。</p> <p><font size="5" style="background:yellow;">但是，信号产生之后，可能由于某种原因被阻塞(屏蔽)，这样就<strong>不能递达</strong>了，我们称之为“阻塞态”。Linux内核当中对这个阻塞态有一个描述的机制，这个描述他的机制对应的是一个集合：这个集合叫做“<strong>阻塞信号集</strong>”，还有另外一个名字，叫做“<strong>信号屏蔽字</strong>”</font>
+用此来描述信号的阻塞状态。</p> <p><font size="5" style="background:red;">与“<strong>信号屏蔽字</strong>”相呼应的，有另外一个集合，这个集合叫做：“<strong>未决信号集</strong>”.所谓未决，也就是<strong>这个信号没有被处理掉（注意理解这个，这个和前面）</strong>。所以说，他处于一个未决状态。也是在信号产生和递达之间，是**转瞬即逝（注意这个词语，虽然想吐槽，那设计这个干啥。。）**的</font></p> <p><strong>递达</strong>：递送并且到达进程。
+<strong>未决</strong>：产生和递达之间的状态。主要由于阻塞(屏蔽)导致该状态。</p> <h3 id="（5）pcb结构体中，有2个非常重要的成员："><a href="#（5）pcb结构体中，有2个非常重要的成员：" class="header-anchor">#</a> （5）PCB结构体中，有2个非常重要的成员：</h3> <p>1）未决信号集-----为一个集合
+2）信号屏蔽字（阻塞信号集）-----为一个集合
+关系：“阻塞信号集”，影响（决定）“未决信号集”
+当然：决定的前提是，信号要产生。
+比如：我的某某进程，提前阻塞某编号的信号，0-》1
+但是这个时候，那个编号的信号本来就没产生，他的未决是0，那么“阻塞信号集”就没影响。</p> <p>比如：
+一个信号，要是不正常的，未决，那么未决信号集对应的编号从0-》1，然后处理，那么马上要从1-》0</p> <p>而，阻塞信号集，要是信号被阻塞，那么对应的编号从0-》1，而，阻塞过程，未决信号集对应的编号的0和1翻转，不能马上进行，所以，阻塞信号集，影响未决信号集</p> <h3 id="（6）信号的处理方式-（假设没有前面那些奇奇怪怪的东西）"><a href="#（6）信号的处理方式-（假设没有前面那些奇奇怪怪的东西）" class="header-anchor">#</a> （6）信号的处理方式: （假设没有前面那些奇奇怪怪的东西）</h3> <ol><li>执行默认动作</li> <li>忽略(丢弃)    （注意，这个是信号的处理方式，并不是说没有处理）</li> <li>捕捉(调用户处理函数)</li></ol> <h3 id="（7）信号4要素"><a href="#（7）信号4要素" class="header-anchor">#</a> （7）信号4要素</h3> <p>信号4要素：
+1）信号名
+2）信号编号，几号编号
+3）每个信号的默认处理动作
+4）信号所对应的事件  几号信号是专门对应一个事件所产生的。比如大家所熟知的段错误，是由于收到一个信号产生的。是在你非法访问内存的时候出现的（事件）</p> <p>我们要掌握常用的信号的编号，名称，默认的事件
+2号，3号，7号（总线错误），8号（浮点数），9号，10，11，13号，14号，15号17，19，20号
+要是刚开始记不住可以man</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">man</span> <span class="token number">7</span> signal
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>注意点：man出来的，有的信号对应3个值？？
+如何选择？
+linux下取中间的值，前面和后面的是针对不同平台下信号的编号。
+啥不同平台？？？也就是我们所提到的，其他的那些Unix的平台。
+比如，sprac的CPU架构，alpha的CPU架构的就不同。</p> <h3 id="默认动作："><a href="#默认动作：" class="header-anchor">#</a> 默认动作：</h3> <p>Term：终止进程
+Ign： 忽略信号 (默认即时对该种信号忽略操作)
+Core：终止进程，生成Core文件。(查验进程死亡原因， 用于gdb调试)
+上面的core，比如，我有次编程出现段错误啥的，然后，我们发现下面显示，啥啥啥给你弄到了那里转储
+也就是这，core文件就是来提供给你用来检查进程死亡原因的。主要应用于GDB调试，
+比如gdb调试段错误</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>-g gdb a.out run
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这样run到的停止的位置，就是出现段错误的位置，但是为何呢？？？
+实际上，实际上就是因为，a.out的程序在被段错误杀死的同时，产生了一个core文件，这个歌文件专门用于内核调试，gdb可以把他拿出来。</p> <p>Stop：停止（暂停）进程
+Cont：继续运行进程</p> <p>为了防止黑客，修改了很多信号的处理方式为忽略
+那样，病毒，我们无法通过kill进行杀死，
+所以，Linux内核保留了两个，能够在必要的时候，将进程切实有效的杀死的信号。不允许忽略和捕捉。
+也就是特殊信号9和19号</p> <h2 id="四、信号的产生（具体我们怎么用）"><a href="#四、信号的产生（具体我们怎么用）" class="header-anchor">#</a> 四、信号的产生（具体我们怎么用）</h2> <h3 id="_1）终端按键产生信号"><a href="#_1）终端按键产生信号" class="header-anchor">#</a> 1）终端按键产生信号</h3> <p>（终端下，按下快捷键）</p> <pre><code>Ctrl + c  → 2) SIGINT（终止/中断）	 &quot;INT&quot; ----Interrupt
+Ctrl + z  → 20) SIGTSTP（暂停/停止）  &quot;T&quot; ----Terminal 终端。
+Ctrl + \  → 3) SIGQUIT（退出）	（将一个进程退出）（核心已转储——这个进程在使用过程中所使用的内存，我帮你转存到其他位置上了，然后把这个进程干掉）
+</code></pre> <p>比如，我们在bash中输入cat，啥的
+我Ctrl+Z快捷键，那个就到后台去了</p> <h3 id="_2）硬件异常产生信号"><a href="#_2）硬件异常产生信号" class="header-anchor">#</a> 2）硬件异常产生信号</h3> <p>（程序代码导致？？）</p> <pre><code>除0操作   → 8) SIGFPE (浮点数例外)	&quot;F&quot; -----float 浮点数。
+</code></pre> <p>比如代码</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span>a<span class="token operator">/</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><pre><code>非法访问内存  → 11) SIGSEGV (段错误)
+总线错误  → 7) SIGBUS	
+</code></pre> <h3 id="_3）kill函数-命令产生信号"><a href="#_3）kill函数-命令产生信号" class="header-anchor">#</a> 3）kill函数/命令产生信号</h3> <p>kill命令产生信号：kill -SIGKILL pid
+kill函数：给指定进程发送指定信号(不一定杀死)
+int kill(pid_t pid, int sig);	 成功：0；失败：-1 (ID非法，信号非法，普通用户杀init进程等权级问题)，设置errno</p> <p>比如在终端，杀19666号进程
+表示给19666进程发送9号信号。注意，kill不一定会杀死进程，取决于发送的信号</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">kill</span> -9 <span class="token number">19666</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>此外和bash命令，还有一个同名的函数。</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">int</span> <span class="token function">kill</span><span class="token punctuation">(</span><span class="token class-name">pid_t</span> pid<span class="token punctuation">,</span> <span class="token keyword">int</span> sig<span class="token punctuation">)</span><span class="token punctuation">;</span>	
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_4）raise和abort函数"><a href="#_4）raise和abort函数" class="header-anchor">#</a> 4）raise和abort函数</h3> <p>在理解kill函数之后，理解这2个函数就简单了。</p> <h3 id="_5）软件条件产生信号"><a href="#_5）软件条件产生信号" class="header-anchor">#</a> 5）软件条件产生信号</h3> <p>alarm函数	
+<strong>每个进程都有且只有唯一个定时器。</strong>
+实际执行时间 = 系统时间 + 用户时间 + 等待时间</p> <p>我们要想要我们的应用程序执行效率变高，首先要优化I/o</p> <p>setitimer函数
+setitimer函数
+设置定时器(闹钟)。 可代替alarm函数。精度微秒us，可以实现周期定时。</p> <h2 id="五、信号捕捉"><a href="#五、信号捕捉" class="header-anchor">#</a> 五、信号捕捉</h2> <p>signal函数
+注册一个信号捕捉函数：
+typedef void (*sighandler_t)(int);
+sighandler_t signal(int signum, sighandler_t handler);
+该函数由ANSI定义，由于历史原因在不同版本的Unix和不同版本的Linux中可能有不同的行为。因此应该尽量避免使用它，<strong>取而代之使用sigaction函数。</strong></p> <p>//比如</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/time.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;signal.h&gt;</span></span>
+
+<span class="token keyword">void</span> <span class="token function">myfunc</span><span class="token punctuation">(</span><span class="token keyword">int</span> signo<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;hello world\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">////</span>
+    <span class="token comment">////</span>
+    <span class="token comment">//</span>
+    <span class="token comment">//</span>
+    <span class="token function">raise</span><span class="token punctuation">(</span>SIGALRM<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">struct</span> <span class="token class-name">itimerval</span> it<span class="token punctuation">,</span> oldit<span class="token punctuation">;</span>
+	<span class="token function">signal</span><span class="token punctuation">(</span>SIGALRM<span class="token punctuation">,</span> myfunc<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//注册SIGALRM信号的捕捉处理函数。</span>
+
+	it<span class="token punctuation">.</span>it_value<span class="token punctuation">.</span>tv_sec <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+	it<span class="token punctuation">.</span>it_value<span class="token punctuation">.</span>tv_usec <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+	it<span class="token punctuation">.</span>it_interval<span class="token punctuation">.</span>tv_sec <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+	it<span class="token punctuation">.</span>it_interval<span class="token punctuation">.</span>tv_usec <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">setitimer</span><span class="token punctuation">(</span>ITIMER_REAL<span class="token punctuation">,</span> <span class="token operator">&amp;</span>it<span class="token punctuation">,</span> <span class="token operator">&amp;</span>oldit<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;setitimer error&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><p>注意：在Linux系统编程阶段，我们是不会直接用位操作的方法去操作一个二进制位的。
+操作系统，都会给我们提供对应的函数去做这个</p> <p>位图在Linux内核中被大量使用。下面的源代码文件包含这些位图结构的通用接口：</p> <p>lib/bitmap.c
+include/linux/bitmap.h
+除了这两个文件，还有一个特定的架构头文件，对特定架构的位运算进行优化。对于x86_64架构，使用下面头文件：</p> <p>arch/x86/include/asm/bitops.h
+在Linux内核中，位图是一个unsigned long类型的数组。因此，一个位图可以简单地声明为：</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">unsigned</span> <span class="token keyword">long</span> my_bitmap<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">/*声明一个16比特的位图 */</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="六（第4）"><a href="#六（第4）" class="header-anchor">#</a> 六（第4）</h2> <blockquote><ul><li>一、竞态条件（APUE叫时序竞态）
+由于竞争，导致程序先后两次执行过程当中发现变化。
+我们常常叫“产生了竞态条件”或“发生了时序竞态”</li></ul> <blockquote><ul><li>1）pause函数。</li></ul> <blockquote><ul><li>借助这个函数，实现sleep函数</li></ul></blockquote> <ul><li>2）借助pause函数特性和sleep函数的实现，分析时序竞态产生的原因（了解）</li> <li>3）全局变量的异步IO</li> <li>4）可重入函数、不可重入函数</li></ul></blockquote></blockquote> <blockquote><ul><li>二、SIGCHLD信号：（关于这个信号，在我们子进程和父进程的回收当中的应用）
+回收子进程 <code>ls | wc -l</code></li></ul></blockquote> <blockquote><ul><li>三、信号传参：
+信号中断系统调用。</li></ul></blockquote> <p>终端</p> <p>进程组</p> <p>会话</p> <p>守护进程</p> <pre><code>编写一个守护进程。
+
+1. 创建子进程  fork
+
+2. 子进程创建新会话  setsid()
+
+3. 改变进程的工作目录   chdir()
+
+4. 指定文件掩码  umask()
+
+5. 将0/1/2重定向  /dev/null   dup2()
+
+6. 守护进程主逻辑。
+
+7. 退出。。。
+</code></pre></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.e37a6e1c.js" defer></script><script src="/assets/js/25.cff7296a.js" defer></script>
+  </body>
+</html>
