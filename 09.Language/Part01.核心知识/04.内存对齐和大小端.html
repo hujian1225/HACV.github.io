@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>内存对齐和大小端 | HACV</title>
+    <meta name="description" content="Personal Blog Website">
+    <link rel="icon" href="/images/photo.jpg">
+  <link rel="manifest" href="/images/photo.jpg">
+  <link rel="apple-touch-icon" href="/images/photo.jpg">
+  <meta http-quiv="pragma" cotent="no-cache">
+  <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+  <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.8eb0d87d.css" as="style"><link rel="preload" href="/assets/js/app.6a6cf01c.js" as="script"><link rel="preload" href="/assets/js/88.f76666ba.js" as="script"><link rel="prefetch" href="/assets/js/10.95a4988c.js"><link rel="prefetch" href="/assets/js/11.99975b23.js"><link rel="prefetch" href="/assets/js/12.52d4faf3.js"><link rel="prefetch" href="/assets/js/13.756be11b.js"><link rel="prefetch" href="/assets/js/14.7ac73266.js"><link rel="prefetch" href="/assets/js/15.83aba54c.js"><link rel="prefetch" href="/assets/js/16.c05341bb.js"><link rel="prefetch" href="/assets/js/17.f5f19be9.js"><link rel="prefetch" href="/assets/js/18.d791ce02.js"><link rel="prefetch" href="/assets/js/19.c656de32.js"><link rel="prefetch" href="/assets/js/2.86e491db.js"><link rel="prefetch" href="/assets/js/20.dbdac4cf.js"><link rel="prefetch" href="/assets/js/21.7f8b6081.js"><link rel="prefetch" href="/assets/js/22.c64e10fe.js"><link rel="prefetch" href="/assets/js/23.6edd4a51.js"><link rel="prefetch" href="/assets/js/24.4c86e07c.js"><link rel="prefetch" href="/assets/js/25.708e0259.js"><link rel="prefetch" href="/assets/js/26.6171ff26.js"><link rel="prefetch" href="/assets/js/27.101e45c2.js"><link rel="prefetch" href="/assets/js/28.a3ddd150.js"><link rel="prefetch" href="/assets/js/29.8db0fc55.js"><link rel="prefetch" href="/assets/js/3.ca474f61.js"><link rel="prefetch" href="/assets/js/30.4fb64b6b.js"><link rel="prefetch" href="/assets/js/31.b7d6826c.js"><link rel="prefetch" href="/assets/js/32.fd4ef510.js"><link rel="prefetch" href="/assets/js/33.da2a2d36.js"><link rel="prefetch" href="/assets/js/34.a75a4a9b.js"><link rel="prefetch" href="/assets/js/35.008bd124.js"><link rel="prefetch" href="/assets/js/36.7fdcec8f.js"><link rel="prefetch" href="/assets/js/37.2dd1554f.js"><link rel="prefetch" href="/assets/js/38.2a90b94e.js"><link rel="prefetch" href="/assets/js/39.6ac394c6.js"><link rel="prefetch" href="/assets/js/4.0fd0afc7.js"><link rel="prefetch" href="/assets/js/40.f877c521.js"><link rel="prefetch" href="/assets/js/41.d6a7ad4c.js"><link rel="prefetch" href="/assets/js/42.3e65136d.js"><link rel="prefetch" href="/assets/js/43.b5104820.js"><link rel="prefetch" href="/assets/js/44.e0c24050.js"><link rel="prefetch" href="/assets/js/45.966945e5.js"><link rel="prefetch" href="/assets/js/46.e7c65bb4.js"><link rel="prefetch" href="/assets/js/47.d182b3b8.js"><link rel="prefetch" href="/assets/js/48.061d72ee.js"><link rel="prefetch" href="/assets/js/49.7af29e85.js"><link rel="prefetch" href="/assets/js/5.ed76c7f6.js"><link rel="prefetch" href="/assets/js/50.3933a846.js"><link rel="prefetch" href="/assets/js/51.d14a663e.js"><link rel="prefetch" href="/assets/js/52.9bd86a6c.js"><link rel="prefetch" href="/assets/js/53.33da0785.js"><link rel="prefetch" href="/assets/js/54.52e29302.js"><link rel="prefetch" href="/assets/js/55.bbfeffa2.js"><link rel="prefetch" href="/assets/js/56.31778059.js"><link rel="prefetch" href="/assets/js/57.7e0002d2.js"><link rel="prefetch" href="/assets/js/58.bea6778f.js"><link rel="prefetch" href="/assets/js/59.8ab49fdf.js"><link rel="prefetch" href="/assets/js/6.30a00f42.js"><link rel="prefetch" href="/assets/js/60.6fea6bac.js"><link rel="prefetch" href="/assets/js/61.4db9380f.js"><link rel="prefetch" href="/assets/js/62.9e669fae.js"><link rel="prefetch" href="/assets/js/63.a719fab6.js"><link rel="prefetch" href="/assets/js/64.dc299df0.js"><link rel="prefetch" href="/assets/js/65.f1a7263a.js"><link rel="prefetch" href="/assets/js/66.42145677.js"><link rel="prefetch" href="/assets/js/67.34ef297a.js"><link rel="prefetch" href="/assets/js/68.bcf8bdeb.js"><link rel="prefetch" href="/assets/js/69.aa4965f0.js"><link rel="prefetch" href="/assets/js/7.f4c9ad88.js"><link rel="prefetch" href="/assets/js/70.fcd6a1e3.js"><link rel="prefetch" href="/assets/js/71.b48fe2c7.js"><link rel="prefetch" href="/assets/js/72.0fb0aa07.js"><link rel="prefetch" href="/assets/js/73.bd7d3bc7.js"><link rel="prefetch" href="/assets/js/74.a9109377.js"><link rel="prefetch" href="/assets/js/75.4583f330.js"><link rel="prefetch" href="/assets/js/76.2b1d2962.js"><link rel="prefetch" href="/assets/js/77.f5c8024e.js"><link rel="prefetch" href="/assets/js/78.5d61a25d.js"><link rel="prefetch" href="/assets/js/79.b56f9e62.js"><link rel="prefetch" href="/assets/js/8.50c0041b.js"><link rel="prefetch" href="/assets/js/80.f4e6107b.js"><link rel="prefetch" href="/assets/js/81.633ad67c.js"><link rel="prefetch" href="/assets/js/82.9150c65c.js"><link rel="prefetch" href="/assets/js/83.c4772a74.js"><link rel="prefetch" href="/assets/js/84.6277e215.js"><link rel="prefetch" href="/assets/js/85.c4d1a84c.js"><link rel="prefetch" href="/assets/js/86.22b63e66.js"><link rel="prefetch" href="/assets/js/87.9cc75cd7.js"><link rel="prefetch" href="/assets/js/89.af5fc494.js"><link rel="prefetch" href="/assets/js/9.3b0dda05.js"><link rel="prefetch" href="/assets/js/90.2b7a0780.js"><link rel="prefetch" href="/assets/js/91.aef4c4c0.js"><link rel="prefetch" href="/assets/js/92.d4357751.js"><link rel="prefetch" href="/assets/js/93.44f904c4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8eb0d87d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">HACV</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/01.About/" class="nav-link">✡️About</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">⭐️硬件</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">🔋软件</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/02.DataStructureAndAlgorithm/" class="nav-link">🐾数据结构和算法</a></li><li class="dropdown-item"><!----> <a href="/03.OS/" class="nav-link">💻操作系统</a></li><li class="dropdown-item"><!----> <a href="/04.Net/" class="nav-link">☁️计算机网络</a></li><li class="dropdown-item"><!----> <a href="/05.SE/" class="nav-link">✅软件工程</a></li></ul></div></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">⚡️数据库</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">⚙️工具</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/09.Language/" class="nav-link router-link-active">⭐️C++</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/01.About/" class="nav-link">✡️About</a></div><div class="nav-item"><a href="/07.InternalSkill/" class="nav-link">⭐️硬件</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">🔋软件</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/02.DataStructureAndAlgorithm/" class="nav-link">🐾数据结构和算法</a></li><li class="dropdown-item"><!----> <a href="/03.OS/" class="nav-link">💻操作系统</a></li><li class="dropdown-item"><!----> <a href="/04.Net/" class="nav-link">☁️计算机网络</a></li><li class="dropdown-item"><!----> <a href="/05.SE/" class="nav-link">✅软件工程</a></li></ul></div></div><div class="nav-item"><a href="/06.SQL/" class="nav-link">⚡️数据库</a></div><div class="nav-item"><a href="/08.Tools/" class="nav-link">⚙️工具</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/09.Language/" class="nav-link router-link-active">⭐️C++</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/HACV" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>内存对齐和大小端</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#⭐️01-内存对齐『核对版』" class="sidebar-link">⭐️01.内存对齐『核对版』</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#参考资料『记忆的』" class="sidebar-link">参考资料『记忆的』</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#典型例题" class="sidebar-link">典型例题</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_01-内存对齐的由来" class="sidebar-link">01.内存对齐的由来</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_02-实验观察内存对齐" class="sidebar-link">02.实验观察内存对齐</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_03-结构体内存对齐规则『核心』" class="sidebar-link">03.结构体内存对齐规则『核心』</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_3-1-自然对齐" class="sidebar-link">3.1.自然对齐</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_3-2-规则对齐" class="sidebar-link">3.2.规则对齐</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_3-3-综合方法" class="sidebar-link">3.3.综合方法</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_3-4-常见的普通类型字节数" class="sidebar-link">3.4.常见的普通类型字节数</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_04-复杂内存对齐分析（面试）" class="sidebar-link">04.复杂内存对齐分析（面试）</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_05-面试记录" class="sidebar-link">05.面试记录</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#测试环境（推翻第2条规则）" class="sidebar-link">测试环境（推翻第2条规则）</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#测试2" class="sidebar-link">测试2</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_06-做题时『我们是否真的需要分辨是4字节对齐还是8字节对齐？』" class="sidebar-link">06.做题时『我们是否真的需要分辨是4字节对齐还是8字节对齐？』</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_07-是否可以强制不内存对齐？" class="sidebar-link">07.是否可以强制不内存对齐？</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_08-可移植性" class="sidebar-link">08.可移植性</a></li></ul></li><li><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#⭐️02-大小端之争" class="sidebar-link">⭐️02.大小端之争</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#_2-1-引子" class="sidebar-link">2.1.引子</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#大端和小端存储" class="sidebar-link">大端和小端存储</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#一．概念" class="sidebar-link">一．概念</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#二．具体的，大端法和小端法的应用" class="sidebar-link">二．具体的，大端法和小端法的应用</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#三．大端法和小端法导致的问题：" class="sidebar-link">三．大端法和小端法导致的问题：</a></li><li class="sidebar-sub-header"><a href="/09.Language/Part01.%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04.%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%A4%A7%E5%B0%8F%E7%AB%AF.html#四．如何判别大端和小端" class="sidebar-link">四．如何判别大端和小端</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="内存对齐和大小端"><a href="#内存对齐和大小端" class="header-anchor">#</a> 内存对齐和大小端</h1> <h2 id="⭐️01-内存对齐『核对版』"><a href="#⭐️01-内存对齐『核对版』" class="header-anchor">#</a> ⭐️01.内存对齐『核对版』</h2> <h3 id="参考资料『记忆的』"><a href="#参考资料『记忆的』" class="header-anchor">#</a> 参考资料『记忆的』</h3> <ul><li>01.转载<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTY1MjY0MQ==&mid=2650753100&idx=4&sn=10fb278995426d9c5bcc07309d39c6f1&chksm=befedd0289895414c5e3b3ed0a952d3a0438e15e85e992129773b349b8e8f9b8590c6fc9167a&mpshare=1&scene=23&srcid=1005yjd59tg3vG08SxTS9Rnm&sharer_sharetime=1601910589841&sharer_shareid=7d02bdfe8ee477ab2b773f2df63f3163#rd" target="_blank" rel="noopener noreferrer">传送门（PS：此文章中有错误的地方，下面自行改正了）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>02.CSDN官方转载，<a href="https://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&mid=2650793413&idx=3&sn=c0f6071b066b36440987dcbca4a64a91&chksm=bea7941689d01d00c5a53fb09fdb22ff14d056534bbec112d10847f3c3562bb81a3bdcb5ebd9&mpshare=1&scene=23&srcid=03070oITnw7pdgZ3yeCUirqz&sharer_sharetime=1615116737628&sharer_shareid=7d02bdfe8ee477ab2b773f2df63f3163#rd" target="_blank" rel="noopener noreferrer">技术让梦想更伟大<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>『很不错』</li> <li><font style="background:yellow;">记忆下面的</font></li></ul> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>核心：
+1、32位编译pack(4)，64位编译pack(8)
+2、3.结构体总大小为最大对齐数的整数倍（max（各个成员变量的由（规则2）获得的对齐数大小））
+（每个成员变量都有自己的对齐数）『是的，这个才是核心！！后边我的写错了』
+比如理解就是
+int类型在16位机器上，是2个字节和2个字节『而不是4个字节』
+double在32位机器上，是4个字节和4个字节『而不是8个字节』
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="典型例题"><a href="#典型例题" class="header-anchor">#</a> 典型例题</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code>在一个<span class="token number">16</span>位的机器，以下结构由于边界对齐浪费了多少空间（）
+复制代码
+<span class="token keyword">struct</span><span class="token punctuation">{</span>
+     <span class="token keyword">char</span> a<span class="token punctuation">;</span>
+     <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+     <span class="token keyword">char</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+正确答案<span class="token operator">:</span> D   你的答案<span class="token operator">:</span> <span class="token function">D</span> <span class="token punctuation">(</span>正确<span class="token punctuation">)</span>
+<span class="token number">8</span>
+<span class="token number">4</span>
+<span class="token number">6</span>
+<span class="token number">2</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-txt line-numbers-mode"><pre class="language-text"><code>解释：
+0、16位的机器上默认是2字节对齐！！
+1、自然对齐，min(char,2)=1，所以a是1个字节放在[0,0]
+2、自然对齐，int 在16位上要拆分为2个short，
+所以min(short ,2)=2,所以前半部分放在[2,3],后半部分在[4,5]
+3、自然对齐，min(char,2)=1，所以c是1个字节放在[6,6]
+4、规则对齐，是max(1,2,1)=2,所以是2的倍数，最接近是8，就是[0,7]『核心是规则对齐』
+然后，char+int+char=6个字节
+8-6=2个字节浪费
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="_01-内存对齐的由来"><a href="#_01-内存对齐的由来" class="header-anchor">#</a> 01.内存对齐的由来</h3> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>demo<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>demo<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 输出8不是5，表现了内存对齐的1种——规则对齐</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>原因:<font face="楷体" color="red">现代的计算机中，有一个内存对齐的要求</font></p> <p><b>PS：现代计算机中内存空间都是按照字节划分的，所以图示中一个黑色的长条代表一个字节。 </b></p> <p>例:有些平台<b>每次读都是从偶地址</b>开始的  『笔者认为，也可以是从2的倍数，从4的倍数，8的倍数开始。。
+如果一个int型（假设为32位系统）<br>
+1）如果他存放在<b>偶地址</b>开始的地方，那么一个CPU读的周期，就可以读出这个32bit的int</p> <img src="/photos/2020.6.03_15/2020_06_08_1.png" width="90%"> <p>2）如果他存放在<b>奇地址</b>开始的地方，那么我们要是想要读取，蓝色的部分的int，我们的CPU需要读两个红色的框框。在第一个4字节块,剔除不想要的字节（0地址）,然后从地址4开始读取下一个4字节块,同样剔除不要的数据（5，6，7地址）,最后将留下的两块数据合并放入寄存器。也就是说这种情况CPU需要2个读周期，并且对两次读出的结果的高低字节进行拼凑才能得到这个32位bit的数据。<br>
+很显然，这个在读取的效率上下降了很多。</p> <img src="/photos/2020.6.03_15/2020_06_08_2.png" width="90%">  
+此处肯定有疑惑  
+<div class="language-txt line-numbers-mode"><pre class="language-text"><code>- Q:难道就不能直接从那个奇地址开始读吗？    
+- A:理论上讲，我们对任何类型的变量的访问可以从任何奇或者偶地址开始，这样是可以的。
+但是，我们的硬件在设计的时候，CPU的底层访问实现的似乎就是这个，每次从偶地址开始读取。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>总的来说，内存对齐一般是由于以下原因：</p> <ul><li>1）<b>平台原因（移植原因）</b>：不是所有的硬件平台都能访问任意地址上的任意数据的；某些硬件平台只能在某些地址处取某些特定类型的数据，否则抛出硬件异常。（有的硬件的设计就是只支持从偶地址开始访问的）</li> <li>2）<b>性能原因（根本原因）</b>：数据结构(尤其是栈)应该尽可能地在自然边界上对齐。原因在于，为了访问未对齐的内存，处理器需要作两次内存访问（前面我们的例子就是这样）；而对齐的内存访问仅需要一次访问。</li></ul> <blockquote><ul><li>我们要提高CPU访问内存数据的<b>效率</b>的问题。</li> <li>计算机访问内存一般是以内存块为单位的，块的大小是地址对齐的。如4,8,16字节对齐等。</li> <li>一般来说对齐是跟CPU位数及CPU特性有关的，具体的比如X86-64支持1,2,4,8字节对齐.所以里面的讲的对齐主要还是取决于C语言中数据类型的大小。
+PS：<b>对齐值必须是2的幂次方</b>，如1，2，4，8，16。如果一个变量按n字节对齐，那么该变量的起始地址必须是n的倍数。
+每个<b>特定平台</b>上的编译器都有自己默认的“对齐系数”，可以通过设置<code>#pragma pack(n)</code>告诉编译器，是n字节对齐。</li></ul></blockquote> <h3 id="_02-实验观察内存对齐"><a href="#_02-实验观察内存对齐" class="header-anchor">#</a> 02.实验观察内存对齐</h3> <p>例1（规则1的应用）</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">char</span> a<span class="token operator">=</span><span class="token string">'a'</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span> b<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span> c<span class="token operator">=</span><span class="token string">'c'</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span> d<span class="token operator">=</span><span class="token string">'d'</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">char</span> e<span class="token operator">=</span><span class="token string">'e'</span><span class="token punctuation">;</span>
+	<span class="token keyword">double</span> num<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">;</span> 
+    <span class="token keyword">char</span> f<span class="token operator">=</span><span class="token string">'f'</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//本程序在32位的编译环境测试的</span>
+<span class="token comment">//62feaf</span>
+<span class="token comment">//62feae</span>
+<span class="token comment">//62fead</span>
+<span class="token comment">//62feac</span>
+<span class="token comment">//显然，上面按照变量在内存中栈的生长方向，是一个挨着一个放的，</span>
+<span class="token comment">//而且char基本数据也符合1字节对齐（规则1）。</span>
+
+<span class="token comment">//62feab</span>
+<span class="token comment">//62fea0</span>
+
+<span class="token comment">//从62feab按照常理应该是隔着（62fea省略）a 9 8 7 6 5 4 3八个字节，</span>
+<span class="token comment">//也就是说最后赢输出62fea3而不是62fea0</span>
+<span class="token comment">//那么，其中的那个多余的a 9 8三个字节的没有被利用，这就是被编译器进行了内存对齐，</span>
+<span class="token comment">//为了访问数据方便</span>
+<span class="token comment">//因为这样的话，前面那字符e和这3个字节也就能凑齐4个字节了。（规则1）</span>
+
+<span class="token comment">//62fe9f</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><p>例3：『例子很好』</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">test</span>
+<span class="token punctuation">{</span> 
+	<span class="token keyword">int</span> ml<span class="token punctuation">;</span>
+	<span class="token keyword">char</span> m2<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> m3<span class="token punctuation">;</span>
+	<span class="token keyword">union</span> uu
+	<span class="token punctuation">{</span>
+    	<span class="token keyword">char</span> ul<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> u2<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> ua<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> myaa<span class="token punctuation">;</span>
+
+问<span class="token number">32</span>位机器下<span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">test</span> <span class="token punctuation">)</span>
+答：<span class="token number">20</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>解释：根据联合体的内存共用机制，显然union整体占用8个字节
+int m1  4个
+char m2 1个
+float m3 4个
+按照规则2和3，我们要按照默认的4字节对齐来对这些在结构体中重排列
+m1  offset=0-3
+m2	offset=4
+offset=5-7不用，但是占领
+m3	offset=8-11
+union	offset=12-19
+总共，占用5个内存块，一个20个字节。</p> <p>例4：</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code>以下代码打印的结果是（假设运行在 <span class="token number">64</span> 位计算机上）：
+<span class="token keyword">struct</span> <span class="token class-name">st_t</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> status<span class="token punctuation">;</span>
+    <span class="token keyword">short</span> <span class="token operator">*</span>pdata<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> errstr<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">st_t</span> st<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>p<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>st<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>esstr<span class="token operator">+</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span>“<span class="token operator">%</span>d”<span class="token punctuation">,</span><span class="token punctuation">(</span>p<span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//题目来自——牛客网</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>//上面这道题，我们暂时不分析最后的结果，我们只分析在64位的机器下的这个结构体占用的字节。
+<table><td bgcolor="#FFFF" FF><b>因为是64位环境下，所以默认对齐方式是8字节为一个内存块</b></td></table></p> <p><code>int status;</code>虽然int只占用4个 由于后面的指针八个字节放不下 填补不了空位 所以对其要八个字节(后面的4个为对齐位）
+<code>short *pdata;</code>这个指针会占用8个字节<br> <code>char errstr[32];</code> 占用32个字节<br>
+所以一共占用 8+8+32=48个字节<br> <code>char *p=(char *)(st[2].esstr+32)</code>，p实际指向了st[3]<br>
+则<code>p-(char *)(st))</code>，即为<code>&amp;st[3]-&amp;st[0]</code>,占用空间为3个结构体的大小，即3*48=14</p> <p>例题5：（分析下面在32位编译环境的程序）</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression"><span class="token function">pack</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span></span></span>
+
+<span class="token comment">//要是不加#pragma pack(2)，则是默认4字节对齐，我们其实可以看做#pragma pack(4)</span>
+<span class="token keyword">struct</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span> c1<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> c2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>demo<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>demo<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//输出为6   //因为加了#pragma pack(2)，根据规则2可以知道也是6</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>例6：（可能嵌入式和网络编程中会用到这种用法：位段（也叫位域）一种特殊的类结构体语法）</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">struct</span> 
+<span class="token punctuation">{</span>
+   <span class="token keyword">int</span> a<span class="token operator">:</span><span class="token number">8</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span> b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span> c<span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>ab<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>ab<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//输出4</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="_03-结构体内存对齐规则『核心』"><a href="#_03-结构体内存对齐规则『核心』" class="header-anchor">#</a> 03.结构体内存对齐规则『核心』</h3> <p>Tips：C语言和C++允许你用预编译来干预内存对齐,比如用<code>#pragma pack</code>来干预。<br> <font face="楷体" color="red">不同平台上编译器的 <code>pragma pack</code> 默认值不同。而我们可以通过预编译命令<code>#pragma pack(n)</code>, n= 1,2,4,8,16来改变对齐系数。</font>
+现代计算机读取数据的时候，都是一次性读取一个内存块，比如4字节。（更准确来说是与数据线根数有关，所以说，其实现在都是64位的CPU，一次性能够读取8字节）</p> <table><td bgcolor="#FFFF" FF>一般<b>内存块</b>对齐方式：32位CPU机器默认4字节对齐，64位CPU机器默认8字节对齐『所以，现在我们面试的时候，碰到OS，一般是64位的编译器，我们就认为是8字节对齐？？？』</td></table> <ul><li><p>规则1：<b>基本类型</b>的对齐值就是其sizeof获得值;（我们在进行基本类型对齐的同时，我们要尽量保证每个变量整体能放到1个或者2个内存块当中，并且要尽可能的小。（也就是能放在1个内存块，绝不放2个，否则会降低效率——比如先前图片中int放的位置。）</p></li> <li><p>规则2：<b>结构(struct)和联合(union))的数据成员</b>对齐规则：</p></li> <li><p>规则3：<b>结构和联合整体</b>对齐规则：在数据成员完成各自对齐之后，结构和联合本身也要进行对齐。</p></li></ul> <blockquote><ul><li>1—<b>未改变默认规定对齐值</b>，对齐将按照结构或联合整体sizeof和默认的机器字节对齐中，比较小的那个进行;</li> <li>2—<b>修改了默认规定对齐值</b>，比如<code>#pragma pack</code>，对齐将按照<code>#pragma pack</code>指定的数值和结构(或联合)sizeof获得值中<b>小</b>的那个进行;</li></ul></blockquote> <blockquote><p><strong>内存对齐又分为『自然对齐』和『规则对齐』</strong></p></blockquote> <h3 id="_3-1-自然对齐"><a href="#_3-1-自然对齐" class="header-anchor">#</a> 3.1.自然对齐</h3> <ul><li>指的是将对应变量类型存入对应地址值的内存空间，即数据要根据其数据类型存放到以其数据类型为倍数的地址处。</li> <li>例如 char 类型占1个字节空间，1的倍数是所有数，因此可以放置在任何允许地址处，而int类型占4个字节空间，以4为倍数的地址就有0,4,8等。</li> <li>编译器会优先按照自然对齐进行数据地址分配。</li></ul> <h3 id="_3-2-规则对齐"><a href="#_3-2-规则对齐" class="header-anchor">#</a> 3.2.规则对齐</h3> <ul><li>以『<strong>结构体</strong>』为例就是在自然对齐后，编译器将对『自然对齐』产生的『空隙内存』填充无效数据，且填充后结构体占<strong>内存空间</strong>为结构<strong>体内</strong>占内存空间<font style="background:yellow;">最大的数据类型成员变量</font>的整数倍。</li></ul> <h5 id="_1、难点1—double『测试坑』"><a href="#_1、难点1—double『测试坑』" class="header-anchor">#</a> 1、难点1—double『测试坑』</h5> <ul><li>我们知道32位处理器一次只能处理32位也就是4个字节的数据，而 double 是8字节数据类型，这要怎么处理呢？</li> <li>『如果是64位处理器，8字节数据可以一次处理完毕』，而在32位处理器下，为了也能处理 double8 字节数据，在处理的时候将<strong>会把 double <font style="background:yellow;">拆分</font>成两个4字节数进行处理</strong>，从这里就会出现一种情况如下：</li></ul> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">test_32</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">char</span> a<span class="token punctuation">;</span>
+     <span class="token keyword">char</span> b<span class="token punctuation">;</span>
+     <span class="token keyword">double</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>test_32<span class="token punctuation">;</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>这个结构体在32位下所占内存空间为12字节，只能拆分成两个4字节进行处理，所以这里规则对齐将判定该结构体最大数据类型长度为4字节，因此总长度为4字节的整数倍，也就是12字节。</li> <li>这个结构体在64位环境下所占内存空间为16字节，而64位判定最大为8字节，所以结果也是8字节的整数倍：16字节。这里的结构体中的double没有按照自然对齐放置到理论上的8字节倍数地址处，我认为这里编译器也有根据规则对齐做出相应的优化，节省了4个多余字节</li></ul> <p>测试代码如下：环境『Linux64位』</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">test_32</span>
+<span class="token punctuation">{</span>
+ <span class="token keyword">char</span> a<span class="token punctuation">;</span>
+ <span class="token keyword">char</span> b<span class="token punctuation">;</span>
+ <span class="token keyword">double</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>test_32<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+
+        cout<span class="token operator">&lt;&lt;</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span> test_32<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    	cout<span class="token operator">&lt;&lt;</span><span class="token function">offsetof</span><span class="token punctuation">(</span>test_32<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token function">offsetof</span><span class="token punctuation">(</span>test_32<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token function">offsetof</span><span class="token punctuation">(</span>test_32<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//输入是16</span>
+<span class="token comment">//0</span>
+<span class="token comment">//1</span>
+<span class="token comment">//8</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>更改字节对齐之后『反向知晓，<font style="background:yellow;">64位Linux的g++默认对齐数是8字节</font>』</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression"><span class="token function">pack</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">test_32</span>
+<span class="token punctuation">{</span>
+ <span class="token keyword">char</span> a<span class="token punctuation">;</span>
+ <span class="token keyword">char</span> b<span class="token punctuation">;</span>
+ <span class="token keyword">double</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>test_32<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+
+        cout<span class="token operator">&lt;&lt;</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span> test_32<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    	cout<span class="token operator">&lt;&lt;</span><span class="token function">offsetof</span><span class="token punctuation">(</span>test_32<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token function">offsetof</span><span class="token punctuation">(</span>test_32<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token function">offsetof</span><span class="token punctuation">(</span>test_32<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//输入是12</span>
+<span class="token comment">//</span>
+<span class="token comment">//0</span>
+<span class="token comment">//1</span>
+<span class="token comment">//4</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><blockquote><p>我的猜想：</p> <p>1、默认字节对齐的本质：CPU一次性寻址的字节长度</p> <p>2、自然对齐中min(默认的对齐数，这个基本类型的字节数)『设置4字节对齐之后，看到了，本猜想正确』</p> <p>3、本次测试，好像推翻了『规则对齐。。。。</p> <p>规则对齐改为？？规则对齐，取我们实际上》》》》。。。不清楚</p> <p>我觉得可这么想，由于min(4，double)获得的是4，所以在自然对齐的时候，我们被迫将double分成两半</p> <p>然后，规则对齐的时候，虽然结构体中最大显然是8，应该是8的倍数，但是被『编译器优化了』觉得后面的『补充不需要了，所以，才采取的12，而不是16，</p> <p>进一步猜测：<font style="background:yellow;">补全空格，只补充中间的，不补充最末尾的？『这个猜想，和下面的黄色部分，我觉得是对的，模型建立完毕』</font></p></blockquote> <p>修正知道：对齐长度『长于』struct中的类型长度『最长』的值时,设置的对齐长度等于无用</p> <ul><li><p><font style="background:yellow;">故当我们将 #pragma pack 的n值小于『所有数据成员长度』的时候，结果将改变。</font></p></li> <li><p>或许上面就是，我们使用pack(4)之后是12的原因？？</p></li></ul> <h5 id="_2、数组『1个易错』"><a href="#_2、数组『1个易错』" class="header-anchor">#</a> 2、<strong>数组</strong>『1个易错』</h5> <ul><li>对齐值为：<strong>min(数组元素类型，编译器默认对齐长度/修改后)</strong>。</li> <li>易错：数组对齐的长度是按照『数组成员类型』长度来比对的</li> <li>但数组中的元素是连续存放，存放时还是按照数组实际的长度。如char t[9]，对齐长度为1，实际占用连续的9byte。然后根据下一个元素的对齐长度决定在下一个元素之前填补多少byte</li></ul> <h5 id="_3、嵌套的结构体"><a href="#_3、嵌套的结构体" class="header-anchor">#</a> 3、<strong>嵌套的结构体</strong></h5> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">struct</span> <span class="token class-name">A</span>
+<span class="token punctuation">{</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token keyword">struct</span> <span class="token class-name">B</span> b<span class="token punctuation">;</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">//对于B结构体在A中的对齐长度为：min(B结构体的对齐长度,编译器默认对齐长度/修改后)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="_3-3-综合方法"><a href="#_3-3-综合方法" class="header-anchor">#</a> 3.3.综合方法</h3> <blockquote><p><code>#pragma pack</code>可以修改，『编译器默认对齐数』，修改之后，下面的那个对齐规则一律换成改后的！！</p></blockquote> <h4 id="_1、首先『自然对齐』"><a href="#_1、首先『自然对齐』" class="header-anchor">#</a> 1、首先『自然对齐』</h4> <ul><li>1.第1个<strong>数据成员</strong>在『<strong>结构</strong>(struct)/<strong>联合</strong>(union)』变量offset偏移量为0 的地址处，也就是第一个成员必须从头开始。『原因：很显然，1,2,4,8的共同的倍数都是0，因为0乘以任何数都是0』</li> <li>2.其他<b>成员变量</b>要对齐到某个数字（对齐数）的整数倍的地址处。对齐数为『编译器默认的对齐数』与该成员大小中的较小值<font style="background:yellow;">（min（编译器默认对齐数，成员变量大小））</font>。『自然对齐，审核正确』</li> <li><font style="background:yellow;">Linux中gcc和g++编译器，32位默认对齐数是4字节对齐。64位默认字节对齐数是8字节对齐。</font>（后续有证明，注意，参考的“脚本之家”那个有误）此外默认对齐数可以通过#pragma pack（）修改，但修改只能设置成1，2，4，8，16。</li></ul> <h4 id="_2、然后『规则对齐』"><a href="#_2、然后『规则对齐』" class="header-anchor">#</a> 2、然后『规则对齐』</h4> <ul><li>3.<b>结构体总大小</b>为最大对齐数的整数倍<font style="background:yellow;">（max（各个成员变量的由（规则2）获得的对齐数大小））</font>。（每个成员变量都有自己的对齐数）『规则对齐，应该错误，应该不是由规则2获得的，而是直接所以成员变量』</li> <li>4.如果嵌套结构体，被嵌套的结构体对齐到『自己的最大对齐数』的整数倍处，（<strong>其实就是，我们将这个结构体也看作1个普通的类型 变量</strong>，这个思想有的像『递归』的定义『『『如果一个结构里有某些结构体成员，则结构体成员要从其内部&quot;最宽<strong>基本类型</strong>成员&quot;的整数倍地址开始存储』』』）结构体的整体大小就是所有最大对齐数（包含嵌套结构体的对齐数）的整数倍。</li></ul> <blockquote><p>其他：可借助，<font style="background:yellow;">C语言头文件中<code>#include&lt;stddef.h&gt;</code>中函数<code>offsetof</code>观察现象</font></p></blockquote> <h3 id="_3-4-常见的普通类型字节数"><a href="#_3-4-常见的普通类型字节数" class="header-anchor">#</a> 3.4.常见的普通类型字节数</h3> <ul><li>long 是由于历史原因导致的和int是一样，4个字节</li> <li>short 是2个字节</li> <li>结构体中union等，要是没有实例化，并且没有其他元素，那么不用算他占的大小</li> <li>如果，仅仅只有它，需要算1个字节，毕竟如果不算，那就不好表述struct了</li></ul> <h3 id="_04-复杂内存对齐分析（面试）"><a href="#_04-复杂内存对齐分析（面试）" class="header-anchor">#</a> 04.复杂内存对齐分析（面试）</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">one</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">char</span> a<span class="token punctuation">;</span><span class="token comment">//1-&gt;内存对齐（4） </span>
+	<span class="token keyword">long</span> b<span class="token punctuation">;</span><span class="token comment">//4</span>
+	<span class="token keyword">char</span> c<span class="token punctuation">;</span> 
+	<span class="token keyword">union</span> test
+	<span class="token punctuation">{</span>
+		<span class="token keyword">int</span> aa<span class="token punctuation">;</span>
+		<span class="token keyword">char</span> bb<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment">//没有实例化，不用管 </span>
+	
+	
+	<span class="token keyword">double</span> k<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> <span class="token operator">*</span> p<span class="token punctuation">;</span><span class="token comment">//32位机器 </span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">struct</span> <span class="token class-name">two</span>
+<span class="token punctuation">{</span>
+	
+	<span class="token keyword">union</span> test
+	<span class="token punctuation">{</span>
+		<span class="token keyword">int</span> aa<span class="token punctuation">;</span>
+		<span class="token keyword">char</span> bb<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>demo<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">struct</span> <span class="token class-name">three</span>
+<span class="token punctuation">{</span>
+	
+	<span class="token keyword">union</span> test
+	<span class="token punctuation">{</span>
+		<span class="token keyword">int</span> aa<span class="token punctuation">;</span>
+		<span class="token keyword">char</span> bb<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+
+<span class="token keyword">struct</span> <span class="token class-name">four</span>
+<span class="token punctuation">{</span>
+	
+	<span class="token keyword">int</span> a<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> b<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> c<span class="token punctuation">;</span>
+	<span class="token keyword">double</span> d<span class="token punctuation">;</span>
+	
+<span class="token punctuation">}</span>_four<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	
+	<span class="token comment">//注意</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;sizeof(long)=%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	one _one<span class="token punctuation">;</span> 
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>_one<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	
+	
+	two _two<span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>_two<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	
+	three _three<span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>_three<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">int</span> <span class="token operator">*</span> p<span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>_four<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br></div></div><h3 id="_05-面试记录"><a href="#_05-面试记录" class="header-anchor">#</a> 05.面试记录</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">// 你必须定义一个 `main()` 函数入口。</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">A</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">union</span> test
+        <span class="token punctuation">{</span>
+          <span class="token keyword">int</span> aa<span class="token punctuation">;</span>
+          <span class="token keyword">int</span> bb<span class="token punctuation">;</span>
+          <span class="token keyword">char</span> <span class="token operator">*</span>cc<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+        <span class="token keyword">short</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+        <span class="token keyword">char</span> d<span class="token punctuation">;</span>
+        
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B</span>
+<span class="token punctuation">{</span>
+        <span class="token keyword">double</span> a<span class="token punctuation">;</span>
+        <span class="token keyword">short</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> c<span class="token punctuation">;</span>
+        <span class="token keyword">char</span> d<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p>64位gcc下输出</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token number">16</span>
+<span class="token number">24</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>原因：64gcc下对齐是8<br>
+union 没有初始化，但是struct中还有其他成员<br>
+我们就可以不用给它分配空间</p> <p>min（int , 8）  4字节对齐，int 占据前4个<br>
+min（short,8） 4字节对齐，short仅接着据4个<br>
+min（int , 8）  4字节对齐，int 占据前4个<br>
+min（char , 8）  1字节对齐，char 占据前1个<br>
+这个时候，我们发现，获得的是13个字节<br>
+接着，结构体总大小进行对齐<br>
+max（4,4,4,1）发现，最大对齐数是4<br>
+那么，我们知道是16</p> <p>PS：参考的，那个的图画得很不错</p> <h3 id="测试环境（推翻第2条规则）"><a href="#测试环境（推翻第2条规则）" class="header-anchor">#</a> 测试环境（推翻第2条规则）</h3> <p>DevC++ 32bit Release版本</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">xx</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> _x1<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> _x2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> _x3<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> _x4<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> _x5<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> xx<span class="token operator">::</span>_x5<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>xx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x4<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>测试</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>24
+0
+8
+12
+16
+17
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="（1）解释不通，如果按照先前的解释方式"><a href="#（1）解释不通，如果按照先前的解释方式" class="header-anchor">#</a> （1）解释不通，如果按照先前的解释方式:</h4> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>_x1 对齐数 min(long long,4)=4   0-7
+_x2 对齐数 min(char,4)=1		8
+_x3 对齐数 min(int,4)=4			12-15
+_x4 对齐数 min(char,4)=1		16-17	（易错点，注意是char，而不是2个char）
+整体字节对齐
+max(4,1,4,1)=4
+那么20字节就OK了，但是这样不对。。。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="（2）最新解释"><a href="#（2）最新解释" class="header-anchor">#</a> （2）最新解释</h4> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>_x1 对齐数 min(long long,4)=4   0-7
+_x2 对齐数 min(char,4)=1		8
+_x3 对齐数 min(int,4)=4			12-15
+_x4 对齐数 min(char,4)=1			16-17
+
+整体字节对齐
+max(long long,char ,int , char)=8
+那么24字节才OK
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>结构体的最终大小必须是结构体最大简单类型的整数倍？？？</p> <h3 id="测试2"><a href="#测试2" class="header-anchor">#</a> 测试2</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">xx</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> _x1<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> _x2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> _x3<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> _x4<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//注意这里</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> _x5<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> xx<span class="token operator">::</span>_x5<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>xx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>_x4<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>输出</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>32
+0
+8
+12
+16
+17
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="_06-做题时『我们是否真的需要分辨是4字节对齐还是8字节对齐？』"><a href="#_06-做题时『我们是否真的需要分辨是4字节对齐还是8字节对齐？』" class="header-anchor">#</a> 06.做题时『我们是否真的需要分辨是4字节对齐还是8字节对齐？』</h3> <ul><li>一般，不需要！如果你数据成员，都比8字节小于等于，完全不需要考虑</li></ul> <h3 id="_07-是否可以强制不内存对齐？"><a href="#_07-是否可以强制不内存对齐？" class="header-anchor">#</a> 07.是否可以强制不内存对齐？</h3> <ul><li>笔者觉得可以，但是那样会导致CPU效率降低</li></ul> <h3 id="_08-可移植性"><a href="#_08-可移植性" class="header-anchor">#</a> 08.可移植性</h3> <ul><li>与C和C++不同，Java规范中没有“依赖具体实现”的地方！！基本数据类型大小以及有关运算都做了明确的说明！</li></ul> <blockquote><p>《Java核心技术卷1》</p></blockquote> <ul><li>Java中int永远是32位的整数</li> <li>而<code>在C和C++中，int可能是16位整数、32位整数、也可能是『编译器提供商』指定的其他大小</code>。唯一的限制只是：int类型的大小不低于short int，并且不能高于long int。</li> <li>在Java中，数据类型具有固定的大小、这消除了代码移植时令人头痛的问题。</li></ul> <h2 id="⭐️02-大小端之争"><a href="#⭐️02-大小端之争" class="header-anchor">#</a> ⭐️02.大小端之争</h2> <ul><li>格列夫游记的鸡蛋—大小端值争02.BigEndianLittleEndian</li> <li>大端和小端存储</li> <li>date: 2020-05-29 19:53:47</li></ul> <h3 id="_2-1-引子"><a href="#_2-1-引子" class="header-anchor">#</a> 2.1.引子</h3> <p>《格列夫游记》一书中讲到，格列佛在小人国中，遇到了这样一件事情：</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>小人国的人纠结于吃鸡蛋的时候，先打破鸡蛋的小端还大端，原来，在这之前所有人都认为,吃鸡蛋前,原始的方法是打破鸡蛋较大的一端。可是当今皇帝的祖父小时候吃鸡蛋,一次按古法打鸡蛋时碰巧将一个手指弄破了,因此他的父亲,当时的皇帝，就下了一道敕令,命令全体臣民吃鸡蛋时打破鸡蛋较小的一端,违令者重罚。老百姓们对这项命令极为反感。历史告诉我们，由此曾发生过六次叛乱,其中一个皇帝送了命,另一个丢了王位。关于这一争端,曾出版过几百本大部著作,不过大端派的书一直是受禁的,法律也规定该派的任何人不得做官。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在计算机界，也有一个类似的大端小端之争，但是并没有像小人国那般，原先我们虽然在纠结选大端还是小端存储？但是随着计算机的发展，历史告诉我们，这些都是合理的，但是要在计算机间合理通信或者理解计算机底层的时候，你自己记得转换就好了。</p> <h3 id="大端和小端存储"><a href="#大端和小端存储" class="header-anchor">#</a> 大端和小端存储</h3> <h3 id="一．概念"><a href="#一．概念" class="header-anchor">#</a> 一．概念</h3> <p>大端：指低字节存储在高地址。
+小端：指低字节存储在低地址。</p> <p><strong>记忆方法：</strong> <table><td bgcolor="#FFFF" FF>小端说：我就是个低低（弟弟）</td></table></p> <p>下图描述了——大端存储（低字节存储在内存高地址了）：
+<img src="/photos/2020.5.29/1.png" width="80%"></p> <p>下图描述了——小端存储（低字节存储在内存低地址了）：：
+<img src="/photos/2020.5.29/2.png" width="80%"></p> <h3 id="二．具体的，大端法和小端法的应用"><a href="#二．具体的，大端法和小端法的应用" class="header-anchor">#</a> 二．具体的，大端法和小端法的应用</h3> <p>有的产品用的大端法，有的产品则是小端法。
+PS:这个大端和小端并没有严格按照企业界限来区分，因为有的企业，它在之前采用的处理器，可能是大端，但是后面的产品中改变了采用的处理器，可能就采用小端法了。
+前沿：许多比较新的微处理器使用双端法，也就是说可以把它们配置成作为大端或者小端的机器运行。</p> <h3 id="三．大端法和小端法导致的问题："><a href="#三．大端法和小端法导致的问题：" class="header-anchor">#</a> 三．大端法和小端法导致的问题：</h3> <p>1）网络应用程序数据传输</p> <p>在采用不同大小端存储的机器之间通过网络传送二进制数据时候，会导致采用不同大小端存储方式的数据的字节变成反序。
+解决方案：网络应用程序的代码编写，必须遵循已建立的关于字节顺序的规则（第一处：网络传输规定了，网络字节序（它采用的大端））。
+第2处，你的机器发送报文前，需要将你的内部表达转换成网络标准。
+第3处，你的机器接受报文时候，需要根据你的机器，将网络标准转换为你的内部表示。。</p> <p>网络字节序
+网络上传输的数据都是字节流,对于一个多字节数值，在进行网络传输的时候,先传递哪个字节?也就是说,当接收端收到第一个字节的时候,它将这个字节作为高位字节还是低位字节处理,是一个比较有意义的问题;
+UDP/TCP/IP协议规定:
+把接收到的第一个字节当作高位字节看待,这就要求发送端发送的第一个字节是高位字节;</p> <p>而在发送端发送数据时，发送的第一个字节是该数值在内存中的起始地址处对应的那个字节,也就是说,该数值在内存中的起始地址处对应的那个字节就是要发送的第一个高位字节(即:高位字节存放在低地址处);
+由此可见,多字节数值在发送之前,在内存中因该是以大端法存放的;所以说,网络字节序是大端字节序;</p> <p>比如,我们经过网络发送整型数值0x12345678时,在80x86平台中,它是以小端发存放的,在发送之前需要使用系统提供的字节序转换函数将其转换成大端法存放的数值;</p> <p>常见CPU的宇节序
+大端（big Endian）: PowerPC、IBM、 Sun
+小端（little Endian）:x86、DEC
+ARM既可以工作在大端模式,也可以工作在小端模式。</p> <p>2）反汇编的时候</p> <p>（——————未完待续）</p> <h3 id="四．如何判别大端和小端"><a href="#四．如何判别大端和小端" class="header-anchor">#</a> 四．如何判别大端和小端</h3> <p>1）我们可以根据C语言中的，联合体来判断，该系统是大端还是小端。
+因为，联合体变量总是从低地址存储。</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">union</span> test
+	<span class="token punctuation">{</span>
+		<span class="token keyword">int</span> a<span class="token punctuation">;</span>
+		<span class="token keyword">char</span> c<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>demo<span class="token punctuation">;</span>
+	
+	demo<span class="token punctuation">.</span>a<span class="token operator">=</span><span class="token number">0x01ffff03</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span>demo<span class="token punctuation">.</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0x03</span><span class="token operator">==</span>demo<span class="token punctuation">.</span>c<span class="token punctuation">)</span> 
+	<span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;这个机器是小端存储！&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0x00</span><span class="token operator">==</span>demo<span class="token punctuation">.</span>c<span class="token punctuation">)</span> 
+	<span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;这个机器是大端存储！&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;无法判断机器类型！&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>显然，
+要是小端存储，那么（低字节）0x03在低地址，
+要是大端存储，那么（高字节）0x00在低地址。
+所以，打印出3就是小端存储。打印出0那就是大端存储。
+笔者的电脑是采用的intel的X86CPU，是小端存储。
+<img src="/photos/2020.5.29/3.png" width="80%"></p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.6a6cf01c.js" defer></script><script src="/assets/js/88.f76666ba.js" defer></script>
+  </body>
+</html>
