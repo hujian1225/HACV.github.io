@@ -21,399 +21,399 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 self.__precacheManifest = [
   {
     "url": "02.DataStructureAndAlgorithm/01.排序和查找.html",
-    "revision": "98a6742f026c2d3c7c631a739dbae3a4"
+    "revision": "dfe11a4fd957f8f7c11b51ce2883a984"
   },
   {
     "url": "02.DataStructureAndAlgorithm/02.编码技巧.html",
-    "revision": "c177276c87d62a06a9b536dc14ffe621"
+    "revision": "115bd7a90e7cf56c4ef9ab5d934f9e3f"
   },
   {
     "url": "02.DataStructureAndAlgorithm/03.求职补给箱.html",
-    "revision": "3d8bbea818ed2575a511c9a18ba027fc"
+    "revision": "b01b54dfe81ea11cb016508be3da8c4f"
   },
   {
     "url": "02.DataStructureAndAlgorithm/04.数学模板.html",
-    "revision": "ac320a6cadbc0b312a89175b281fcb8d"
+    "revision": "69f4839b4ab7f671bdb983b424d1fcab"
   },
   {
     "url": "02.DataStructureAndAlgorithm/05.DFS和BFS模板和图论.html",
-    "revision": "85d20cc37c2c8b702ddd8d3b17fe084a"
+    "revision": "ff1751f6b239bc80d28a4dca1dcd3583"
   },
   {
     "url": "02.DataStructureAndAlgorithm/06.动态规划.html",
-    "revision": "e74a7644c594ddeaa7a6ab71a184eb8c"
+    "revision": "9629bb1bdb4e3875ef148e2685ff201b"
   },
   {
     "url": "02.DataStructureAndAlgorithm/07.冷门考点.html",
-    "revision": "4e9bd3d8c7533b707f964b531eeab505"
+    "revision": "2ed4aa0976828808e77850f15e2d82e8"
   },
   {
     "url": "02.DataStructureAndAlgorithm/index.html",
-    "revision": "f9be2029dff71e5a77f8d5c5af17e409"
+    "revision": "2e4a2d1ad6032e8cb3d17e775f0528ba"
   },
   {
     "url": "02.DataStructureAndAlgorithm/Part01.OJ多组输入输出.html",
-    "revision": "26fc38145dbac80bb571d61eb21eada8"
+    "revision": "71a9dead96dad2fc9158ce5d9cd4f08b"
   },
   {
     "url": "02.DataStructureAndAlgorithm/Part02.个人OJ编码习惯.html",
-    "revision": "43a37ce67d8ae6e566eb7351b4737a56"
+    "revision": "589475f16ff644097d1e55f42d6eb08c"
   },
   {
     "url": "02.DataStructureAndAlgorithm/Part03.STL模板详解.html",
-    "revision": "64e54cf51076f081f9de87e495bd324b"
+    "revision": "21fbbbf3350e9bf6a474306b132abdaa"
   },
   {
     "url": "02.DataStructureAndAlgorithm/Part04.专题模板.html",
-    "revision": "39e0b2ea4c379ef0c9409d4f2eea2784"
+    "revision": "cb3901f5b74782b8803eb0bd21e2cd66"
   },
   {
     "url": "03.OS/01.后端开发面试概念.html",
-    "revision": "0b2f80619192e5f0fe995a240581e28e"
+    "revision": "a5c85ecb0a6d3dd866371d217a6af3c4"
   },
   {
     "url": "03.OS/02.线程和进程基础.html",
-    "revision": "1375610bc86dcfe67b619ec9109ac27b"
+    "revision": "5d8436d5c1a603dbda60eb374021b2e8"
   },
   {
     "url": "03.OS/03.OS编程基础.html",
-    "revision": "c1b1b72370605b0fe1fd995d3299fc0f"
+    "revision": "2a4fcca2be153557ade7ad8e077f6440"
   },
   {
     "url": "03.OS/04.Debian系和Redhat系.html",
-    "revision": "0ae6736dbe51c19a1eca8b7fdb44a98a"
+    "revision": "f3d79a9d2f06d6b11ba0408e82c2652a"
   },
   {
     "url": "03.OS/05.Linux工程笔记详解.html",
-    "revision": "a8617c4902ead010f52af6b2aef63b1e"
+    "revision": "6934498707819c8a62f493a88cb95233"
   },
   {
     "url": "03.OS/06.Linux效率脚本Shell.html",
-    "revision": "78be6ea085152f0705f9a6196f2d9625"
+    "revision": "5cb66388153bda417acea453db7a0eb6"
   },
   {
     "url": "03.OS/index.html",
-    "revision": "42e99f3514ff9dc8cae6af80f4278704"
+    "revision": "626a084fdaad6161bd86c2a8bfe8a52f"
   },
   {
     "url": "04.Net/01.计算机网络面试和FAQ.html",
-    "revision": "bb6b555aefebb0c374b8e8e16865f93e"
+    "revision": "4c43b3fc954c321ab52ef1cae6d4ab83"
   },
   {
     "url": "04.Net/02.计算机网络工程术语.html",
-    "revision": "10774f5b28b827e36edc48509fa5a955"
+    "revision": "a5977a74c6ad787d8182d4e786b81f20"
   },
   {
     "url": "04.Net/Analyse/01.LinuxAndWindows.html",
-    "revision": "62776d39619e428cbb085fb8ef1561a2"
+    "revision": "62ad0a2daa06c4d8a33e0ab32476d1a8"
   },
   {
     "url": "04.Net/Analyse/02.wireshark基础.html",
-    "revision": "a2826aca836d5ed68caf13ce5ba5a499"
+    "revision": "025270ac00e0e856193532dfb125cc6e"
   },
   {
     "url": "04.Net/Analyse/03.网络模拟实验环境软件.html",
-    "revision": "24c7d3ad167b389b26997300a3ef4130"
+    "revision": "c03b8575e12fc1f2525eea016711f4f0"
   },
   {
     "url": "04.Net/index.html",
-    "revision": "c133a67024a4fdf4aa769674bca06f95"
+    "revision": "a1f8a6f3731dee44c51d7bd626cf2a4b"
   },
   {
     "url": "04.Net/Part01.服务器开发系统调用.html",
-    "revision": "be4d8fde3489aeef17e9df469b3ff37d"
+    "revision": "43e8663b3ab278139538c8ba52a1edc7"
   },
   {
     "url": "04.Net/Part02.Unix和Linux下IO多路复用服务器.html",
-    "revision": "3ac473d22d2fe0ec12ff44eff927d337"
+    "revision": "c5f07bf0b7bdf007f85772e39852b6cc"
   },
   {
     "url": "05.SE/——整理/2020_07_07_Design_Patterns.html",
-    "revision": "98a20dde6673f2c4ea6c102d6222db27"
+    "revision": "ce0f34eba7b716798602e6cf7ff75e49"
   },
   {
     "url": "05.SE/01.软件开发流程.html",
-    "revision": "9f454c5bbbf1a0acd55bff861d65ab60"
+    "revision": "f2a880325cdf72856095e5b6723c3cfa"
   },
   {
     "url": "05.SE/02.UML.html",
-    "revision": "cdd18143582b1f97d14576bf0a1b7280"
+    "revision": "b9be24b3f14018937a91127d3c513b5f"
   },
   {
     "url": "05.SE/index.html",
-    "revision": "6d73aa15c3f3872597a7a71d1deda157"
+    "revision": "f7989de0e876bcf4118b2f02ddf38760"
   },
   {
     "url": "05.SE/设计模式/01.OOP设计模式思想.html",
-    "revision": "04a0ea2da14c2788d1475b09befc90f1"
+    "revision": "adabe8d15e1d93b629d5945639954927"
   },
   {
     "url": "05.SE/设计模式/02.设计模式.html",
-    "revision": "aa41ebbce72a9bab87d90d8e2697dcec"
+    "revision": "74060466d483bf3f0ddf181b6d94e7f7"
   },
   {
     "url": "06.SQL/01.数据库基础.html",
-    "revision": "96f7f3bdcc9233a818b2435d67fd3aed"
+    "revision": "4374e0286bd8daedfe03c3e8e44b10e8"
   },
   {
     "url": "06.SQL/02.SQL.html",
-    "revision": "9bafc9fbcf1d7c7e4cde1f77542f54cf"
+    "revision": "6239d94fee013e157b99a457cee60ab5"
   },
   {
     "url": "06.SQL/04.Redis.html",
-    "revision": "3ca52830467805eac4c67f7bf8d42796"
+    "revision": "ea8f30092b1712c3db7f9350aa02a02b"
   },
   {
     "url": "06.SQL/index.html",
-    "revision": "5104abf98b1958fb982a2bea36070a62"
+    "revision": "5890556f143fc2628fa73b8444de0530"
   },
   {
     "url": "07.InternalSkill/index.html",
-    "revision": "a00a704b692f5c737b822923ce0598e4"
+    "revision": "be0a85013fc0972bf9d85769709f30f0"
   },
   {
     "url": "07.InternalSkill/Part01.计算机体系结构概念辨析.html",
-    "revision": "8b268154b5c120fdd79757b99513303e"
+    "revision": "8e83a272f2497ba0ca673cacc33c8902"
   },
   {
     "url": "07.InternalSkill/Part02.计算机组成原理的C语言描述.html",
-    "revision": "0098dcdd4b0f2460ca6e623e47a7106b"
+    "revision": "25fe5df30117b714a9d35324a1829e82"
   },
   {
     "url": "07.InternalSkill/汇编语言/01.汇编语言基础.html",
-    "revision": "f9f1f6bc11a2295d58fb6bcc66f23453"
+    "revision": "b81669a174ac3a5562c0cb4ac9eaa97c"
   },
   {
     "url": "07.InternalSkill/汇编语言/02.汇编技巧.html",
-    "revision": "9b5edc439d43623b6faf8b2e2eb79af6"
+    "revision": "126c332afac74f49c2eb436a9c764171"
   },
   {
     "url": "07.InternalSkill/汇编语言/03.NASM的AT_T汇编.html",
-    "revision": "2a81fe2fbb69375c539d9aefb424751a"
+    "revision": "09ca184a432a3b63bf2829b2ae7159c4"
   },
   {
     "url": "07.InternalSkill/汇编语言/04.汇编工具查阅表.html",
-    "revision": "6094e0e2d15dd10d68a33443b5a780a6"
+    "revision": "5525d6f8499b53628b2ccf4615e8a880"
   },
   {
     "url": "07.InternalSkill/编译原理/01.编译原理基础.html",
-    "revision": "24dc6aa2874e15415944dff263af0424"
+    "revision": "07fe5fdd81c897129b7d496b86fd4f5d"
   },
   {
     "url": "07.InternalSkill/编译原理/02.编译器设计基础.html",
-    "revision": "424b6b1776fb7ea6143717707d9abed3"
+    "revision": "1a35a5ea419cef5e369fe788ffa16e40"
   },
   {
     "url": "08.Tools/02.software/01.C++工程开发常用工具.html",
-    "revision": "bc72447ef0b545940bb6670c67b347e5"
+    "revision": "61a1746cb9af878e8f99135f89df9310"
   },
   {
     "url": "08.Tools/02.software/02.Git常用命令.html",
-    "revision": "d340b53594c9660d12dc77c827ed0943"
+    "revision": "3574b386d1c393f72a3b90bcfef81ab9"
   },
   {
     "url": "08.Tools/02.software/03.记录思考工具.html",
-    "revision": "5eb1b80b094c55a8525dab5f19cd6e75"
+    "revision": "868b6b7ed561283a188d8c1ff93fa4f8"
   },
   {
     "url": "08.Tools/book/00.书单和思考.html",
-    "revision": "a168130062f6b8b58a520bb494d4ebf2"
+    "revision": "57c1643a9e5ada844204b7e433395113"
   },
   {
     "url": "08.Tools/employment/01.IT类公司传送门.html",
-    "revision": "73280bfb7df387e3deb6b2af197dddc0"
+    "revision": "2433008997e5e0dfe6afaead30089a53"
   },
   {
     "url": "08.Tools/employment/02.公司福利.html",
-    "revision": "e7bbc5668f955f3f6c644d4532d8ee5c"
+    "revision": "474303e5c782fb88da73ed0feb573669"
   },
   {
     "url": "08.Tools/employment/03.IT技术岗位求职流程和术语.html",
-    "revision": "62555715eea0f728c58a7e7d14eaad72"
+    "revision": "a2300a43e83bb0ff3f038a069f926455"
   },
   {
     "url": "08.Tools/employment/04.FAQ.html",
-    "revision": "ae47a90c7f4de94b12e3940d73c65e75"
+    "revision": "dbfc705a24ac5df7c055b5a3edf56780"
   },
   {
     "url": "08.Tools/index.html",
-    "revision": "3abbf7a390eaee9bff316077ea903232"
+    "revision": "b8023df514120a2cfd493d65cfbab6cf"
   },
   {
     "url": "08.Tools/Windows/01.工具软件快捷键.html",
-    "revision": "3b8ee0617ef0164572da68e3b92c3b0a"
+    "revision": "21ab1218ae815a19af2e98d34f24284c"
   },
   {
     "url": "08.Tools/Windows/02.运行命令.html",
-    "revision": "22ef25c6c8c53fba4d0dcadeefed3c4b"
+    "revision": "0235a06e6151dc9d119f903934c6e7f7"
   },
   {
     "url": "08.Tools/Windows/03.快捷键.html",
-    "revision": "8d1c14b4a1ff4ea2d7c8eb54f42f5b35"
+    "revision": "ab7d5a61c1e83d57af4c6222a07abde4"
   },
   {
     "url": "08.Tools/Windows/04.Windows注册表.html",
-    "revision": "36465bd5ed91f1e39fe6d1291b04c2d3"
+    "revision": "c282a2007d39492c997d6e7decf011b3"
   },
   {
     "url": "08.Tools/Windows/05.DistinguishVB_A_S.html",
-    "revision": "e477e114b9b41cba555706ef487ee148"
+    "revision": "0fd3f12f5378cbb2cbefd07eafb58726"
   },
   {
     "url": "08.Tools/Windows/06.Windows10经验.html",
-    "revision": "85de1aa1e66659282c40ba49f4c00dd7"
+    "revision": "eba061dc7a874440ba17d3e9aa794acb"
   },
   {
     "url": "08.Tools/Windows/07.各大电脑厂商进入BIOS.html",
-    "revision": "6029a4dd8072a9c42729109c2e9b28cb"
+    "revision": "271b0b3c1ee75e420f737d31bc8f3d7f"
   },
   {
     "url": "08.Tools/代码题单.html",
-    "revision": "605daa4cfadc529a24816bee5b5c9e08"
+    "revision": "3e3ceb14194ea149604d936ccb2f77f7"
   },
   {
     "url": "09.Language/C/01.ANSIC详解.html",
-    "revision": "62ad3387913531e682c1936cccbedd53"
+    "revision": "e00a87d75841d02ebe66ddb24a04cbc0"
   },
   {
     "url": "09.Language/C/02.C99和C11详解.html",
-    "revision": "8a1afce18c37facf042f697bf80e61dd"
+    "revision": "55c5c3a4e6517bde52107b0b0e31fdd0"
   },
   {
     "url": "09.Language/C/03.C输入输出IO.html",
-    "revision": "6e2c81cff82c1ff0b57c5ab4e0d571eb"
+    "revision": "e01b5739e7cfceeebf82046822e397d5"
   },
   {
     "url": "09.Language/C/index.html",
-    "revision": "8007ab3a62ad2424aa6c69eb40652949"
+    "revision": "54b715aaeb5ddc0c8a5bb364cd0d420c"
   },
   {
     "url": "09.Language/C/Part01.杂记.html",
-    "revision": "7e0df954173902e2a5554a195223138e"
+    "revision": "8c52f6a9661c239758efc47fa2a645c6"
   },
   {
     "url": "09.Language/C/Part02.语言共性和对比.html",
-    "revision": "9d25937c516dc5fcb461bf8a4a792d9a"
+    "revision": "8fbd0b263196da18970f3a9cad46d013"
   },
   {
     "url": "09.Language/Cpp/01.C++98核心详解.html",
-    "revision": "034d6911b68fc43ace7f613515bdb5d7"
+    "revision": "dec4f49028e54bdf0b9d16a981181694"
   },
   {
     "url": "09.Language/Cpp/02.C++11详解.html",
-    "revision": "2163ed58030a7e1a1f5ac12b43ededd9"
+    "revision": "49cd0fb87670a45ee4f56afee5ac718a"
   },
   {
     "url": "09.Language/Cpp/03.C++输入输出IO.html",
-    "revision": "e8910844dfc38389b8b0754592e8718e"
+    "revision": "e027d147bd93374fc766e259229f1a1a"
   },
   {
     "url": "09.Language/Cpp/index.html",
-    "revision": "6d1194ee42a945325c666addb0f70c29"
+    "revision": "5bbd63651f3f61af2fd02a231889b04c"
   },
   {
     "url": "09.Language/Cpp/Part01.核心知识/01.虚拟内存空间分布图.html",
-    "revision": "52ddcdba832e35bcbbf930bc712bd657"
+    "revision": "0907cb9903aa93498591c8b1e3aee916"
   },
   {
     "url": "09.Language/Cpp/Part01.核心知识/02.C和Cplusplus优先级和结合性记忆.html",
-    "revision": "791a30803cd37cd7f71c0cb0d7767a1a"
+    "revision": "cb8b9e204da3c0f757f5d85d3fd40625"
   },
   {
     "url": "09.Language/Cpp/Part01.核心知识/03.C和Cplusplus指针详解.html",
-    "revision": "9ea3ff7926ae6152f221e4725861f2b8"
+    "revision": "a431b14bc7a1566ebebd609fb5f68a45"
   },
   {
     "url": "09.Language/Cpp/Part01.核心知识/04.内存对齐.html",
-    "revision": "5329bae8c3119a59d1139fae2302655f"
+    "revision": "9c56fe945357eeb3e8cc0ada1576a506"
   },
   {
     "url": "09.Language/Cpp/ReviewCpp/01.C++面向对象高级编程上.html",
-    "revision": "dae5db0ffa25f0c6b5eb09e551283714"
+    "revision": "626903e8b12f01f72df97a7345e18f73"
   },
   {
     "url": "09.Language/Cpp/ReviewCpp/02.C++面向对象高级编程下.html",
-    "revision": "20d7c41c83c5efdec37aa626e360a68d"
+    "revision": "a4d2562caf5c7beaf863c7529b31ea93"
   },
   {
     "url": "09.Language/Cpp/ReviewCpp/03.C++2.0新特性.html",
-    "revision": "2fae20f24a29728bdd329e0aef2a941d"
+    "revision": "654afea35bb38e086da133e973e78d6b"
   },
   {
     "url": "09.Language/Cpp/ReviewCpp/04.C++内存管理.html",
-    "revision": "87aa1f685bc40b0c57e5bf29a103f950"
+    "revision": "ae4661e0f8d9d27ec670f749744ad5e5"
   },
   {
     "url": "09.Language/Cpp/ReviewCpp/05.C++Startup揭密C++程序的生前和死后.html",
-    "revision": "910714bc85d2f97123a672cb4c102127"
+    "revision": "e89a5a3f5eb6ad228b1703580ccf2ef4"
   },
   {
     "url": "09.Language/Cpp/ReviewCpp/index.html",
-    "revision": "ef7a915d8462980f9298cd0b5e39a1a6"
+    "revision": "98f1c0ada5bf76fd5fd699d3ac8601ef"
   },
   {
     "url": "09.Language/Java/01.Java核心技术卷1总结.html",
-    "revision": "4b3d7abd344051bb942d5c25df7ac160"
+    "revision": "609f04f9b2159c02563e45ef9af3706d"
   },
   {
     "url": "09.Language/Java/02.Java和C++的对比.html",
-    "revision": "02fe24ce02877df5f0edbc13fd765d26"
+    "revision": "0f5ba20f17d7680ae082ba1a642edd69"
   },
   {
     "url": "09.Language/Java/03.Java的OJ编程模板.html",
-    "revision": "023d7958ba913225760ad954aead877e"
+    "revision": "eb1f049d95b75ab29661e6b49b51d7b0"
   },
   {
     "url": "09.Language/Java/index.html",
-    "revision": "d4ef0b9c97b4dc2e9edb3a79d7ebe84e"
+    "revision": "70ac1f461d63a2beadfd7967f0cba0a5"
   },
   {
     "url": "10.SourceCode/code/Tinyhttpd源码剖析.html",
-    "revision": "8afe8f36229ce050eafd17ca3818944d"
+    "revision": "2afa7876897e4c94880ffad72036a398"
   },
   {
     "url": "10.SourceCode/code/webbench源码剖析.html",
-    "revision": "a21f324ca1193c8b71f6f5f9b251d6d4"
+    "revision": "a5b452f3a8efb4756ed57d0d1265b4e9"
   },
   {
     "url": "10.SourceCode/index.html",
-    "revision": "f0ef1fa3e14a9f7bf9bcca12a9682355"
+    "revision": "6f8688b31deb0130be3c1f5328b7a1ee"
   },
   {
     "url": "10.SourceCode/IT/01.编程常用的数据格式.html",
-    "revision": "e8a66e8bb6d062025358932dcfa8a7b6"
+    "revision": "c7f7b6b6435f0a5e6b924ec212cda2a3"
   },
   {
     "url": "10.SourceCode/PLserver/index.html",
-    "revision": "76531409cb92cb5e8773efb12f9b103f"
+    "revision": "de473467b7f1340564364f4abde972b7"
   },
   {
     "url": "10.SourceCode/PLserver/第1章-Linux系统编程入门/第1章-Linux系统编程入门.html",
-    "revision": "777ab9d7a2d23d24edaa0c4bbf145951"
+    "revision": "f74294a0814fa5407ba1a4c3ba246062"
   },
   {
     "url": "10.SourceCode/PLserver/第2章-Linux多进程开发/第2章-Linux多进程开发.html",
-    "revision": "b36e319f253c00b9f16b83aa835103a0"
+    "revision": "96ca89cbe378522bb7aa5896e621a0cf"
   },
   {
     "url": "10.SourceCode/PLserver/第3章-Linux多线程开发/第3章-Linux多线程开发.html",
-    "revision": "474c977ac7ddf50b48a57d8299b6f171"
+    "revision": "2ed15f236c6229889c79c2fc26688c7c"
   },
   {
     "url": "10.SourceCode/PLserver/第4章-Linux网络编程/第4章-Linux网络编程.html",
-    "revision": "d61d8a01ce0e7bc34773c2ced74a8231"
+    "revision": "16ac2ffc0ca6f80f31b5c0306c8eedde"
   },
   {
     "url": "10.SourceCode/PLserver/第5章-项目实战与总结/第5章-项目实战与总结.html",
-    "revision": "2dd696216ec07bcbfe542dca3d3b6c8a"
+    "revision": "b9bafafb9d2930257e22b2e733e5e60c"
   },
   {
     "url": "10.SourceCode/推荐的开源库.html",
-    "revision": "0034aebd64d403344229521e5f46f943"
+    "revision": "71815e5ac45c9d676f65edba875098d8"
   },
   {
     "url": "404.html",
-    "revision": "bb841dc8de4f91a2a65245caaf07ab69"
+    "revision": "17b8440e6863a76b5f3e9f81126bacab"
   },
   {
     "url": "assets/css/0.styles.0dbae9ec.css",
@@ -816,8 +816,8 @@ self.__precacheManifest = [
     "revision": "09de508da8842871ad14bee388538c90"
   },
   {
-    "url": "assets/js/84.1f90a12e.js",
-    "revision": "550aabd3660822194c9d604801ff569d"
+    "url": "assets/js/84.51bd2828.js",
+    "revision": "2893d01a2ebf2271b84962917562f685"
   },
   {
     "url": "assets/js/85.c85a54e8.js",
@@ -884,8 +884,8 @@ self.__precacheManifest = [
     "revision": "0fd73160aab60eb80bb76140ee1311d5"
   },
   {
-    "url": "assets/js/app.d03e0e3d.js",
-    "revision": "aa365d474e48273f30feb23cc99b463f"
+    "url": "assets/js/app.628aec65.js",
+    "revision": "245c6bc2d8282b89b291e96b84a839e5"
   },
   {
     "url": "images/photo.jpg",
@@ -893,7 +893,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "732fda9ca6442436e2cd0d1853e92fd8"
+    "revision": "5afb829e19ed9e140153d24800415427"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
