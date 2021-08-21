@@ -1,10 +1,12 @@
 
 
-<center>个人博客</center>
+<br>
 
 | 🚀语言 | ✔️硬件基础 | ⭐️软件基础 | 🎨数据库 | 🔖学术/工程 | ⚙️工具 |
 | ----- | --------- | --------- | ------- | ---------- | ----- |
 | 🚀     | ✔️         | ⭐️         | 🎨       | 🔖          | ⚙️     |
+<br>
+
 
 <div align="center">
     <a href="https://hacv.gitee.io/"> <img src="https://badgen.net/badge/HACV/%E5%9C%A8%E7%BA%BF%E9%98%85%E8%AF%BB?icon=sourcegraph&color=4ab8a1"></a>
